@@ -1,80 +1,254 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "soundcn",
+  "homepage": "https://soundcn.dev",
   "items": [
     {
-      "name": "hello-world",
-      "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "name": "sound-types",
+      "type": "registry:lib",
+      "title": "Sound Types",
+      "description": "TypeScript type definitions for soundcn sound assets.",
       "files": [
         {
-          "path": "registry/new-york/blocks/hello-world/hello-world.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "example-form",
-      "type": "registry:component",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/example-form/example-form.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "complex-component",
-      "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/lib/pokemon.ts",
+          "path": "registry/new-york/lib/sound-types.ts",
           "type": "registry:lib"
-        },
+        }
+      ],
+      "categories": ["lib"]
+    },
+    {
+      "name": "use-sound",
+      "type": "registry:hook",
+      "title": "useSound",
+      "description": "A lightweight React hook for playing sound effects using the Web Audio API. Zero dependencies.",
+      
+      "files": [
         {
-          "path": "registry/new-york/blocks/complex-component/hooks/use-pokemon.ts",
+          "path": "registry/new-york/hooks/use-sound.ts",
           "type": "registry:hook"
         }
-      ]
+      ],
+      "categories": ["hooks"]
     },
     {
-      "name": "example-with-css",
-      "type": "registry:component",
-      "title": "Example with CSS",
-      "description": "A login form with a CSS file.",
+      "name": "click-8bit",
+      "type": "registry:block",
+      "title": "Click 8-Bit",
+      "description": "A retro 8-bit click sound. Perfect for buttons and toggles in pixel-art or retro-themed interfaces.",
+      
       "files": [
         {
-          "path": "registry/new-york/blocks/example-with-css/example-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/example-with-css/example-card.css",
-          "type": "registry:component"
+          "path": "registry/new-york/sounds/click-8bit/click-8bit.ts",
+          "type": "registry:lib"
         }
-      ]
+      ],
+      "categories": ["click", "8-bit", "ui"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.091,
+        "format": "mp3",
+        "sizeKb": 1,
+        "license": "CC0",
+        "tags": ["click", "button", "8-bit", "retro", "ui"]
+      }
+    },
+    {
+      "name": "click-soft",
+      "type": "registry:block",
+      "title": "Click Soft",
+      "description": "A soft, subtle click. Ideal for minimal and clean UI interactions.",
+      
+      "files": [
+        {
+          "path": "registry/new-york/sounds/click-soft/click-soft.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": ["click", "ui"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.007,
+        "format": "mp3",
+        "sizeKb": 1,
+        "license": "CC0",
+        "tags": ["click", "button", "soft", "minimal", "ui"]
+      }
+    },
+    {
+      "name": "switch-on",
+      "type": "registry:block",
+      "title": "Switch On",
+      "description": "A satisfying switch-on toggle sound for checkboxes, toggles, and state changes.",
+      
+      "files": [
+        {
+          "path": "registry/new-york/sounds/switch-on/switch-on.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": ["switch", "ui"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.364,
+        "format": "mp3",
+        "sizeKb": 3,
+        "license": "CC0",
+        "tags": ["switch", "toggle", "on", "enable", "ui"]
+      }
+    },
+    {
+      "name": "switch-off",
+      "type": "registry:block",
+      "title": "Switch Off",
+      "description": "A toggle switch-off sound. Pair with switch-on for complete toggle feedback.",
+      
+      "files": [
+        {
+          "path": "registry/new-york/sounds/switch-off/switch-off.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": ["switch", "ui"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.213,
+        "format": "mp3",
+        "sizeKb": 2,
+        "license": "CC0",
+        "tags": ["switch", "toggle", "off", "disable", "ui"]
+      }
+    },
+    {
+      "name": "notification-pop",
+      "type": "registry:block",
+      "title": "Notification Pop",
+      "description": "A friendly pop sound for notifications, toasts, and alerts.",
+      
+      "files": [
+        {
+          "path": "registry/new-york/sounds/notification-pop/notification-pop.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": ["notification", "ui"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.539,
+        "format": "mp3",
+        "sizeKb": 5,
+        "license": "CC0",
+        "tags": ["notification", "pop", "alert", "toast", "ui"]
+      }
+    },
+    {
+      "name": "success-chime",
+      "type": "registry:block",
+      "title": "Success Chime",
+      "description": "A positive confirmation chime for success states, form submissions, and completed actions.",
+      
+      "files": [
+        {
+          "path": "registry/new-york/sounds/success-chime/success-chime.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": ["feedback", "ui"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.490,
+        "format": "mp3",
+        "sizeKb": 4,
+        "license": "CC0",
+        "tags": ["success", "confirmation", "chime", "positive", "ui"]
+      }
+    },
+    {
+      "name": "error-buzz",
+      "type": "registry:block",
+      "title": "Error Buzz",
+      "description": "A short error buzz for validation failures, rejected actions, and error states.",
+      
+      "files": [
+        {
+          "path": "registry/new-york/sounds/error-buzz/error-buzz.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": ["feedback", "ui"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.104,
+        "format": "mp3",
+        "sizeKb": 1,
+        "license": "CC0",
+        "tags": ["error", "buzz", "negative", "warning", "ui"]
+      }
+    },
+    {
+      "name": "hover-tick",
+      "type": "registry:block",
+      "title": "Hover Tick",
+      "description": "A subtle tick for hover and focus states. Adds tactile feedback to navigation.",
+      
+      "files": [
+        {
+          "path": "registry/new-york/sounds/hover-tick/hover-tick.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": ["hover", "ui"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.224,
+        "format": "mp3",
+        "sizeKb": 2,
+        "license": "CC0",
+        "tags": ["hover", "tick", "rollover", "focus", "ui"]
+      }
+    },
+    {
+      "name": "jump-8bit",
+      "type": "registry:block",
+      "title": "Jump 8-Bit",
+      "description": "A classic 8-bit jump sound effect. Great for game UIs and playful interactions.",
+      
+      "files": [
+        {
+          "path": "registry/new-york/sounds/jump-8bit/jump-8bit.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": ["game-8bit"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.467,
+        "format": "mp3",
+        "sizeKb": 4,
+        "license": "CC0",
+        "tags": ["jump", "8-bit", "retro", "game", "digital"]
+      }
+    },
+    {
+      "name": "coin-collect",
+      "type": "registry:block",
+      "title": "Coin Collect",
+      "description": "A cheerful coin pickup sound. Perfect for rewards, achievements, and gamification.",
+      
+      "files": [
+        {
+          "path": "registry/new-york/sounds/coin-collect/coin-collect.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": ["game-8bit"],
+      "author": "Kenney <https://kenney.nl>",
+      "meta": {
+        "duration": 0.441,
+        "format": "mp3",
+        "sizeKb": 4,
+        "license": "CC0",
+        "tags": ["coin", "collect", "reward", "achievement", "game", "digital"]
+      }
     }
   ]
 }

@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw sound files (downloaded packs)
+/raw-sounds
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -1,5 +1,5 @@
 {
-  "name": "registry",
+  "name": "soundcn",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -34,10 +34,8 @@
     "tailwindcss": "^4.1.11",
     "typescript": "^5.9.2"
   },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.1.2",
-      "@types/react-dom": "19.1.2"
-    }
+  "overrides": {
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2"
   }
 }
