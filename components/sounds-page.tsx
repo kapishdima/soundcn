@@ -80,9 +80,9 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
   }, []);
 
   return (
-    <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-6">
-      {/* Header */}
-      <header className="flex items-center justify-between">
+    <div className="flex min-h-svh flex-col">
+      {/* Header — always at top */}
+      <header className="border-input mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4">
         <div className="flex items-center gap-2">
           <Volume2 className="size-5" />
           <span className="text-lg font-bold tracking-tight">soundcn</span>
@@ -99,42 +99,44 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
       </header>
 
       {/* Hero */}
-      <div className="flex flex-col items-center gap-6 pt-4 pb-2">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Sound effects for the modern web.
-          </h1>
-          <p className="text-muted-foreground mt-2 text-lg">
-            Copy. Paste. Play.
-          </p>
-        </div>
+      <section className="flex flex-col items-center gap-4 px-4 pt-12 pb-16">
+        <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl">
+          Beautiful UI sounds
+          <br />
+          <span className="text-muted-foreground">for your next project</span>
+        </h1>
+        <p className="text-muted-foreground max-w-md text-center text-base">
+          A collection of carefully crafted sounds for user interfaces. Inspired
+          by shadcn/ui design philosophy.
+        </p>
+      </section>
 
-        <SoundSearch
-          value={query}
-          onChange={setQuery}
-          totalCount={sounds.length}
-        />
+      {/* Sticky action bar: search + categories */}
+      <div className="bg-background/80 sticky top-0 z-40 border-b backdrop-blur-md">
+        <div className="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-3">
+          <SoundSearch value={query} onChange={setQuery} />
+          <div className="min-w-0 flex-1">
+            <CategoryFilter
+              options={categoryOptions}
+              activeCategory={activeCategory}
+              onChange={setActiveCategory}
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Categories */}
-      <CategoryFilter
-        options={categoryOptions}
-        activeCategory={activeCategory}
-        onChange={setActiveCategory}
-      />
+      {/* Content */}
+      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 py-6">
+        <p className="text-muted-foreground text-sm">
+          {filteredSounds.length} sound
+          {filteredSounds.length !== 1 ? "s" : ""}
+        </p>
 
-      {/* Results count */}
-      <p className="text-muted-foreground text-sm">
-        {filteredSounds.length} sound{filteredSounds.length !== 1 ? "s" : ""}
-      </p>
+        <SoundGrid sounds={filteredSounds} onSelect={handleSelect} />
+      </main>
 
-      {/* Grid */}
-      <SoundGrid sounds={filteredSounds} onSelect={handleSelect} />
-
-      {/* Detail panel */}
-      {selectedSound && (
-        <SoundDetail sound={selectedSound} onClose={handleClose} />
-      )}
+      {/* Drawer */}
+      <SoundDetail sound={selectedSound} onClose={handleClose} />
     </div>
   );
 }
