@@ -13,6 +13,7 @@ export interface SoundCatalogItem {
     sizeKb: number;
     license: string;
     tags: string[];
+    keywords: string[];
   };
 }
 

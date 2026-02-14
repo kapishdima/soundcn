@@ -1,79 +1,50 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
+import { useQueryState, parseAsString } from "nuqs";
 import { Github, Volume2 } from "lucide-react";
-import {
-  ALL_CATEGORY,
-  CATEGORY_ORDER,
-  type SoundCatalogItem,
-} from "@/lib/sound-catalog";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { ALL_CATEGORY, type SoundCatalogItem } from "@/lib/sound-catalog";
+import { filterSounds, buildCategoryOptions } from "@/lib/sound-filters";
 import { CategoryFilter } from "@/components/category-filter";
 import { SoundGrid } from "@/components/sound-grid";
 import { SoundSearch } from "@/components/sound-search";
 import { SoundDetail } from "@/components/sound-detail";
+import { useHoverPreview } from "@/hooks/use-hover-preview";
 
 interface SoundsPageProps {
   sounds: SoundCatalogItem[];
 }
 
 export function SoundsPage({ sounds }: SoundsPageProps) {
-  const [query, setQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState<string>(ALL_CATEGORY);
+  const [query, setQuery] = useQueryState(
+    "q",
+    parseAsString.withDefault("").withOptions({ shallow: true, throttleMs: 300 })
+  );
+  const [activeCategory, setActiveCategory] = useQueryState(
+    "category",
+    parseAsString.withDefault(ALL_CATEGORY).withOptions({ shallow: true })
+  );
   const [selectedSound, setSelectedSound] = useState<SoundCatalogItem | null>(
     null
   );
 
-  const filteredSounds = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
+  const filteredSounds = useMemo(
+    () => filterSounds(sounds, query, activeCategory),
+    [sounds, query, activeCategory]
+  );
 
-    return sounds.filter((sound) => {
-      const categoryMatch =
-        activeCategory === ALL_CATEGORY ||
-        sound.broadCategory === activeCategory;
+  const categoryOptions = useMemo(
+    () => buildCategoryOptions(sounds),
+    [sounds]
+  );
 
-      if (!categoryMatch) return false;
-      if (!normalized) return true;
-
-      const searchableText = [
-        sound.name,
-        sound.title,
-        sound.description,
-        sound.meta.tags.join(" "),
-      ]
-        .join(" ")
-        .toLowerCase();
-
-      return searchableText.includes(normalized);
-    });
-  }, [activeCategory, query, sounds]);
-
-  const categoryOptions = useMemo(() => {
-    const categoryCounts = sounds.reduce<Record<string, number>>(
-      (acc, sound) => {
-        const key = sound.broadCategory;
-        acc[key] = (acc[key] ?? 0) + 1;
-        return acc;
-      },
-      {}
-    );
-
-    const ordered = CATEGORY_ORDER.filter(
-      (cat) => (categoryCounts[cat] ?? 0) > 0
-    ).map((cat) => ({
-      key: cat,
-      label: cat,
-      count: categoryCounts[cat] ?? 0,
-    }));
-
-    return [
-      { key: ALL_CATEGORY, label: "All", count: sounds.length },
-      ...ordered,
-    ];
-  }, [sounds]);
+  const { onPreviewStart, onPreviewStop } = useHoverPreview();
 
   const handleSelect = useCallback((sound: SoundCatalogItem) => {
+    onPreviewStop();
     setSelectedSound(sound);
-  }, []);
+  }, [onPreviewStop]);
 
   const handleClose = useCallback(() => {
     setSelectedSound(null);
@@ -81,25 +52,28 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 
   return (
     <div className="flex min-h-svh flex-col">
-      {/* Header — always at top */}
-      <header className="border-input mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4">
+      {/* Header */}
+      <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4">
         <div className="flex items-center gap-2">
           <Volume2 className="size-5" />
           <span className="text-lg font-bold tracking-tight">soundcn</span>
         </div>
-        <a
-          href="https://github.com/soundcn/soundcn"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="GitHub"
-        >
-          <Github className="size-5" />
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://github.com/soundcn/soundcn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="GitHub"
+          >
+            <Github className="size-5" />
+          </a>
+          <ThemeToggle />
+        </div>
       </header>
 
       {/* Hero */}
-      <section className="flex flex-col items-center gap-4 px-4 pt-12 pb-16">
+      {/* <section className="flex flex-col items-center gap-4 px-4 pt-12 pb-16">
         <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl">
           Beautiful UI sounds
           <br />
@@ -109,9 +83,9 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
           A collection of carefully crafted sounds for user interfaces. Inspired
           by shadcn/ui design philosophy.
         </p>
-      </section>
+      </section> */}
 
-      {/* Sticky action bar: search + categories */}
+      {/* Sticky action bar */}
       <div className="bg-background/80 sticky top-0 z-40 border-b backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-3">
           <SoundSearch value={query} onChange={setQuery} />
@@ -132,7 +106,12 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
           {filteredSounds.length !== 1 ? "s" : ""}
         </p>
 
-        <SoundGrid sounds={filteredSounds} onSelect={handleSelect} />
+        <SoundGrid
+          sounds={filteredSounds}
+          onSelect={handleSelect}
+          onPreviewStart={onPreviewStart}
+          onPreviewStop={onPreviewStop}
+        />
       </main>
 
       {/* Drawer */}

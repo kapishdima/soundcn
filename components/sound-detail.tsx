@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Check, Copy, Loader2, Play, Square } from "lucide-react";
+import { Check, Copy, Download, Loader2, Play, Square } from "lucide-react";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { formatDuration, formatSizeKb } from "@/lib/sound-catalog";
 import { loadSoundAsset } from "@/lib/sound-loader";
@@ -40,7 +40,7 @@ function CopyRow({ label, text }: { label: string; text: string }) {
         {label}
       </span>
       <div className="group/row relative">
-        <pre className="bg-secondary/50 overflow-x-auto rounded-lg p-3 pr-10 text-sm leading-relaxed">
+        <pre className="bg-secondary/50 overflow-x-auto rounded-lg p-3 pr-10 text-sm leading-relaxed [scrollbar-width:none]">
           <code className="font-mono">{text}</code>
         </pre>
         <button
@@ -95,6 +95,23 @@ const [play] = useSound(${exportName});`
     setPlayState("idle");
   }, [sound?.name]);
 
+  const handleDownload = async () => {
+    if (!sound) return;
+    try {
+      const asset = await loadSoundAsset(sound.name);
+      const res = await fetch(asset.dataUri);
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${sound.name}.${asset.format}`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error(`[SoundDetail] Failed to download "${sound.name}":`, err);
+    }
+  };
+
   const handleTogglePlayback = async () => {
     if (!sound) return;
 
@@ -132,7 +149,7 @@ const [play] = useSound(${exportName});`
     >
       <DrawerContent>
         {sound && (
-          <div className="mx-auto w-full max-w-lg px-4 pb-8">
+          <div className="mx-auto w-full max-w-2xl px-4 pb-8">
             <DrawerHeader className="px-0">
               <div className="flex items-center gap-4">
                 <button
@@ -159,7 +176,7 @@ const [play] = useSound(${exportName});`
                   )}
                 </button>
 
-                <div className="min-w-0 text-left">
+                <div className="min-w-0 flex-1 text-left">
                   <DrawerTitle className="truncate text-lg">
                     {sound.title}
                   </DrawerTitle>
@@ -168,8 +185,22 @@ const [play] = useSound(${exportName});`
                     {formatSizeKb(sound.meta.sizeKb)} · {sound.meta.license}
                   </DrawerDescription>
                 </div>
+
+                <button
+                  onClick={handleDownload}
+                  className="text-muted-foreground hover:text-foreground hover:bg-secondary flex size-9 shrink-0 items-center justify-center rounded-lg transition-colors"
+                  aria-label="Download sound file"
+                >
+                  <Download className="size-5" />
+                </button>
               </div>
             </DrawerHeader>
+
+            {sound.description && (
+              <p className="text-muted-foreground text-sm mb-6">
+                {sound.description}
+              </p>
+            )}
 
             <div className="flex flex-col gap-4">
               <CopyRow label="Install" text={installCmd} />

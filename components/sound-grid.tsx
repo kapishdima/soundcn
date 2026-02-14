@@ -4,9 +4,16 @@ import { SoundCard } from "@/components/sound-card";
 interface SoundGridProps {
   sounds: SoundCatalogItem[];
   onSelect: (sound: SoundCatalogItem) => void;
+  onPreviewStart: (soundName: string) => void;
+  onPreviewStop: () => void;
 }
 
-export function SoundGrid({ sounds, onSelect }: SoundGridProps) {
+export function SoundGrid({
+  sounds,
+  onSelect,
+  onPreviewStart,
+  onPreviewStop,
+}: SoundGridProps) {
   if (sounds.length === 0) {
     return (
       <div className="border-muted text-muted-foreground rounded-xl border border-dashed px-6 py-16 text-center">
@@ -18,7 +25,13 @@ export function SoundGrid({ sounds, onSelect }: SoundGridProps) {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
       {sounds.map((sound) => (
-        <SoundCard key={sound.name} sound={sound} onSelect={onSelect} />
+        <SoundCard
+          key={sound.name}
+          sound={sound}
+          onSelect={onSelect}
+          onPreviewStart={onPreviewStart}
+          onPreviewStop={onPreviewStop}
+        />
       ))}
     </div>
   );

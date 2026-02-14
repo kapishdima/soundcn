@@ -20,6 +20,7 @@ export default function Home() {
           sizeKb: item.meta?.sizeKb ?? 0,
           license: item.meta?.license ?? "Unknown",
           tags: item.meta?.tags ?? [],
+          keywords: (item.meta as Record<string, unknown>)?.keywords as string[] ?? [],
         },
       };
     })
