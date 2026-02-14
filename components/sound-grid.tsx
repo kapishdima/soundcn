@@ -8,6 +8,8 @@ interface SoundGridProps {
   onPreviewStop: () => void;
 }
 
+const EMPTY_EQ = [35, 55, 25, 70, 40, 60, 30];
+
 export function SoundGrid({
   sounds,
   onSelect,
@@ -17,6 +19,18 @@ export function SoundGrid({
   if (sounds.length === 0) {
     return (
       <div className="border-border/40 text-muted-foreground rounded-xl border border-dashed px-6 py-20 text-center">
+        <div
+          className="mx-auto mb-4 flex items-end justify-center gap-[3px] h-8"
+          aria-hidden="true"
+        >
+          {EMPTY_EQ.map((h, i) => (
+            <span
+              key={i}
+              className="w-[3px] rounded-full bg-muted-foreground/15"
+              style={{ height: `${h}%` }}
+            />
+          ))}
+        </div>
         <p className="text-sm">No sounds match your filters.</p>
       </div>
     );

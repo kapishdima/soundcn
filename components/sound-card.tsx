@@ -46,11 +46,14 @@ export const SoundCard = memo(function SoundCard({
       onPointerLeave={onPreviewStop}
       onFocus={() => onPreviewStart(sound.name)}
       onBlur={onPreviewStop}
-      className="group relative flex cursor-pointer flex-col items-center gap-3 rounded-xl border border-border/50 bg-card p-4 transition-[color,border-color,box-shadow,background-color] duration-200 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/[0.06] focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none"
+      className="group relative flex cursor-pointer flex-col items-center gap-3 rounded-xl border border-border/50 bg-card p-4 transition-[color,border-color,box-shadow,background-color,transform] duration-200 hover:border-primary/30 hover:shadow-[0_8px_30px_-8px] hover:shadow-primary/[0.08] hover:scale-[1.03] active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none"
       style={{ contentVisibility: "auto", containIntrinsicSize: "auto 140px" }}
     >
       {/* Mini equalizer bars */}
-      <div className="flex items-end justify-center gap-[3px] h-10" aria-hidden="true">
+      <div
+        className="flex items-end justify-center gap-[3px] h-10"
+        aria-hidden="true"
+      >
         {bars.map((bar, i) => (
           <span
             key={i}

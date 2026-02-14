@@ -5,6 +5,8 @@ import {
 } from "@/lib/sound-catalog";
 import type { CategoryFilterOption } from "@/components/category-filter";
 
+const WHITESPACE_RE = /\s+/;
+
 export function filterSounds(
   sounds: SoundCatalogItem[],
   query: string,
@@ -29,7 +31,7 @@ export function filterSounds(
       .join(" ")
       .toLowerCase();
 
-    const terms = normalized.split(/\s+/).filter(Boolean);
+    const terms = normalized.split(WHITESPACE_RE).filter(Boolean);
     return terms.every((term) => searchableText.includes(term));
   });
 }

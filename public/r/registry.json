@@ -10,7 +10,7 @@
       "description": "TypeScript type definitions for soundcn sound assets.",
       "files": [
         {
-          "path": "registry/new-york/lib/sound-types.ts",
+          "path": "registry/soundcn/lib/sound-types.ts",
           "type": "registry:lib"
         }
       ],
@@ -25,7 +25,7 @@
       "description": "A lightweight React hook for playing sound effects using the Web Audio API. Zero dependencies.",
       "files": [
         {
-          "path": "registry/new-york/hooks/use-sound.ts",
+          "path": "registry/soundcn/hooks/use-sound.ts",
           "type": "registry:hook"
         }
       ],
@@ -40,7 +40,7 @@
       "description": "A retro 8-bit click sound. Perfect for buttons and toggles in pixel-art or retro-themed interfaces.",
       "files": [
         {
-          "path": "registry/new-york/sounds/click-8bit/click-8bit.ts",
+          "path": "registry/soundcn/sounds/click-8bit/click-8bit.ts",
           "type": "registry:lib"
         }
       ],
@@ -74,7 +74,7 @@
       "description": "A soft, subtle click. Ideal for minimal and clean UI interactions.",
       "files": [
         {
-          "path": "registry/new-york/sounds/click-soft/click-soft.ts",
+          "path": "registry/soundcn/sounds/click-soft/click-soft.ts",
           "type": "registry:lib"
         }
       ],
@@ -107,7 +107,7 @@
       "description": "A satisfying switch-on toggle sound for checkboxes, toggles, and state changes.",
       "files": [
         {
-          "path": "registry/new-york/sounds/switch-on/switch-on.ts",
+          "path": "registry/soundcn/sounds/switch-on/switch-on.ts",
           "type": "registry:lib"
         }
       ],
@@ -140,7 +140,7 @@
       "description": "A toggle switch-off sound. Pair with switch-on for complete toggle feedback.",
       "files": [
         {
-          "path": "registry/new-york/sounds/switch-off/switch-off.ts",
+          "path": "registry/soundcn/sounds/switch-off/switch-off.ts",
           "type": "registry:lib"
         }
       ],
@@ -173,7 +173,7 @@
       "description": "A friendly pop sound for notifications, toasts, and alerts.",
       "files": [
         {
-          "path": "registry/new-york/sounds/notification-pop/notification-pop.ts",
+          "path": "registry/soundcn/sounds/notification-pop/notification-pop.ts",
           "type": "registry:lib"
         }
       ],
@@ -206,7 +206,7 @@
       "description": "A positive confirmation chime for success states, form submissions, and completed actions.",
       "files": [
         {
-          "path": "registry/new-york/sounds/success-chime/success-chime.ts",
+          "path": "registry/soundcn/sounds/success-chime/success-chime.ts",
           "type": "registry:lib"
         }
       ],
@@ -239,7 +239,7 @@
       "description": "A short error buzz for validation failures, rejected actions, and error states.",
       "files": [
         {
-          "path": "registry/new-york/sounds/error-buzz/error-buzz.ts",
+          "path": "registry/soundcn/sounds/error-buzz/error-buzz.ts",
           "type": "registry:lib"
         }
       ],
@@ -272,7 +272,7 @@
       "description": "A subtle tick for hover and focus states. Adds tactile feedback to navigation.",
       "files": [
         {
-          "path": "registry/new-york/sounds/hover-tick/hover-tick.ts",
+          "path": "registry/soundcn/sounds/hover-tick/hover-tick.ts",
           "type": "registry:lib"
         }
       ],
@@ -305,7 +305,7 @@
       "description": "A classic 8-bit jump sound effect. Great for game UIs and playful interactions.",
       "files": [
         {
-          "path": "registry/new-york/sounds/jump-8bit/jump-8bit.ts",
+          "path": "registry/soundcn/sounds/jump-8bit/jump-8bit.ts",
           "type": "registry:lib"
         }
       ],
@@ -337,7 +337,7 @@
       "description": "A cheerful coin pickup sound. Perfect for rewards, achievements, and gamification.",
       "files": [
         {
-          "path": "registry/new-york/sounds/coin-collect/coin-collect.ts",
+          "path": "registry/soundcn/sounds/coin-collect/coin-collect.ts",
           "type": "registry:lib"
         }
       ],

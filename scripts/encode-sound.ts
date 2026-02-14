@@ -39,7 +39,7 @@ const license = getOptionalArg("license", "CC0") as "CC0" | "OGA-BY" | "MIT";
 const category = getOptionalArg("category", "ui");
 
 const ROOT = resolve(dirname(new URL(import.meta.url).pathname), "..");
-const SOUNDS_DIR = resolve(ROOT, "registry/new-york/sounds");
+const SOUNDS_DIR = resolve(ROOT, "registry/soundcn/sounds");
 const TEMP_DIR = resolve(ROOT, ".tmp-audio");
 
 // Ensure temp dir exists
@@ -121,7 +121,7 @@ try {
   // ignore
 }
 
-console.log(`Generated: registry/new-york/sounds/${name}/${name}.ts`);
+console.log(`Generated: registry/soundcn/sounds/${name}/${name}.ts`);
 console.log(`  Size: ${sizeKb}KB | Duration: ${duration.toFixed(3)}s | Category: ${category}`);
 console.log(
   `  Export: ${exportName} | License: ${license} | Author: ${author}`

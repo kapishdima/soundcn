@@ -3,7 +3,7 @@ import type { SoundAsset } from "@/lib/sound-types";
 export async function loadSoundAsset(name: string): Promise<SoundAsset> {
   const mod: Record<string, unknown> = await import(
     /* webpackExclude: /it's/ */
-    `@/registry/new-york/sounds/${name}/${name}`
+    `@/registry/soundcn/sounds/${name}/${name}`
   );
 
   // Find the SoundAsset export by scanning for an object with `dataUri`

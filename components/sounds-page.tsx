@@ -9,7 +9,11 @@ import { filterSounds, buildCategoryOptions } from "@/lib/sound-filters";
 import { CategoryFilter } from "@/components/category-filter";
 import { SoundGrid } from "@/components/sound-grid";
 import { SoundSearch } from "@/components/sound-search";
-import { SoundDetail } from "@/components/sound-detail";
+import dynamic from "next/dynamic";
+
+const SoundDetail = dynamic(() =>
+  import("@/components/sound-detail").then((mod) => mod.SoundDetail)
+);
 import { useHoverPreview } from "@/hooks/use-hover-preview";
 
 interface SoundsPageProps {
@@ -23,11 +27,12 @@ const HERO_BARS = Array.from({ length: 80 }, (_, i) => ({
   height: 20 + (((i * 5) % 7) / 7) * 80,
 }));
 
+const EQ_LOGO_HEIGHTS = [55, 90, 35, 75, 45];
+
 function EqLogo() {
-  const heights = [55, 90, 35, 75, 45];
   return (
     <div className="flex items-end gap-[2.5px] h-[18px]" aria-hidden="true">
-      {heights.map((h, i) => (
+      {EQ_LOGO_HEIGHTS.map((h, i) => (
         <span
           key={i}
           className="w-[3px] rounded-full bg-primary"
@@ -85,10 +90,13 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
       </a>
 
       {/* ── Header ── */}
-      <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
+      <header className="stagger-fade-up mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
         <div className="flex items-center gap-2.5">
           <EqLogo />
-          <span className="font-display text-lg font-bold tracking-tight" aria-label="soundcn">
+          <span
+            className="font-display text-lg font-bold tracking-tight"
+            aria-label="soundcn"
+          >
             soundcn
           </span>
         </div>
@@ -108,8 +116,21 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden px-6 pt-8 pb-14 sm:pt-14 sm:pb-20">
+        {/* Radial amber glow — warm spotlight effect */}
+        <div
+          className="pointer-events-none absolute -top-48 -left-32 h-[650px] w-[750px] opacity-[0.06] dark:opacity-[0.10] blur-3xl"
+          style={{
+            background:
+              "radial-gradient(ellipse, var(--primary) 0%, transparent 65%)",
+          }}
+          aria-hidden="true"
+        />
+
         {/* Background equalizer bars */}
-        <div className="pointer-events-none absolute inset-0 flex items-end gap-[2px] overflow-hidden opacity-[0.045] dark:opacity-[0.08]" aria-hidden="true">
+        <div
+          className="pointer-events-none absolute inset-0 flex items-end gap-[2px] overflow-hidden opacity-[0.045] dark:opacity-[0.08]"
+          aria-hidden="true"
+        >
           {HERO_BARS.map((bar, i) => (
             <span
               key={i}
@@ -124,31 +145,45 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
         </div>
 
         <div className="relative mx-auto max-w-6xl">
-          <h1 className="font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+          <h1
+            className="stagger-fade-up font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+            style={{ animationDelay: "80ms" }}
+          >
             <span className="text-primary">{sounds.length}</span> curated UI
             sounds.
             <br />
             <span className="text-muted-foreground">Copy. Paste. Play.</span>
           </h1>
 
-          <p className="text-muted-foreground mt-5 max-w-lg text-base leading-relaxed sm:text-lg">
+          <p
+            className="stagger-fade-up text-muted-foreground mt-5 max-w-lg text-base leading-relaxed sm:text-lg"
+            style={{ animationDelay: "160ms" }}
+          >
             Open-source sound effects for modern web apps. Install any sound
             with a single CLI command.
           </p>
 
-          <div className="mt-7">
+          <div className="stagger-fade-up mt-7" style={{ animationDelay: "240ms" }}>
             <div className="bg-secondary/70 border-border/60 inline-flex items-center gap-3 rounded-lg border px-4 py-2.5 font-mono text-sm backdrop-blur-sm">
               <span className="text-primary select-none">$</span>
               <code className="text-foreground/80">
                 npx shadcn add https://soundcn.dev/r/click-soft.json
               </code>
+              <span
+                className="inline-block w-[7px] h-[15px] rounded-[1px] bg-primary/60"
+                style={{ animation: "blink-caret 1.1s step-end infinite" }}
+                aria-hidden="true"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* ── Sticky search & filter bar ── */}
-      <div className="bg-background/80 sticky top-0 z-40 border-b backdrop-blur-xl">
+      <div
+        className="stagger-fade-up bg-background/80 sticky top-0 z-40 border-b backdrop-blur-xl"
+        style={{ animationDelay: "350ms" }}
+      >
         <div className="mx-auto flex w-full max-w-6xl items-center gap-4 px-6 py-3">
           <SoundSearch value={query} onChange={setQuery} />
           <div className="min-w-0 flex-1">
@@ -162,7 +197,11 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
       </div>
 
       {/* ── Content ── */}
-      <main id="main-content" className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 px-6 py-8">
+      <main
+        id="main-content"
+        className="stagger-fade-up mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 px-6 py-8"
+        style={{ animationDelay: "450ms" }}
+      >
         <p className="text-muted-foreground text-sm tabular-nums">
           {filteredSounds.length} sound
           {filteredSounds.length !== 1 ? "s" : ""}

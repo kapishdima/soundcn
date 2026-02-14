@@ -3,7 +3,7 @@
  * Batch-encodes all .ogg files from assets/ into base64 TypeScript sound modules.
  *
  * Walks every folder and subfolder in assets/, converting each .ogg file to
- * registry/new-york/sounds/{sound-name}/{sound-name}.ts
+ * registry/soundcn/sounds/{sound-name}/{sound-name}.ts
  *
  * Sound name is derived from the filename (kebab-case, without extension).
  * Duplicates get the parent folder prefix automatically.
@@ -27,7 +27,7 @@ import { resolve, basename, extname, dirname, relative } from "path";
 
 const ROOT = resolve(dirname(new URL(import.meta.url).pathname), "..");
 const ASSETS_DIR = resolve(ROOT, "assets");
-const SOUNDS_DIR = resolve(ROOT, "registry/new-york/sounds");
+const SOUNDS_DIR = resolve(ROOT, "registry/soundcn/sounds");
 const TEMP_DIR = resolve(ROOT, ".tmp-audio");
 
 const args = process.argv.slice(2);

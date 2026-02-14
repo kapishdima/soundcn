@@ -23,5 +23,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "registry/new-york/sounds/it's-a-tie"]
+  "exclude": ["node_modules"]
 }

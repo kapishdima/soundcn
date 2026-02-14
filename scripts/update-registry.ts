@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * Scans registry/new-york/sounds/ for sound modules and adds any missing
+ * Scans registry/soundcn/sounds/ for sound modules and adds any missing
  * entries to registry.json.
  *
  * Usage:
@@ -12,7 +12,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync } from "fs";
 import { resolve, dirname } from "path";
 
 const ROOT = resolve(dirname(new URL(import.meta.url).pathname), "..");
-const SOUNDS_DIR = resolve(ROOT, "registry/new-york/sounds");
+const SOUNDS_DIR = resolve(ROOT, "registry/soundcn/sounds");
 const REGISTRY_PATH = resolve(ROOT, "registry.json");
 
 const dryRun = process.argv.includes("--dry-run");
@@ -113,7 +113,7 @@ for (const dirName of soundDirs) {
     description: `${title} sound effect.`,
     files: [
       {
-        path: `registry/new-york/sounds/${dirName}/${dirName}.ts`,
+        path: `registry/soundcn/sounds/${dirName}/${dirName}.ts`,
         type: "registry:lib",
       },
     ],

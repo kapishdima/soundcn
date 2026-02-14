@@ -82,7 +82,7 @@ Plan: Sound Demo Page
  Template literal dynamic imports (import(\@/sounds/${name}/${name}`)) are unreliable with bundlers. Instead, lib/sound-loader.ts` maps each curated sound name to a static
   import function:
  const loaders = {
-   "click-8bit": () => import("@/registry/new-york/sounds/click-8bit/click-8bit"),
+   "click-8bit": () => import("@/registry/soundcn/sounds/click-8bit/click-8bit"),
    // ...12 entries
  };
  This ensures proper code-splitting — each sound's base64 data is a separate chunk loaded only on play.
@@ -118,12 +118,12 @@ Plan: Sound Demo Page
 
  Reuse Existing Code
 
- - registry/new-york/ui/card.tsx — Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter
- - registry/new-york/ui/button.tsx — Button (variants: default, secondary, ghost, outline; sizes: default, sm, icon)
- - registry/new-york/ui/input.tsx — Input
+ - registry/soundcn/ui/card.tsx — Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter
+ - registry/soundcn/ui/button.tsx — Button (variants: default, secondary, ghost, outline; sizes: default, sm, icon)
+ - registry/soundcn/ui/input.tsx — Input
  - lib/utils.ts — cn() utility
  - lucide-react — Play, Square, Loader2, Search, Copy, Check, Clock icons
- - AudioContext pattern from registry/new-york/hooks/use-sound.ts lines 10-36
+ - AudioContext pattern from registry/soundcn/hooks/use-sound.ts lines 10-36
 
  Verification
 

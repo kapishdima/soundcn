@@ -74,7 +74,7 @@ soundcn/
 ### 1. Sound module (что устанавливается пользователю)
 
 ```typescript
-// registry/new-york/sounds/click-8bit/click-8bit.ts
+// registry/soundcn/sounds/click-8bit/click-8bit.ts
 import type { SoundAsset } from "@/lib/sound-types";
 
 export const click8bitSound: SoundAsset = {
@@ -90,7 +90,7 @@ export const click8bitSound: SoundAsset = {
 ### 2. Core hook (устанавливается автоматически как registryDependency)
 
 ```typescript
-// registry/new-york/hooks/use-sound.ts
+// registry/soundcn/hooks/use-sound.ts
 "use client";
 // Lightweight hook on Web Audio API:
 // - Singleton AudioContext (shared across all sounds)
@@ -132,7 +132,7 @@ function Button() {
   "type": "registry:block",
   "registryDependencies": ["use-sound"],
   "files": [{
-    "path": "registry/new-york/sounds/click-8bit/click-8bit.ts",
+    "path": "registry/soundcn/sounds/click-8bit/click-8bit.ts",
     "content": "import type { SoundAsset }...",
     "type": "registry:lib"
   }],
@@ -192,8 +192,8 @@ raw-sounds/*.ogg  -->  ffmpeg (MP3 64kbps mono)  -->  base64 encode  -->  .ts mo
 ### Phase 1: Foundation (текущая сессия)
 1. Клонировать `shadcn-ui/registry-template` в текущую директорию
 2. Адаптировать под soundcn (переименовать, обновить metadata)
-3. Создать `registry/new-york/lib/sound-types.ts` - TypeScript types
-4. Создать `registry/new-york/hooks/use-sound.ts` - core hook (Web Audio API)
+3. Создать `registry/soundcn/lib/sound-types.ts` - TypeScript types
+4. Создать `registry/soundcn/hooks/use-sound.ts` - core hook (Web Audio API)
 5. Скачать Kenney UI Audio pack, выбрать 5-10 звуков
 6. Создать `scripts/encode-sound.ts` - конвертация audio -> base64 TS module
 7. Сгенерировать 5-10 звуковых модулей:
