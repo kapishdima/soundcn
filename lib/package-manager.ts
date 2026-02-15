@@ -3,10 +3,10 @@ export type PackageManager = "npm" | "pnpm" | "yarn" | "bun";
 export const PACKAGE_MANAGERS: PackageManager[] = ["npm", "pnpm", "yarn", "bun"];
 
 const PM_PREFIX: Record<PackageManager, string> = {
-  npm: "npx shadcn",
-  pnpm: "pnpm dlx shadcn",
-  yarn: "npx shadcn",
-  bun: "bunx --bun shadcn",
+  npm: "npx shadcn@latest",
+  pnpm: "pnpm dlx shadcn@latest",
+  yarn: "npx shadcn@latest",
+  bun: "bunx --bun shadcn@latest",
 };
 
 export const PM_STORAGE_KEY = "soundcn-pm";
