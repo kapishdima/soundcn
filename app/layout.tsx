@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Syne } from "next/font/google";
 import { ThemeProvider } from "next-themes";
@@ -23,9 +23,51 @@ const syne = Syne({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://soundcn.dev";
+
 export const metadata: Metadata = {
-  title: "soundcn",
-  description: "Curated sound effects for modern web apps. Copy, paste, play.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "soundcn - Free Sound Effects for Modern Web Apps",
+    template: "%s | soundcn",
+  },
+  description:
+    "700+ curated UI sound effects for modern web apps. Browse, preview, and install sounds with a single command. Free and open source.",
+  keywords: [
+    "sound effects",
+    "UI sounds",
+    "web app sounds",
+    "notification sounds",
+    "click sounds",
+    "shadcn",
+    "react sounds",
+    "nextjs sounds",
+    "free sound effects",
+    "open source sounds",
+  ],
+  authors: [{ name: "soundcn" }],
+  creator: "soundcn",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "soundcn",
+    title: "soundcn - Free Sound Effects for Modern Web Apps",
+    description:
+      "700+ curated UI sound effects for modern web apps. Browse, preview, and install sounds with a single command.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "soundcn - Free Sound Effects for Modern Web Apps",
+    description:
+      "700+ curated UI sound effects for modern web apps. Browse, preview, and install sounds with a single command.",
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+};
+
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#faf8f4" },
     { media: "(prefers-color-scheme: dark)", color: "#1c1b2e" },
