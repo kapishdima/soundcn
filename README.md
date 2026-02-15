@@ -1,23 +1,38 @@
-# registry-template
+# soundcn
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+![soundcn](public/hero.png)
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template-v3](https://github.com/shadcn-ui/registry-template-v3).
+Open-source collection of UI sound effects, installable via [shadcn CLI](https://ui.shadcn.com/docs/cli).
 
-## Getting Started
+## Problem
 
-This is a template for creating a custom registry using Next.js.
+Adding sound to web interfaces is tedious. You either hunt for free samples, deal with licensing, wire up audio loading, or pull in heavy libraries — all for a simple button click sound.
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+## What is soundcn
 
-## Documentation
+A curated registry of 700+ short sound effects (clicks, notifications, transitions, game sounds) that you can add to any React project with a single command:
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+```bash
+npx shadcn add https://soundcn.xyz/r/click-soft.json
+```
+
+Each sound is a self-contained TypeScript module with an inline base64 data URI — no external files, no runtime fetching, no CORS issues. Sounds are installed directly into your codebase, not as a dependency.
+
+Includes a `useSound` hook for playback via the Web Audio API. Zero dependencies.
+
+## How it works
+
+- Browse sounds at [soundcn.dev](https://soundcn.dev)
+- Install any sound — it copies the `.ts` file and the `useSound` hook into your project
+- Import and play:
+
+```tsx
+import { useSound } from "@/hooks/use-sound";
+import { clickSoftSound } from "@/sounds/click-soft";
+
+const [play] = useSound(clickSoftSound);
+```
+
+## License
+
+Sounds are sourced from CC0-licensed collections (primarily [Kenney](https://kenney.nl)).

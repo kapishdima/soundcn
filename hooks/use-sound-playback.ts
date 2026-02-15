@@ -17,14 +17,11 @@ export function useSoundPlayback(soundName: string | null): SoundPlaybackControl
 
   // Stop & reset when the sound changes
   useEffect(() => {
+    setPlayState("idle");
     return () => {
       playbackRef.current?.stop();
       playbackRef.current = null;
     };
-  }, [soundName]);
-
-  useEffect(() => {
-    setPlayState("idle");
   }, [soundName]);
 
   const toggle = useCallback(async () => {

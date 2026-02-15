@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
 import { useQueryState, parseAsString } from "nuqs";
 import { Check, Copy, Github, ListChecks, Package } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -126,7 +126,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
   const selectedSound = soundParam ? (soundsByName.get(soundParam) ?? null) : null;
 
   // ── Batch selection ──
-  const [selectedNames, setSelectedNames] = useState<Set<string>>(new Set());
+  const [selectedNames, setSelectedNames] = useState<Set<string>>(() => new Set());
   const selectMode = selectedNames.size > 0;
 
   const handleToggleSelect = useCallback((name: string) => {
@@ -174,10 +174,15 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
     setSoundParam("");
   }, [setSoundParam]);
 
-  // Clear batch selection when category/search changes
-  useEffect(() => {
-    setSelectedNames(new Set());
-  }, [activeCategory, query]);
+  // Clear batch selection when category/search changes (render-time reset
+  // avoids the extra re-render + one-frame stale-selection flash of useEffect)
+  const prevFiltersRef = useRef({ activeCategory, query });
+  if (prevFiltersRef.current.activeCategory !== activeCategory || prevFiltersRef.current.query !== query) {
+    prevFiltersRef.current = { activeCategory, query };
+    if (selectedNames.size > 0) {
+      setSelectedNames(new Set());
+    }
+  }
 
   const showInstallAll = activeCategory !== ALL_CATEGORY && deferredSounds.length > 1;
 
