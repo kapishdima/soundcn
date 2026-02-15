@@ -6,6 +6,8 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "./globals.css";
 import { Suspense } from "react";
 
+import { Analytics } from "@vercel/analytics/next"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -49,6 +51,7 @@ export default function RootLayout({
         >
           <NuqsAdapter>{children}</NuqsAdapter>
         </ThemeProvider>
+        <Analytics />
         </Suspense>
       </body>
     </html>
