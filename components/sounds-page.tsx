@@ -7,6 +7,8 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { ALL_CATEGORY, type SoundCatalogItem } from "@/lib/sound-catalog";
 import { filterSounds, buildCategoryOptions } from "@/lib/sound-filters";
 import { buildInstallCommand } from "@/lib/sound-install";
+import { type PackageManager, getInstallPrefix } from "@/lib/package-manager";
+import { usePackageManager } from "@/hooks/use-package-manager";
 import { CategoryFilter } from "@/components/category-filter";
 import { SoundGrid } from "@/components/sound-grid";
 import { SoundSearch } from "@/components/sound-search";
@@ -52,13 +54,15 @@ function EqLogo() {
 
 function InstallCategoryButton({
   sounds,
+  pm,
 }: {
   sounds: SoundCatalogItem[];
+  pm: PackageManager;
 }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    const cmd = buildInstallCommand(sounds.map((s) => s.name));
+    const cmd = buildInstallCommand(sounds.map((s) => s.name), pm);
     try {
       await navigator.clipboard.writeText(cmd);
       setCopied(true);
@@ -98,6 +102,7 @@ function InstallCategoryButton({
 }
 
 export function SoundsPage({ sounds }: SoundsPageProps) {
+  const [pm, setPm] = usePackageManager();
   const [query, setQuery] = useQueryState(
     "q",
     parseAsString.withDefault("").withOptions({ shallow: true, throttleMs: 300 })
@@ -271,7 +276,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
             <div className="bg-secondary/70 border-border/60 inline-flex items-center gap-3 rounded-lg border px-4 py-2.5 font-mono text-sm backdrop-blur-sm">
               <span className="text-primary select-none">$</span>
               <code className="text-foreground/80">
-                {`npx shadcn add ${BASE_URL}/r/click-soft.json`}
+                {`${getInstallPrefix(pm)} add ${BASE_URL}/r/click-soft.json`}
               </code>
               <span
                 className="inline-block w-[7px] h-[15px] rounded-[1px] bg-primary/60"
@@ -298,7 +303,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
             />
           </div>
           {showInstallAll ? (
-            <InstallCategoryButton sounds={deferredSounds} />
+            <InstallCategoryButton sounds={deferredSounds} pm={pm} />
           ) : null}
         </div>
       </div>
@@ -344,10 +349,11 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
       <BatchInstallBar
         selectedNames={selectedNames}
         onClear={handleClearSelection}
+        pm={pm}
       />
 
       {/* ── Drawer ── */}
-      <SoundDetail sound={selectedSound} onClose={handleClose} />
+      <SoundDetail sound={selectedSound} onClose={handleClose} pm={pm} onPmChange={setPm} />
     </div>
   );
 }

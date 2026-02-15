@@ -3,23 +3,26 @@
 import { useState } from "react";
 import { Check, Package, X } from "lucide-react";
 import { buildInstallCommand } from "@/lib/sound-install";
+import type { PackageManager } from "@/lib/package-manager";
 import { cn } from "@/lib/utils";
 
 interface BatchInstallBarProps {
   selectedNames: Set<string>;
   onClear: () => void;
+  pm: PackageManager;
 }
 
 export function BatchInstallBar({
   selectedNames,
   onClear,
+  pm,
 }: BatchInstallBarProps) {
   const [copied, setCopied] = useState(false);
   const count = selectedNames.size;
 
   if (count === 0) return null;
 
-  const cmd = buildInstallCommand(Array.from(selectedNames));
+  const cmd = buildInstallCommand(Array.from(selectedNames), pm);
 
   const handleCopy = async () => {
     try {

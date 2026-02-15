@@ -16,6 +16,8 @@ import {
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { formatDuration, formatSizeKb } from "@/lib/sound-catalog";
 import { getSoundSnippets } from "@/lib/sound-snippets";
+import type { PackageManager } from "@/lib/package-manager";
+import { PackageManagerSwitcher } from "@/components/package-manager-switcher";
 import { useSoundPlayback, type PlayState } from "@/hooks/use-sound-playback";
 import { useSoundDownload } from "@/hooks/use-sound-download";
 import { cn } from "@/lib/utils";
@@ -184,20 +186,90 @@ function CopyBlock({ label, text }: { label: string; text: string }) {
   );
 }
 
+/* ── Install block with package manager switcher ── */
+
+function InstallBlock({
+  text,
+  pm,
+  onPmChange,
+}: {
+  text: string;
+  pm: PackageManager;
+  onPmChange: (pm: PackageManager) => void;
+}) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between">
+        <span className="text-muted-foreground text-[11px] font-semibold uppercase tracking-widest">
+          Install
+        </span>
+        <button
+          onClick={handleCopy}
+          className={cn(
+            "inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[11px] font-medium transition-all",
+            copied
+              ? "text-green-500"
+              : "text-muted-foreground hover:text-foreground hover:bg-accent"
+          )}
+          aria-label="Copy install command"
+        >
+          {copied ? (
+            <>
+              <Check className="size-3" aria-hidden="true" />
+              Copied
+            </>
+          ) : (
+            <>
+              <Copy className="size-3" aria-hidden="true" />
+              Copy
+            </>
+          )}
+        </button>
+      </div>
+      <div className="rounded-lg border border-border/40 bg-secondary/30">
+        <div className="border-b border-border/40 px-3 py-1.5">
+          <PackageManagerSwitcher value={pm} onChange={onPmChange} />
+        </div>
+        <pre className="overflow-x-auto p-3 text-[13px] leading-relaxed [scrollbar-width:none]">
+          <code className="font-mono">{text}</code>
+        </pre>
+      </div>
+      <span className="sr-only" aria-live="polite">
+        {copied ? "Install command copied to clipboard" : ""}
+      </span>
+    </div>
+  );
+}
+
 /* ── Main component: thin UI shell over hooks ── */
 
 interface SoundDetailProps {
   sound: SoundCatalogItem | null;
   onClose: () => void;
+  pm: PackageManager;
+  onPmChange: (pm: PackageManager) => void;
 }
 
-export function SoundDetail({ sound, onClose }: SoundDetailProps) {
+export function SoundDetail({ sound, onClose, pm, onPmChange }: SoundDetailProps) {
   const { playState, toggle } = useSoundPlayback(sound?.name ?? null);
   const download = useSoundDownload(sound?.name ?? null);
 
   const snippets = useMemo(
-    () => (sound ? getSoundSnippets(sound.name) : null),
-    [sound]
+    () => (sound ? getSoundSnippets(sound.name, pm) : null),
+    [sound, pm]
   );
 
   const tags = sound?.meta.tags ?? EMPTY_TAGS;
@@ -269,7 +341,11 @@ export function SoundDetail({ sound, onClose }: SoundDetailProps) {
 
             {/* ── 4. Integration code ── */}
             <div className="mt-6 flex flex-col gap-5">
-              <CopyBlock label="Install" text={snippets.installCmd} />
+              <InstallBlock
+                text={snippets.installCmd}
+                pm={pm}
+                onPmChange={onPmChange}
+              />
               <CopyBlock label="Usage" text={snippets.usageCode} />
             </div>
           </div>

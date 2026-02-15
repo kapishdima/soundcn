@@ -1,3 +1,5 @@
+import { type PackageManager, getInstallPrefix } from "@/lib/package-manager";
+
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://soundcn.dev";
 
 function toCamelCase(name: string): string {
@@ -10,9 +12,9 @@ export interface SoundSnippets {
   usageCode: string;
 }
 
-export function getSoundSnippets(name: string): SoundSnippets {
+export function getSoundSnippets(name: string, pm: PackageManager): SoundSnippets {
   const exportName = `${toCamelCase(name)}Sound`;
-  const installCmd = `npx shadcn add ${BASE_URL}/r/${name}.json`;
+  const installCmd = `${getInstallPrefix(pm)} add ${BASE_URL}/r/${name}.json`;
   const usageCode = `import { useSound } from "@/hooks/use-sound";
 import { ${exportName} } from "@/sounds/${name}";
 
