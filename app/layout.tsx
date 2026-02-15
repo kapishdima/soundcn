@@ -55,12 +55,21 @@ export const metadata: Metadata = {
     title: "soundcn - Free Sound Effects for Modern Web Apps",
     description:
       "700+ curated UI sound effects for modern web apps. Browse, preview, and install sounds with a single command.",
+    images: [
+      {
+        url: "/hero-dark.png",
+        width: 2896,
+        height: 944,
+        alt: "soundcn - Free Sound Effects for Modern Web Apps",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "soundcn - Free Sound Effects for Modern Web Apps",
     description:
       "700+ curated UI sound effects for modern web apps. Browse, preview, and install sounds with a single command.",
+    images: ["/hero-dark.png"],
   },
   alternates: {
     canonical: siteUrl,

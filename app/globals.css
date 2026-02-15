@@ -148,7 +148,7 @@
 }
 
 .stagger-fade-up {
-  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation: fade-up 0.4s ease-out backwards;
 }
 
 /* ─── Blinking CLI cursor ─── */
@@ -178,6 +178,11 @@
   }
 }
 
+/* ─── Pause hero bars when off-screen ─── */
+[data-eq-paused] .hero-eq-bar {
+  animation-play-state: paused !important;
+}
+
 /* ─── Reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {
   .eq-bar-mini,
@@ -198,7 +203,7 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 100;
+  z-index: 50;
   opacity: 0.35;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");

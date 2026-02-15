@@ -150,7 +150,7 @@ function CopyBlock({ label, text }: { label: string; text: string }) {
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <span className="text-muted-foreground text-[11px] font-semibold uppercase tracking-widest">
+        <span className="text-muted-foreground text-[11px] font-semibold uppercase">
           {label}
         </span>
         <button
@@ -213,7 +213,7 @@ function InstallBlock({
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <span className="text-muted-foreground text-[11px] font-semibold uppercase tracking-widest">
+        <span className="text-muted-foreground text-[11px] font-semibold uppercase">
           Install
         </span>
         <button
@@ -293,7 +293,7 @@ export function SoundDetail({ sound, onClose, pm, onPmChange }: SoundDetailProps
                       {sound.broadCategory}
                     </span>
                   </div>
-                  <DrawerTitle className="truncate text-xl font-bold tracking-tight">
+                  <DrawerTitle className="truncate text-xl font-bold">
                     {sound.title}
                   </DrawerTitle>
                   {sound.description ? (

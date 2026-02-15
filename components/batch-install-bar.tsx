@@ -37,9 +37,9 @@ export function BatchInstallBar({
   return (
     <div
       className={cn(
-        "fixed bottom-6 left-1/2 -translate-x-1/2 z-50",
+        "fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pb-[env(safe-area-inset-bottom)]",
         "flex items-center gap-3 rounded-2xl border border-primary/20",
-        "bg-card/95 backdrop-blur-xl shadow-[0_20px_60px_-10px] shadow-primary/15",
+        "bg-card/95 backdrop-blur-xl shadow-2xl shadow-primary/15",
         "px-5 py-3",
         "animate-in slide-in-from-bottom-4 fade-in-0 duration-300"
       )}

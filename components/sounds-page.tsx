@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { useQueryState, parseAsString } from "nuqs";
 import { Check,  Github, ListChecks, Package } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -169,6 +169,11 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
     setSelectedNames(new Set());
   }, []);
 
+  const handleClearFilters = useCallback(() => {
+    setQuery("");
+    setActiveCategory(ALL_CATEGORY);
+  }, [setQuery, setActiveCategory]);
+
   // ── Filtering ──
   const filteredSounds = useMemo(
     () => filterSounds(sounds, query, activeCategory),
@@ -208,6 +213,20 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
     }
   }
 
+  // Pause hero EQ bars when scrolled off-screen
+  const heroEqRef = useRef<HTMLDivElement>(null);
+  const [heroVisible, setHeroVisible] = useState(true);
+  useEffect(() => {
+    const el = heroEqRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setHeroVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   const showInstallAll = activeCategory !== ALL_CATEGORY && deferredSounds.length > 1;
 
   return (
@@ -224,7 +243,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
         <div className="flex items-center gap-2.5">
           <EqLogo />
           <span
-            className="font-display text-lg font-bold tracking-tight"
+            className="font-display text-lg font-bold"
             aria-label="soundcn"
           >
             soundcn
@@ -247,17 +266,15 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
       {/* ── Hero ── */}
       <section className="relative overflow-hidden px-6 pt-8 pb-14 sm:pt-14 sm:pb-20">
         <div
-          className="pointer-events-none absolute -top-48 -left-32 h-[400px] w-[500px] opacity-[0.09] dark:opacity-[0.15] blur-2xl"
-          style={{
-            background:
-              "radial-gradient(ellipse, var(--primary) 0%, transparent 65%)",
-          }}
+          className="pointer-events-none absolute -top-48 -left-32 size-[400px] rounded-full bg-primary opacity-[0.07] dark:opacity-[0.12] blur-2xl"
           aria-hidden="true"
         />
 
         <div
+          ref={heroEqRef}
           className="pointer-events-none absolute inset-0 flex items-end gap-[2px] overflow-hidden opacity-[0.045] dark:opacity-[0.08] [contain:layout_style]"
           aria-hidden="true"
+          {...(!heroVisible && { "data-eq-paused": "" })}
         >
           {HERO_BARS.map((bar, i) => (
             <span
@@ -274,8 +291,8 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 
         <div className="relative mx-auto max-w-6xl">
           <h1
-            className="stagger-fade-up font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl"
-            style={{ animationDelay: "80ms" }}
+            className="stagger-fade-up font-display text-4xl font-bold text-balance sm:text-5xl lg:text-6xl"
+            style={{ animationDelay: "50ms" }}
           >
             <span className="text-primary">{sounds.length}</span> curated UI
             sounds.
@@ -284,14 +301,14 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
           </h1>
 
           <p
-            className="stagger-fade-up text-muted-foreground mt-5 max-w-lg text-base leading-relaxed sm:text-lg"
-            style={{ animationDelay: "160ms" }}
+            className="stagger-fade-up text-muted-foreground mt-5 max-w-lg text-base text-pretty leading-relaxed sm:text-lg"
+            style={{ animationDelay: "100ms" }}
           >
             Open-source sound effects for modern web apps. Install any sound
             with a single CLI command.
           </p>
 
-          <div className="stagger-fade-up mt-7" style={{ animationDelay: "240ms" }}>
+          <div className="stagger-fade-up mt-7" style={{ animationDelay: "150ms" }}>
             <div className="bg-secondary/70 border-border/60 inline-flex items-center gap-3 rounded-lg border px-4 py-2.5 font-mono text-sm backdrop-blur-sm">
               <span className="text-primary select-none">$</span>
               <code className="text-foreground/80">
@@ -314,8 +331,8 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 
       {/* ── Sticky search & filter bar ── */}
       <div
-        className="stagger-fade-up bg-background/80 sticky top-0 z-40 border-b backdrop-blur-xl"
-        style={{ animationDelay: "350ms" }}
+        className="stagger-fade-up bg-background/95 sticky top-0 z-40 border-b"
+        style={{ animationDelay: "200ms" }}
       >
         <div className="mx-auto flex w-full max-w-6xl items-center gap-3 px-6 py-3">
           <SoundSearch value={query} onChange={setQuery} />
@@ -336,7 +353,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
       <main
         id="main-content"
         className="stagger-fade-up mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 px-6 py-8"
-        style={{ animationDelay: "450ms" }}
+        style={{ animationDelay: "260ms" }}
       >
         <div className="flex items-center justify-between">
           <p className="text-muted-foreground text-sm tabular-nums">
@@ -365,6 +382,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
             onToggleSelect={handleToggleSelect}
             onPreviewStart={onPreviewStart}
             onPreviewStop={onPreviewStop}
+            onClearFilters={handleClearFilters}
           />
         </div>
       </main>
