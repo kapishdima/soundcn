@@ -1,0 +1,59 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "minimize-002",
+  "type": "registry:block",
+  "title": "Minimize 002",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A smooth, receding sound, good for conveying an element shrinking or closing in a graceful UI interaction.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/minimize-002/minimize-002.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const minimize002Sound: SoundAsset = {\n  name: \"minimize-002\",\n  dataUri: \"data:audio/mpeg;base64,SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYyLjMuMTAwAAAAAAAAAAAAAAD/+1DAAAAAAAAAAAAAAAAAAAAAAABJbmZvAAAADwAAAAsAAAnKACoqKioqKioqKj8/Pz8/Pz8/P1VVVVVVVVVVVWpqampqampqan9/f39/f39/f5WVlZWVlZWVlaqqqqqqqqqqqr+/v7+/v7+/v9XV1dXV1dXV1erq6urq6urq6v///////////wAAAABMYXZjNjIuMTEAAAAAAAAAAAAAAAAkAsIAAAAAAAAJyk1UEFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//tQxAAACiz3abQUAAF+KG9/FNABbc1l20aIADYxjGNjjAAAAV/u/+9//2n/8Jf/7un//Tu7/+iIiIiU7u7u7uiIiIiI7u7u7ugoDQGgeGFh2AuAAACAKA0FBQEATB8H3/+/lPP9GAFAEgEgDgDgHA4CQAJA4ALwBbwWhA+IkLnySHt5eMS7+XTIvF7/MS6XVF7/y8Yl1FSX//6/r9zgWwEImCgkATMWhImqI4xLgV0nEsvgXIc0ufpJJLRR////5dSCopIa44AAA//9dX/Xev/7UsQFAwu01VJ8CgAZRxdpjADukh//9AzLBOkRGTDEAQhQFDYGEQAaxgBsGQG2YAcuCBa2BrqAGsQgdMGB0DQHRCgdQyBt6wGQMAc2oBvzQEQIGQLgZIWA0BD2gbDCPRXg+YWUTyzVF/AAoBoykTph/4Q///nKJmVQ85hcMRDBlAsIyEzU1AR0ao8G6lByBAcOCnGJJncAbmdCMZM0QTPC0CgJlBuTIBiogQgKljV4Ov1a10BS0XKs/XUAAAACXAAIB0rRyVIVDiwkHBUA/1MI//tSxAsCS/SjPaAXktFTkqZoHHcCgWLPyx4MABhkXiA+G3HsbcXB0nCnQUAe6Bh8GEGwsCeMrZzSUnGHeamGpjAmmFAsHDMSDKOTXX+paYFgl+sBCrkM//////6lX1gfEAF///zDaK4QRCL7i1u5VgpeJvaIIAwYTExNFExeWA4oqI8k7g7ygM+Juoxak064oM07GAyqMsxUDIWJYBByGAErlr0V1KQgNBogk0bPXYjSUGblAGdZd2RuAAJWFzmaJPJL3PLkzcj/GGrEHDWgnuT/+1LEDoIL7JEx4PPYAXaRZXQlesAA4wCExYZGTiEbAzRhoGwmmKaIYphPpjtA1mHOIIYNIGIOBoDAD0d0nFzqeuSWm+kEAHUt44006rhIWpq3dP//9jkoAXAAQMMb/+n/7qjOxZyegxBEAVTpQWBQCJgQgBGCkAIYdYqJg3jtGfsPobSbQZturoGkSSYYmIYJEJqJA7CwEJWAGy2NU8SntU1oNCERcCw65af///rX//o/9PrsDDYjTZAAFQSl5IPQcPBf2D563UpVhxAoEFDFGP/7UsQOAgsohS+g49YRaY8kkC76UAiAoYGgCphPhKmFQSsZ8SfxooF8mrqr4aEZfhjYguGAeCeYFQEgkCOkilc7sWna+f0v//8t//R2f//4v/uABg3///p5zmExFInPSildtIR/REBwkCINAQoBExXB00OXYxfns1UliDX6g8OYIF46pXijNnK+M4UygxfwXQMKYYJoBJgHgTigEAVATEgGX6qgFX/////po3RyAAoFloAADEjf6fTf3BBez8sgJiMNwQhPLnAokGSmG4NGLQQG//tSxBIAivRzMaFnskHWjeTwLXmYTaqmnpOmHgZGj9vn9IgH/TcnBFhnMibmKpuCylCQugYIi4sadmRS3L////s///9X+3//SGGkVYCEGt0pttyV1nbVSMEGMoYS4MAG2ZIUzsCBCUCYhMYG+YBYYhiHALmOSWCZb5FpjGi4mbMn0arwyBrYoNmw0DWabK6hrXqdGg+S4YMAyZh3BHBQH4wSwhTCYArQqShRWvQNLawLf//9ThPRekyP7v//++oAAC6xAADAAY2+pKEAGkoOA4H/+1LECQBMZLVHoHSrmV2VLvWRPlsjCICjDcEzE4hDCcmzD83DUwkDT2WzOkyzQJEDU5ijYAxjP1xTBkjjAwkQgzDFsfjIMfDDwGTAMHBoE0RWvOzeiL+gYxf////+h0OovEG+JgtNttraABdz6e3UjF6Vxuy4bE4kXsMABzAuGZ6JvJAgc67wrYcUZz4ADM7hQwCMZ2////CVhbChBjgzBKD1l4azrhFwVCnUcZPs8isiQ3+6R8QEY8RAZPAKckkhAAHSBmtHz67CrWw5UJSQk//7UsQJgAuMqW+HhzD5YhBmJBBweg/iAn6W0nKuZpYonNf+iFNRf9bkTtww7EOQYbzBi0mC4a1ojoItzOPRwLkr9cJl1O7MVoI1ZrS7Ols6pu1rXQWE2cCwmzRWXmzAAAGAEBL/v96w5Xmoy+rLksDBYDMNE4xoSzaMbOX0M7naz3CuOX9cxr1jBnHOkG47roDtsuOHx45PNjaSdMBpI0OFDGwvEISLnpgLra5GLc1+j///////0xrrRrWABLJJhuiLPyTf8xeOUeIzwlb0PkYp//tSxA0ACUhpQ6CbUFFLjKVwHu5IMb6keLMbKGfVUeDeBqhn0QCdGFNDxsICtKp7N0aSAvlRE9E76Ono+lea0L/93//6hY7LGABd9qbuqXb+sh4ZxhrYWAAEhuYWiYZ6NgbVFkcdwmcbnoahcmaRR9NMYqhgZAIhtaluJyirZvDwVK5L/W1X/UZDI+bW39n//6a5p7eP2fYqAgAAAOMogb9///OGIZh5/WUiEADA4ETJ1PzgujzHm+DjVgDXNSDKcBTA8MTiQOMBoLjpqx9tcoz/+1LEHAAKGGEnQXcwgTYXZBheihjulGP/SXpeces9SUWCY8mGTDXf2sQn7v+gZgNQAGL9WT77a4wyFACSYe8cAQKB+ZUh4eKIyYQj2ZtEqAAkMCQFBwALsYG3jjVf7rK///5aa3U2q0fZiFcwoBniX/6P/4hf//d/0fpqCsRJQAFjTKIXBdk1zgPlupjm8TxuSjsIRIDFacOdJMzAMIl2s6hn+Chr9gimjoCE/K1u5JXBMFXfKljv//4vR/3f/+LDkbGPWmfqzR5mjzPLjqFaD//7UsQqgAiMXyWg8E7BJwvfwMyaECq5egDVG9KaPQN4MWc0EgFWUSBixeFkUNyIAlJETFkToSBQCkTrtXt+BRVLf4//6Wj9P//6Rcz/zVVMQU1FMy4xMDBVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV\",\n  duration: 0.258,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.258,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "minimize",
+      "002"
+    ],
+    "keywords": [
+      "minimize",
+      "close",
+      "shrink",
+      "collapse",
+      "window minimize",
+      "ui",
+      "system",
+      "smooth",
+      "receding",
+      "gentle",
+      "fluid",
+      "transition",
+      "modal close",
+      "panel collapse",
+      "hide",
+      "subtle",
+      "clean",
+      "quick",
+      "elegant"
+    ]
+  },
+  "categories": [
+    "minimize"
+  ]
+}

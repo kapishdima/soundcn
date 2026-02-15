@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "back-004",
+  "type": "registry:block",
+  "title": "Back 004",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A concise sound effect for going back in a sequence or returning to a prior state in an interface.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/back-004/back-004.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const back004Sound: SoundAsset = {\n  name: \"back-004\",\n  dataUri: \"data:audio/mpeg;base64,SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYyLjMuMTAwAAAAAAAAAAAAAAD/+1DAAAAAAAAAAAAAAAAAAAAAAABJbmZvAAAADwAAAAUAAATkAFVVVVVVVVVVVVVVVVVVVVVVVVV/f39/f39/f39/f39/f39/f39/f6qqqqqqqqqqqqqqqqqqqqqqqqqq1dXV1dXV1dXV1dXV1dXV1dXV1dX//////////////////////////wAAAABMYXZjNjIuMTEAAAAAAAAAAAAAAAAkBAAAAAAAAAAE5FqyHVYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//tQxAAACSgtSHWRAAGYkOmDOPAAAABWwN1cDNoFGYwcEhzSHA0aRQQAyeNu25bvv+/8bpwAAAAAEOH4gB8H8HAQBAEAwfwfBwEHYPh/5y/lAQDH8oCDoPg+f//7u4w3SjV5fMMAkzeFDDADMCAsxYQRGBjMoAaaZaBKgA0Dy4SjjFwcB1hRIyEh/oWfqHlhTiOUChYFa9aDqexFaeEaWZVv4sZsfT3isGr2u+1Gx5vm1/O0DgFSxhxrBoYdezaqh/TX/QoITOJovyvxci+Tdv/7UsQFgAu0hVYZl4ABbBDrQzGAAFN5kvUj0JAISRpoHKLDMgYWwMNAI2OaOO46RwJg32FydrKjiH4f0FubYd6qqTyp57GfRcazneIur4jxpo94gTF0BRaAuCYs1ulLCoqCxh/3cy5TpuclMZQOS77ugZZtMirEGJpXpXx0LmeWRMkeUUGg6yN383YdxgsSh6gpZ+BHfn7cvuX5q5bx1LJzD/qy2W3KbPDn4cz7nYwpgVCSJQoD4kc0REjv5xQNI/T/XWSzil5kAvV8kzX4MZwQ//tSxAcAC2iRWhmHgAGNG2ibMRAAloUWc9lKVwGxBS2pleAkAa4s0fTjMexOiwpF7Ge6k5jptUJ9xexb11rfX2yV6+g6trVvn480Wd5SGFBQjygMg0AzK/wIFxUN/+g0sUoIAwUo8wQAQkEj10SdNjwOg2RxaV/gQpVmy7P/DYgB6OSRHFdK4WhDkqVxN4yxDiMSMWS8QlIwcRcL/U/xcJATUlCkRJKiyv5ixASMJkxMUvo/yaMydc0JoyNjP/rCShNDX/61O6dsyQCjRAFMnhv/+1LEBYMK4GEMHceACQMH4M2cGDgw0QBCMTDIQEiwYfDINDYNBwYFQ4NmBAEIQOIwAX5DAWAOwZAhoew5B9mcdKDOM5EmplStqxTtzM6Z3ksKLHeQJbIyIxGRGJK1mrq8AAdo+NnARtmYwZcogEOLKozKHsTX6u5sbuOc4rDmYum5rlR0IDhIMJFoLRCoJBMMmRn2f7fof//s//8kp19v/60AAHADSpATEmDAU+7Mh7EYrWTYFSahosCR9DipKhchYRImpERMmiehQ4RAkTJopv/7UsQXgE5Eos5MJMvJNQ5KWPg8wEIIhllYVAkFQCRw4BAIkl6JAIlW80kSS15k1HEFBTQkFFQgo3IblwK/pv+bf+m/83+N/8m2JcppSas3/Nv/xKiirv2V+kCdEFG8K6BWA2iCBjgggmDTIAJ+LYScrEEjVavJ9GHkaJfjBM4wjPLoaZSEmHpFeE9CAg+gloUAP8SQeshBpscj1mVqeRKYSaRXl2pMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\",\n  duration: 0.094,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.094,
+    "format": "mp3",
+    "sizeKb": 1,
+    "license": "CC0",
+    "tags": [
+      "back",
+      "004"
+    ],
+    "keywords": [
+      "back",
+      "undo",
+      "return",
+      "navigate",
+      "ui",
+      "menu",
+      "previous",
+      "step",
+      "concise",
+      "short",
+      "quick",
+      "cancel",
+      "dismiss",
+      "close",
+      "feedback",
+      "digital",
+      "snappy",
+      "revert",
+      "action",
+      "transition",
+      "swift"
+    ]
+  },
+  "categories": [
+    "back"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footstep-wood-004",
+  "type": "registry:block",
+  "title": "Footstep Wood 004",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A resonant footstep sound on wood, ideal for indicating indoor movement, exploration in a cozy setting, or navigation on a wooden surface.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/footstep-wood-004/footstep-wood-004.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const footstepWood004Sound: SoundAsset = {\n  name: \"footstep-wood-004\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.245,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.245,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "footstep",
+      "wood",
+      "004"
+    ],
+    "keywords": [
+      "footstep",
+      "wood",
+      "resonant",
+      "indoor",
+      "movement",
+      "cozy",
+      "walk",
+      "step",
+      "hollow",
+      "floorboard",
+      "creak",
+      "progress",
+      "navigation",
+      "character",
+      "environment",
+      "short",
+      "warm",
+      "inviting",
+      "subtle",
+      "vintage",
+      "echo"
+    ]
+  },
+  "categories": [
+    "footstep"
+  ]
+}

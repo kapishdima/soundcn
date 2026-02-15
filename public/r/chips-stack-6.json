@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chips-stack-6",
+  "type": "registry:block",
+  "title": "Chips Stack 6",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A clear, concise sound of chips stacking, perfect for a straightforward item addition, a clear increment, or a simple game stacking action.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/chips-stack-6/chips-stack-6.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const chipsStack6Sound: SoundAsset = {\n  name: \"chips-stack-6\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.208,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.208,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "chips",
+      "stack",
+      "6"
+    ],
+    "keywords": [
+      "item addition",
+      "clear increment",
+      "stacking",
+      "game ui",
+      "ui action",
+      "confirm",
+      "clear",
+      "concise",
+      "game",
+      "token",
+      "counter",
+      "pile",
+      "short",
+      "precise",
+      "build",
+      "collect",
+      "organize",
+      "positive",
+      "straightforward"
+    ]
+  },
+  "categories": [
+    "chips"
+  ]
+}

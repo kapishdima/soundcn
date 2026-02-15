@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "laser-retro-004",
+  "type": "registry:block",
+  "title": "Laser Retro 004",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A slightly elongated retro laser sound, suitable for energy blasts or confirming more deliberate selections in an old-school UI.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/laser-retro-004/laser-retro-004.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const laserRetro004Sound: SoundAsset = {\n  name: \"laser-retro-004\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.279,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.279,
+    "format": "mp3",
+    "sizeKb": 3,
+    "license": "CC0",
+    "tags": [
+      "laser",
+      "retro",
+      "004"
+    ],
+    "keywords": [
+      "laser",
+      "retro",
+      "arcade",
+      "pew",
+      "classic",
+      "elongated",
+      "energy",
+      "blast",
+      "confirm",
+      "select",
+      "sci-fi",
+      "game",
+      "old-school",
+      "electronic",
+      "synthetic",
+      "vintage",
+      "digital",
+      "feedback",
+      "deliberate"
+    ]
+  },
+  "categories": [
+    "laser"
+  ]
+}

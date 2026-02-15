@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "confirmation-003",
+  "type": "registry:block",
+  "title": "Confirmation 003",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A gentle, yet clear confirmation sound, ideal for subtle affirmations, minor task completions, or acknowledging user input without being intrusive.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/confirmation-003/confirmation-003.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const confirmation003Sound: SoundAsset = {\n  name: \"confirmation-003\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.322,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.322,
+    "format": "mp3",
+    "sizeKb": 3,
+    "license": "CC0",
+    "tags": [
+      "confirmation",
+      "003"
+    ],
+    "keywords": [
+      "subtle affirmation",
+      "task completion",
+      "user input",
+      "confirmation",
+      "gentle",
+      "clear",
+      "game ui",
+      "success",
+      "acknowledge",
+      "validate",
+      "ding",
+      "chime",
+      "ui",
+      "notification",
+      "alert",
+      "soft",
+      "minimal",
+      "positive",
+      "quiet",
+      "polite"
+    ]
+  },
+  "categories": [
+    "confirmation"
+  ]
+}

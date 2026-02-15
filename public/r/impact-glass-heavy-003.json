@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "impact-glass-heavy-003",
+  "type": "registry:block",
+  "title": "Impact Glass Heavy 003",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A concise, heavy glass crack, ideal for a quick, impactful notification of something breaking or a sharp error message.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/impact-glass-heavy-003/impact-glass-heavy-003.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const impactGlassHeavy003Sound: SoundAsset = {\n  name: \"impact-glass-heavy-003\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.169,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.169,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "impact",
+      "glass",
+      "heavy",
+      "003"
+    ],
+    "keywords": [
+      "impact",
+      "glass",
+      "heavy",
+      "concise",
+      "crack",
+      "quick",
+      "notification",
+      "breaking",
+      "sharp",
+      "error message",
+      "damage",
+      "warning",
+      "crystal",
+      "distinct",
+      "short",
+      "firm",
+      "negative",
+      "ui feedback",
+      "game",
+      "fragile"
+    ]
+  },
+  "categories": [
+    "impact"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "maximize-002",
+  "type": "registry:block",
+  "title": "Maximize 002",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A clean, ascending sound that suggests expansion, ideal for window restoration, menu reveal, or content display transitions.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/maximize-002/maximize-002.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const maximize002Sound: SoundAsset = {\n  name: \"maximize-002\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.258,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.258,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "maximize",
+      "002"
+    ],
+    "keywords": [
+      "maximize",
+      "expand",
+      "ascend",
+      "grow",
+      "window",
+      "menu reveal",
+      "content display",
+      "ui effect",
+      "transition",
+      "positive",
+      "quick",
+      "clean",
+      "short",
+      "digital",
+      "interface",
+      "snap",
+      "open",
+      "restore"
+    ]
+  },
+  "categories": [
+    "maximize"
+  ]
+}

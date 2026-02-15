@@ -1,18 +1,25 @@
+import { memo } from "react";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { SoundCard } from "@/components/sound-card";
 
 interface SoundGridProps {
   sounds: SoundCatalogItem[];
+  selectedNames?: Set<string>;
+  selectMode?: boolean;
   onSelect: (sound: SoundCatalogItem) => void;
+  onToggleSelect?: (soundName: string) => void;
   onPreviewStart: (soundName: string) => void;
   onPreviewStop: () => void;
 }
 
 const EMPTY_EQ = [35, 55, 25, 70, 40, 60, 30];
 
-export function SoundGrid({
+export const SoundGrid = memo(function SoundGrid({
   sounds,
+  selectedNames,
+  selectMode = false,
   onSelect,
+  onToggleSelect,
   onPreviewStart,
   onPreviewStop,
 }: SoundGridProps) {
@@ -42,11 +49,14 @@ export function SoundGrid({
         <SoundCard
           key={sound.name}
           sound={sound}
+          selected={selectedNames?.has(sound.name) ?? false}
+          selectMode={selectMode}
           onSelect={onSelect}
+          onToggleSelect={onToggleSelect}
           onPreviewStart={onPreviewStart}
           onPreviewStop={onPreviewStop}
         />
       ))}
     </div>
   );
-}
+});

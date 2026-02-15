@@ -1,0 +1,59 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "phaser-down-2",
+  "type": "registry:block",
+  "title": "Phaser Down 2",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A quick, clean descending phaser sound, good for rapid deactivation or a subtle energy drain in a sci-fi interface.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/phaser-down-2/phaser-down-2.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const phaserDown2Sound: SoundAsset = {\n  name: \"phaser-down-2\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.311,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.311,
+    "format": "mp3",
+    "sizeKb": 3,
+    "license": "CC0",
+    "tags": [
+      "phaser",
+      "down",
+      "2"
+    ],
+    "keywords": [
+      "phaser down",
+      "quick",
+      "clean",
+      "descending",
+      "sci-fi",
+      "deactivate",
+      "energy drain",
+      "futuristic",
+      "ui feedback",
+      "system",
+      "status change",
+      "subtle",
+      "concise",
+      "low",
+      "close",
+      "short",
+      "brief",
+      "transition"
+    ]
+  },
+  "categories": [
+    "phaser"
+  ]
+}

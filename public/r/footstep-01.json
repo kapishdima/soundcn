@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footstep-01",
+  "type": "registry:block",
+  "title": "Footstep 01",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A generic, light footstep sound, suitable for indicating movement, progress through steps, or character locomotion in an interactive environment.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/footstep-01/footstep-01.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const footstep01Sound: SoundAsset = {\n  name: \"footstep-01\",\n  dataUri: \"data:audio/mpeg;base64,SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYyLjMuMTAwAAAAAAAAAAAAAAD/+1DAAAAAAAAAAAAAAAAAAAAAAABJbmZvAAAADwAAAAwAAAqbACcnJycnJycnOjo6Ojo6OjpOTk5OTk5OTmJiYmJiYmJiYnZ2dnZ2dnZ2iYmJiYmJiYmdnZ2dnZ2dnZ2xsbGxsbGxscTExMTExMTE2NjY2NjY2NjY7Ozs7Ozs7Oz//////////wAAAABMYXZjNjIuMTEAAAAAAAAAAAAAAAAkAxYAAAAAAAAKm2WtJBoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//tQxAAACPSJIkeYZcFuiGd49hjcAAZlyJuUQEAligUeF49sCBCEEAtP+IiIs9PdAAQXXc/dxCfogQAAxbv7nHAwMW5/E4Pg+DgIf3+7/8kpyz8MeU/v+3U4/OS5AiQyupl9PVE4HpFqZZS4pk9yAVGScZGUVRQvHjh7JxERd6ukgqGgVHCUNIFmPAgoIlBQFZsKIKuxoBBdCk2KHjVhc+4gcDMVNpJv2yDmrUY3GTTruFv1HK+5BlUAMtwADILkJPvGp+s0C43Knfh7IAg6I//7UsQLgAwQcyt1kwABo58vdxiwAhaMv/HRC+OClhSQMWnhhxzzeY8ZkoOYrHyUIizywUOApPCNVaJafcWYtcsgFBdo+hFLh81PvIi+GHPLqRa3dclNfSm9aqLlh97WhiMxktGGcQEQyIgyIqTAyDcn1q+rCQJtksE8HRnDT8BsU27pkjrOHP+7VH9xDECSur+6feOpFQ2R//e/qrSiJNzT//YsfznksxNE2x///1/N3vlmyV3BL/RvsFv+mFjCDhSFRQ0LC4JqABi8gAN7YbJd//tSxASAC5ilb1z0AAF0lmwpgw3oQJUagnxcyUk5JypjqLkhx1I7KtVoNhabIDoAwsUsIdcypsfzSqvfDdcxFxb3//HzV//ypRU7OlQVRKtwack3CQ6EwCxANJ2Yo9XWp7hwNPij2gGsAt/QAApbyA6J6+mXF3kunfpGtPpm/stmIrHMKcswknqRdfe+SWz9m15DXj1+YG29TIC0Y91v5+RJIpL+SOAqtxnz1YIdRpciovQevSgW3+W9qsmATL0pQeltT58bEKqgAAlOVJjlR57/+1LEBYALUKdjR7Bj0YUOa3T0mUhh4BobHoUFYhlwvgkJQJlUtecstHx01PwjMmPp7mL6tTC7TAqZbUgnKeukiz/buCIpeiipz/ZvAz0Aara/3OUofONiM7CItS05kCb70tIiUBEpMxhAA7/nwGWbhiq4L8N+yXlNNUNmDgMgoUTJ2ubtB2zSMZiRfTMoWSg2SqZjy0IKaywSEYTBsqkFTAePqUGAgFBVnqZa3YYQLnAQLkgQKCB9DAymtxteBbSbd8ojkbHCfpAAAXb3hghMMv/7UsQFgIuMbVlMPMbBZ5XqtYMOIOiFAjSYkJBIp2znaoGJcKJD70mSEUXmevTtdlXMtgtG2tOJNYsyTxULBIGg285YoNUABp1qnMsPFDf9a3DmmHBN1GP8Uc0xVQibEK0BRR4j/UAAoyiCpKX1InRRzGSSRvmRPM8btxR3JimjVNPRXLO4b0HuSpZmumj1DEUL18KzbEyTEBB1kbTPy/7DLsNlRWQYM2zjWE/9RKMoUA06mVzTTrloSP2iaKrRSpWhANGpAAl63GUCYd9jzKWR//tSxAgADFDbVawYbcF5EqplrBiwsBsNmqQfblc1MnCxxqIWRJVKLkpNyfvaEqvsyaPymW+4j3G0i0tjXWXJDP2nsSjkMBCKjm1+Sonm/aD4K1D1Hww7Yem/uYpE+9EWxWdQJ8xO/ogAQAAGKCqMyNY9UI080wTQQEx4ZCgDJLukoBkIgEXvSsY8txvn6e21jNR25LwAQAYImEUiyOVjO/3fSadj0BmGIUTwzHe/rff2L1CT5Agazd85xaKE//9mj/d7ziOhQACOxIARTbiaptb/+1LEBYALtIVZrDBjoXSU6CmUjbgPSK4gEaHMoCEeCMOIktLlVhNYVuRQMKqhjXLZjbZj41jHtc2I2Mm+QCHXh1YUPAsweJCNiw0QReeKqPagaf0rz2WPdbQVCaEO7gVCTnaYlG78mACQgAAMaBs3Aq0yTDoDDNSKdTJ3WsTl2HHvq3wgNkciI6lPWm3y8PtSntprdtIo6GZqpgmEzDc0jLCa0qnm/sZ+qxvjeEHJGpPDoDLsFwRKtFAe+ravRY3vtauydQAQGnGQA5vQlyr0cP/7UsQGAApsfUOssMUBRg8m9aywGZH0zDGYqEgvB8tGSCDVUoaJWQcDCqVJoS2P/vliM93nPn3vFowWackkzMugrFi1gaNKFjYTA6WsOjyIS7G12arhQ0goIv3zoAADjZIAToAIQQEhmpcaFQMXCTJtQFde4icPRsYk0OR0ueqGLc5dya9lPty7nsaehnXna51X0qwnLXV3O2Ck3fbB1pPmRlXaSzftwtdxwyxvzBASSKqnZ13/gBPD1BGxnhQA8bPCpGmLQllqOM6SoZ6fraJV//tSxBGACTSXSeexA6lMlmY1p5hgd07ifSAzBJBzlRE8VWtSHkmGrRt/ey3Msw1hHNKxK0Qfj973p/swAAstrKCmksa4NFTiESXMO0lhDnEtMqFPo5lUpESlDwAgq4otIlH/7NQGyH8e2pp7ojTeUwHiVvdbvZvn+6tq+zSryZ0toSKFW/6v9///zv/p9q4AFVg2C4CZGOG3j5tnCY6JmtjCsKAVA2MxGEg6kjwmm1ZbqUOcYpl0xTA8GTSZ9B8UmdolhTyw46d6QWeSOuApZAv/+1LEIQCJ3H0hDaDLgTUSo5mdoBgPAIhkFpKOX//s///SIEaX0MjM4BeMe8gIMoGtZWw7045gQkCQscYMLmJ10hZVplRocySm8lXy4rOomO1yhbSM6G1WbqTARKCah7Ou+qinXEWuY9X/qf//V8lVACgBjmJdMhuTUrMwsxJQ0EAbRXesIiQBwJMbNRB+OlUJrb8xmVVB5y9uvscgYsDd2ej8zzqATmQRxZZDQWjbM5u+r1//937v84AXNFKrx3DWJIciURewZDwbug1ExmZjsf/7UsQwggksgxisbMDBBA6j5ZYMiDNMYcoZgYlWRRlC3IYZPBx3I1EhxICIWNvUJQDu+v2D+/7P//6///7dCl4AZyJ5sJZshLWFLpkgCB2UOMEhKGdYETiXis35aBbbB7ZcovbSlIlHDbiSxUO4madSk6h6RHMoRPJomv9NmoW9W1T6v/vqSu6SAKclFzlF3+4iQFFTKRjTTKXaNqdZIfc3/Z9A9K+tC+pH8ewBNS39f//+ukxBTUUzLjEwMKqqqqqqqqqqqqqqqqqqqqqqqqqq//tSxEkACUBrEgxowICqAGP0EQQEqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqo=\",\n  duration: 0.282,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/hooks/use-sound.ts",
+      "content": "\"use client\";\r\n\r\nimport { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport type {\r\n  SoundAsset,\r\n  UseSoundOptions,\r\n  UseSoundReturn,\r\n} from \"@/lib/sound-types\";\r\n\r\nlet audioContext: AudioContext | null = null;\r\n\r\nfunction getAudioContext(): AudioContext {\r\n  if (!audioContext) {\r\n    audioContext = new AudioContext();\r\n  }\r\n  return audioContext;\r\n}\r\n\r\nconst bufferCache = new Map<string, AudioBuffer>();\r\n\r\nasync function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\r\n  const cached = bufferCache.get(dataUri);\r\n  if (cached) return cached;\r\n\r\n  const ctx = getAudioContext();\r\n  const base64 = dataUri.split(\",\")[1];\r\n  const binaryString = atob(base64);\r\n  const bytes = new Uint8Array(binaryString.length);\r\n  for (let i = 0; i < binaryString.length; i++) {\r\n    bytes[i] = binaryString.charCodeAt(i);\r\n  }\r\n\r\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\r\n  bufferCache.set(dataUri, audioBuffer);\r\n  return audioBuffer;\r\n}\r\n\r\nexport function useSound(\r\n  sound: SoundAsset,\r\n  options: UseSoundOptions = {}\r\n): UseSoundReturn {\r\n  const {\r\n    volume = 1,\r\n    playbackRate = 1,\r\n    interrupt = false,\r\n    soundEnabled = true,\r\n    onPlay,\r\n    onEnd,\r\n    onPause,\r\n    onStop,\r\n  } = options;\r\n\r\n  const [isPlaying, setIsPlaying] = useState(false);\r\n  const [duration, setDuration] = useState<number | null>(\r\n    sound.duration ?? null\r\n  );\r\n  const sourceRef = useRef<AudioBufferSourceNode | null>(null);\r\n  const gainRef = useRef<GainNode | null>(null);\r\n  const bufferRef = useRef<AudioBuffer | null>(null);\r\n\r\n  useEffect(() => {\r\n    let cancelled = false;\r\n    decodeAudioData(sound.dataUri).then((buffer) => {\r\n      if (!cancelled) {\r\n        bufferRef.current = buffer;\r\n        setDuration(buffer.duration);\r\n      }\r\n    });\r\n    return () => {\r\n      cancelled = true;\r\n    };\r\n  }, [sound.dataUri]);\r\n\r\n  const stop = useCallback(() => {\r\n    if (sourceRef.current) {\r\n      try {\r\n        sourceRef.current.stop();\r\n      } catch {\r\n        // Already stopped\r\n      }\r\n      sourceRef.current = null;\r\n    }\r\n    setIsPlaying(false);\r\n    onStop?.();\r\n  }, [onStop]);\r\n\r\n  const play = useCallback(\r\n    (overrides?: { volume?: number; playbackRate?: number }) => {\r\n      if (!soundEnabled || !bufferRef.current) return;\r\n\r\n      const ctx = getAudioContext();\r\n\r\n      if (ctx.state === \"suspended\") {\r\n        ctx.resume();\r\n      }\r\n\r\n      if (interrupt && sourceRef.current) {\r\n        stop();\r\n      }\r\n\r\n      const source = ctx.createBufferSource();\r\n      const gain = ctx.createGain();\r\n\r\n      source.buffer = bufferRef.current;\r\n      source.playbackRate.value = overrides?.playbackRate ?? playbackRate;\r\n      gain.gain.value = overrides?.volume ?? volume;\r\n\r\n      source.connect(gain);\r\n      gain.connect(ctx.destination);\r\n\r\n      source.onended = () => {\r\n        setIsPlaying(false);\r\n        onEnd?.();\r\n      };\r\n\r\n      source.start(0);\r\n      sourceRef.current = source;\r\n      gainRef.current = gain;\r\n      setIsPlaying(true);\r\n      onPlay?.();\r\n    },\r\n    [soundEnabled, playbackRate, volume, interrupt, stop, onPlay, onEnd]\r\n  );\r\n\r\n  const pause = useCallback(() => {\r\n    stop();\r\n    onPause?.();\r\n  }, [stop, onPause]);\r\n\r\n  useEffect(() => {\r\n    if (gainRef.current) {\r\n      gainRef.current.gain.value = volume;\r\n    }\r\n  }, [volume]);\r\n\r\n  useEffect(() => {\r\n    return () => {\r\n      if (sourceRef.current) {\r\n        try {\r\n          sourceRef.current.stop();\r\n        } catch {\r\n          // Already stopped\r\n        }\r\n      }\r\n    };\r\n  }, []);\r\n\r\n  return [play, { stop, pause, isPlaying, duration, sound }] as const;\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.282,
+    "format": "mp3",
+    "sizeKb": 3,
+    "license": "CC0",
+    "tags": [
+      "footstep",
+      "01"
+    ],
+    "keywords": [
+      "footstep",
+      "movement",
+      "progress",
+      "step",
+      "walk",
+      "traverse",
+      "character",
+      "game sound",
+      "locomotion",
+      "subtle",
+      "short",
+      "interactive",
+      "event",
+      "navigation",
+      "user action",
+      "sequence",
+      "light",
+      "stride",
+      "advance",
+      "discrete"
+    ]
+  },
+  "categories": [
+    "footstep"
+  ]
+}

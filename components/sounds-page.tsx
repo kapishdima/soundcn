@@ -1,20 +1,25 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useQueryState, parseAsString } from "nuqs";
-import { Github } from "lucide-react";
+import { Check, Copy, Github, ListChecks, Package } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ALL_CATEGORY, type SoundCatalogItem } from "@/lib/sound-catalog";
 import { filterSounds, buildCategoryOptions } from "@/lib/sound-filters";
+import { buildInstallCommand } from "@/lib/sound-install";
 import { CategoryFilter } from "@/components/category-filter";
 import { SoundGrid } from "@/components/sound-grid";
 import { SoundSearch } from "@/components/sound-search";
+import { BatchInstallBar } from "@/components/batch-install-bar";
 import dynamic from "next/dynamic";
+import { cn } from "@/lib/utils";
 
 const SoundDetail = dynamic(() =>
   import("@/components/sound-detail").then((mod) => mod.SoundDetail)
 );
 import { useHoverPreview } from "@/hooks/use-hover-preview";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://soundcn.dev";
 
 interface SoundsPageProps {
   sounds: SoundCatalogItem[];
@@ -43,6 +48,55 @@ function EqLogo() {
   );
 }
 
+/* ── Install-all-in-category button ── */
+
+function InstallCategoryButton({
+  sounds,
+}: {
+  sounds: SoundCatalogItem[];
+}) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    const cmd = buildInstallCommand(sounds.map((s) => s.name));
+    try {
+      await navigator.clipboard.writeText(cmd);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* noop */
+    }
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className={cn(
+        "inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-all duration-150 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
+        copied
+          ? "border-green-500/30 bg-green-500/10 text-green-600 dark:text-green-400"
+          : "border-primary/30 bg-primary/5 text-primary hover:bg-primary/10 active:scale-[0.97]"
+      )}
+    >
+      {copied ? (
+        <>
+          <Check className="size-3.5" />
+          <span className="hidden sm:inline">Copied!</span>
+        </>
+      ) : (
+        <>
+          <Package className="size-3.5" />
+          <span className="hidden sm:inline">Install all</span>
+          <span className="sm:hidden">All</span>
+        </>
+      )}
+      <span className="sr-only" aria-live="polite">
+        {copied ? "Install command copied" : ""}
+      </span>
+    </button>
+  );
+}
+
 export function SoundsPage({ sounds }: SoundsPageProps) {
   const [query, setQuery] = useQueryState(
     "q",
@@ -52,14 +106,54 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
     "category",
     parseAsString.withDefault(ALL_CATEGORY).withOptions({ shallow: true })
   );
-  const [selectedSound, setSelectedSound] = useState<SoundCatalogItem | null>(
-    null
+
+  // ── Deep link: ?sound=click-soft ──
+  const [soundParam, setSoundParam] = useQueryState(
+    "sound",
+    parseAsString.withDefault("").withOptions({ shallow: true })
   );
 
+  // Build a name→item lookup for deep linking
+  const soundsByName = useMemo(() => {
+    const map = new Map<string, SoundCatalogItem>();
+    for (const s of sounds) {
+      map.set(s.name, s);
+    }
+    return map;
+  }, [sounds]);
+
+  // Resolve the selected sound from URL param or null
+  const selectedSound = soundParam ? (soundsByName.get(soundParam) ?? null) : null;
+
+  // ── Batch selection ──
+  const [selectedNames, setSelectedNames] = useState<Set<string>>(new Set());
+  const selectMode = selectedNames.size > 0;
+
+  const handleToggleSelect = useCallback((name: string) => {
+    setSelectedNames((prev) => {
+      const next = new Set(prev);
+      if (next.has(name)) {
+        next.delete(name);
+      } else {
+        next.add(name);
+      }
+      return next;
+    });
+  }, []);
+
+  const handleClearSelection = useCallback(() => {
+    setSelectedNames(new Set());
+  }, []);
+
+  // ── Filtering ──
   const filteredSounds = useMemo(
     () => filterSounds(sounds, query, activeCategory),
     [sounds, query, activeCategory]
   );
+
+  // Keep old cards visible while React prepares new ones
+  const deferredSounds = useDeferredValue(filteredSounds);
+  const isPending = deferredSounds !== filteredSounds;
 
   const categoryOptions = useMemo(
     () => buildCategoryOptions(sounds),
@@ -71,14 +165,21 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
   const handleSelect = useCallback(
     (sound: SoundCatalogItem) => {
       onPreviewStop();
-      setSelectedSound(sound);
+      setSoundParam(sound.name);
     },
-    [onPreviewStop]
+    [onPreviewStop, setSoundParam]
   );
 
   const handleClose = useCallback(() => {
-    setSelectedSound(null);
-  }, []);
+    setSoundParam("");
+  }, [setSoundParam]);
+
+  // Clear batch selection when category/search changes
+  useEffect(() => {
+    setSelectedNames(new Set());
+  }, [activeCategory, query]);
+
+  const showInstallAll = activeCategory !== ALL_CATEGORY && deferredSounds.length > 1;
 
   return (
     <div className="flex min-h-svh flex-col">
@@ -102,7 +203,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/soundcn/soundcn"
+            href="https://github.com/kapishdima/soundcn"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -116,7 +217,6 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden px-6 pt-8 pb-14 sm:pt-14 sm:pb-20">
-        {/* Radial amber glow — warm spotlight effect */}
         <div
           className="pointer-events-none absolute -top-48 -left-32 h-[650px] w-[750px] opacity-[0.06] dark:opacity-[0.10] blur-3xl"
           style={{
@@ -126,7 +226,6 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
           aria-hidden="true"
         />
 
-        {/* Background equalizer bars */}
         <div
           className="pointer-events-none absolute inset-0 flex items-end gap-[2px] overflow-hidden opacity-[0.045] dark:opacity-[0.08]"
           aria-hidden="true"
@@ -167,7 +266,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
             <div className="bg-secondary/70 border-border/60 inline-flex items-center gap-3 rounded-lg border px-4 py-2.5 font-mono text-sm backdrop-blur-sm">
               <span className="text-primary select-none">$</span>
               <code className="text-foreground/80">
-                npx shadcn add https://soundcn.dev/r/click-soft.json
+                {`npx shadcn add ${BASE_URL}/r/click-soft.json`}
               </code>
               <span
                 className="inline-block w-[7px] h-[15px] rounded-[1px] bg-primary/60"
@@ -184,7 +283,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
         className="stagger-fade-up bg-background/80 sticky top-0 z-40 border-b backdrop-blur-xl"
         style={{ animationDelay: "350ms" }}
       >
-        <div className="mx-auto flex w-full max-w-6xl items-center gap-4 px-6 py-3">
+        <div className="mx-auto flex w-full max-w-6xl items-center gap-3 px-6 py-3">
           <SoundSearch value={query} onChange={setQuery} />
           <div className="min-w-0 flex-1">
             <CategoryFilter
@@ -193,6 +292,9 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
               onChange={setActiveCategory}
             />
           </div>
+          {showInstallAll ? (
+            <InstallCategoryButton sounds={deferredSounds} />
+          ) : null}
         </div>
       </div>
 
@@ -202,18 +304,42 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
         className="stagger-fade-up mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 px-6 py-8"
         style={{ animationDelay: "450ms" }}
       >
-        <p className="text-muted-foreground text-sm tabular-nums">
-          {filteredSounds.length} sound
-          {filteredSounds.length !== 1 ? "s" : ""}
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="text-muted-foreground text-sm tabular-nums">
+            {deferredSounds.length} sound
+            {deferredSounds.length !== 1 ? "s" : ""}
+          </p>
 
-        <SoundGrid
-          sounds={filteredSounds}
-          onSelect={handleSelect}
-          onPreviewStart={onPreviewStart}
-          onPreviewStop={onPreviewStop}
-        />
+          {/* Select mode hint */}
+          <p className="text-muted-foreground/60 text-xs hidden sm:flex items-center gap-1.5">
+            <ListChecks className="size-3.5" />
+            <kbd className="font-mono text-[10px]">&#8984;</kbd>+click to batch select
+          </p>
+        </div>
+
+        <div
+          className={cn(
+            "transition-opacity duration-150",
+            isPending ? "opacity-50" : "opacity-100"
+          )}
+        >
+          <SoundGrid
+            sounds={deferredSounds}
+            selectedNames={selectedNames}
+            selectMode={selectMode}
+            onSelect={handleSelect}
+            onToggleSelect={handleToggleSelect}
+            onPreviewStart={onPreviewStart}
+            onPreviewStop={onPreviewStop}
+          />
+        </div>
       </main>
+
+      {/* ── Batch install floating bar ── */}
+      <BatchInstallBar
+        selectedNames={selectedNames}
+        onClear={handleClearSelection}
+      />
 
       {/* ── Drawer ── */}
       <SoundDetail sound={selectedSound} onClose={handleClose} />
