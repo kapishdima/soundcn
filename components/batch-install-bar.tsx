@@ -61,7 +61,7 @@ export function BatchInstallBar({
       <button
         onClick={handleCopy}
         className={cn(
-          "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all duration-150",
+          "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-[color,background-color,box-shadow] duration-150",
           copied
             ? "bg-green-500/10 text-green-600 dark:text-green-400"
             : "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm shadow-primary/20 active:scale-[0.97]"

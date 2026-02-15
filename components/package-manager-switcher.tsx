@@ -11,7 +11,7 @@ interface PackageManagerSwitcherProps {
 
 export function PackageManagerSwitcher({ value, onChange }: PackageManagerSwitcherProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [indicator, setIndicator] = useState({ left: 0, width: 0 });
+  const [indicator, setIndicator] = useState({ x: 0, width: 0, baseWidth: 1 });
   const measured = useRef(false);
 
   const measure = useCallback(() => {
@@ -19,9 +19,12 @@ export function PackageManagerSwitcher({ value, onChange }: PackageManagerSwitch
     if (!container) return;
     const activeBtn = container.querySelector<HTMLButtonElement>("[aria-checked='true']");
     if (!activeBtn) return;
+    const firstBtn = container.querySelector<HTMLButtonElement>("button");
+    const baseWidth = firstBtn?.offsetWidth || activeBtn.offsetWidth;
     setIndicator({
-      left: activeBtn.offsetLeft,
+      x: activeBtn.offsetLeft,
       width: activeBtn.offsetWidth,
+      baseWidth,
     });
     measured.current = true;
   }, []);
@@ -49,9 +52,13 @@ export function PackageManagerSwitcher({ value, onChange }: PackageManagerSwitch
         <span
           className={cn(
             "absolute top-[3px] bottom-[3px] rounded-md bg-background shadow-sm shadow-primary/10 dark:shadow-primary/5",
-            measured.current && "transition-[left,width] duration-200 ease-out"
+            measured.current && "transition-transform duration-200 ease-out"
           )}
-          style={{ left: indicator.left, width: indicator.width }}
+          style={{
+            width: indicator.baseWidth,
+            transform: `translateX(${indicator.x}px) scaleX(${indicator.width / indicator.baseWidth})`,
+            transformOrigin: "left",
+          }}
           aria-hidden="true"
         />
       )}

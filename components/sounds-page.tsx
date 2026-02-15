@@ -27,7 +27,7 @@ interface SoundsPageProps {
 }
 
 // Deterministic bar configs for the hero equalizer
-const HERO_BARS = Array.from({ length: 80 }, (_, i) => ({
+const HERO_BARS = Array.from({ length: 32 }, (_, i) => ({
   duration: 0.6 + (((i * 7) % 11) / 11) * 0.9,
   delay: ((i * 3) % 17) / 17 * 1.5,
   height: 20 + (((i * 5) % 7) / 7) * 80,
@@ -75,7 +75,7 @@ function InstallCategoryButton({
     <button
       onClick={handleCopy}
       className={cn(
-        "inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-all duration-150 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
+        "inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-[color,background-color,border-color,box-shadow] duration-150 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
         copied
           ? "border-green-500/30 bg-green-500/10 text-green-600 dark:text-green-400"
           : "border-primary/30 bg-primary/5 text-primary hover:bg-primary/10 active:scale-[0.97]"
@@ -247,7 +247,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
       {/* ── Hero ── */}
       <section className="relative overflow-hidden px-6 pt-8 pb-14 sm:pt-14 sm:pb-20">
         <div
-          className="pointer-events-none absolute -top-48 -left-32 h-[650px] w-[750px] opacity-[0.06] dark:opacity-[0.10] blur-3xl"
+          className="pointer-events-none absolute -top-48 -left-32 h-[400px] w-[500px] opacity-[0.09] dark:opacity-[0.15] blur-2xl"
           style={{
             background:
               "radial-gradient(ellipse, var(--primary) 0%, transparent 65%)",
@@ -256,7 +256,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
         />
 
         <div
-          className="pointer-events-none absolute inset-0 flex items-end gap-[2px] overflow-hidden opacity-[0.045] dark:opacity-[0.08]"
+          className="pointer-events-none absolute inset-0 flex items-end gap-[2px] overflow-hidden opacity-[0.045] dark:opacity-[0.08] [contain:layout_style]"
           aria-hidden="true"
         >
           {HERO_BARS.map((bar, i) => (

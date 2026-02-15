@@ -66,7 +66,7 @@ function PlayerStrip({
     <button
       onClick={onToggle}
       className={cn(
-        "group/player relative flex w-full items-center gap-3 rounded-xl border px-4 py-3 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
+        "group/player relative flex w-full items-center gap-3 rounded-xl border px-4 py-3 transition-[color,background-color,border-color,box-shadow] duration-200 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
         isPlaying
           ? "border-primary/30 bg-primary/[0.06]"
           : "border-border/60 bg-secondary/40 hover:border-primary/20 hover:bg-secondary/70"
@@ -75,7 +75,7 @@ function PlayerStrip({
     >
       <span
         className={cn(
-          "relative flex size-9 shrink-0 items-center justify-center rounded-full transition-all duration-200",
+          "relative flex size-9 shrink-0 items-center justify-center rounded-full transition-[color,background-color,box-shadow] duration-200",
           isPlaying
             ? "bg-primary text-primary-foreground shadow-sm shadow-primary/20"
             : "bg-secondary text-muted-foreground group-hover/player:bg-primary/10 group-hover/player:text-primary"
@@ -156,7 +156,7 @@ function CopyBlock({ label, text }: { label: string; text: string }) {
         <button
           onClick={handleCopy}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[11px] font-medium transition-all",
+            "inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[11px] font-medium transition-colors",
             copied
               ? "text-green-500"
               : "text-muted-foreground hover:text-foreground hover:bg-accent"
@@ -219,7 +219,7 @@ function InstallBlock({
         <button
           onClick={handleCopy}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[11px] font-medium transition-all",
+            "inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[11px] font-medium transition-colors",
             copied
               ? "text-green-500"
               : "text-muted-foreground hover:text-foreground hover:bg-accent"
