@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "soundcn",
-  "homepage": "https://soundcn.dev",
+  "homepage": "https://soundcn.xyz",
   "items": [
     {
       "name": "sound-types",
