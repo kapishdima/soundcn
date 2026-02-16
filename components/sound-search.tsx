@@ -40,7 +40,7 @@ export function SoundSearch({
 				name="search"
 				aria-label="Search sounds"
 				autoComplete="off"
-				placeholder="Search sounds\u2026"
+				placeholder="Search sounds..."
 				value={value}
 				onChange={(e) => onChange(e.target.value)}
 				onKeyDown={(e) => {
