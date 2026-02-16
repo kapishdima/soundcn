@@ -1,10 +1,10 @@
 "use client";
 
 import { memo, useMemo } from "react";
+import { useHorizontalScroll } from "@/hooks/use-horizontal-scroll";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { buildCategoryOptions } from "@/lib/sound-filters";
 import { cn } from "@/lib/utils";
-import { Button } from "@/registry/soundcn/ui/button";
 
 export interface CategoryFilterOption {
 	key: string;
@@ -23,15 +23,23 @@ export const CategoryFilter = memo(function CategoryFilter({
 	onChange,
 	sounds,
 }: CategoryFilterProps) {
+	const { ref, isGrabbing } = useHorizontalScroll<HTMLDivElement>();
 	const options = useMemo(() => buildCategoryOptions(sounds), [sounds]);
 
 	return (
-		<div className="scrollbar-hide overflow-x-auto">
-			<div className="flex min-w-max gap-2">
+		<div
+			ref={ref}
+			className={cn(
+				"scrollbar-hide w-full overflow-x-auto cursor-grab active:cursor-grabbing",
+				isGrabbing && "cursor-grabbing",
+			)}
+		>
+			<div className="flex min-w-max gap-2 pr-4">
 				{options.map((option) => {
 					const isActive = option.key === activeCategory;
 					return (
-						<Button
+						<button
+							type="button"
 							key={option.key}
 							onClick={() => onChange(option.key)}
 							className={cn(
@@ -52,7 +60,7 @@ export const CategoryFilter = memo(function CategoryFilter({
 							>
 								{option.count}
 							</span>
-						</Button>
+						</button>
 					);
 				})}
 			</div>
