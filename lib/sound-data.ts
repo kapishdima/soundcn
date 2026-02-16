@@ -29,9 +29,7 @@ function buildCatalog(): SoundCatalogItem[] {
 		.sort((a, b) => a.title.localeCompare(b.title));
 }
 
-function buildIndex(
-	sounds: SoundCatalogItem[],
-): Map<string, SoundCatalogItem> {
+function buildIndex(sounds: SoundCatalogItem[]): Map<string, SoundCatalogItem> {
 	return new Map(sounds.map((s) => [s.name, s]));
 }
 
@@ -56,3 +54,36 @@ export const getRelatedSounds = cache(
 			.slice(0, limit);
 	},
 );
+
+export function hashName(name: string): number {
+	let h = 0;
+	for (let i = 0; i < name.length; i++) {
+		h = h + name.charCodeAt(i) * (i + 1);
+	}
+	return h;
+}
+
+export const generateSoundWaves = (name: string) => {
+	const h = hashName(name);
+
+	return Array.from({ length: 5 }, (_, i) => ({
+		height: 30 + ((h * (i + 1) * 7) % 60),
+		duration: 0.55 + ((h * (i + 1) * 3) % 5) / 8,
+		delay: ((h * (i + 1) * 11) % 7) / 25,
+	}));
+};
+
+export function generateWaveform(name: string, length: number): number[] {
+	let seed = 0;
+	for (let i = 0; i < name.length; i++) {
+		seed = seed + name.charCodeAt(i) * (i + 1);
+	}
+	return Array.from({ length }, (_, i) => {
+		const x = i / (length - 1);
+		const envelope = Math.sin(x * Math.PI);
+		const n1 = Math.sin(i * 2.5 + seed * 0.1) * 0.3;
+		const n2 = Math.sin(i * 5.7 + seed * 0.3) * 0.2;
+		const n3 = Math.sin(i * 11.3 + seed * 0.7) * 0.1;
+		return Math.max(8, (envelope * 0.65 + (n1 + n2 + n3) * 0.35 + 0.35) * 100);
+	});
+}

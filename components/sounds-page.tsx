@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useCallback, useRef } from "react";
+import { useRef } from "react";
 import { BatchInstallBar } from "@/components/batch-install-bar";
 import { GlobalFilters } from "@/components/global-fiters";
 import { Header } from "@/components/header";
@@ -11,7 +11,6 @@ import { SoundGrid } from "@/components/sound-grid";
 import { SoundsCountTitle } from "@/components/sounds-count-title";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
-import { usePackageManager } from "@/hooks/use-package-manager";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { cn } from "@/lib/utils";
 
@@ -24,18 +23,12 @@ interface SoundsPageProps {
 }
 
 export function SoundsPage({ sounds }: SoundsPageProps) {
-	const [pm, setPm] = usePackageManager();
-
 	const gridFocusRef = useRef<(() => void) | null>(null);
 	const { deferredSounds, isPending } = useGlobalFilters({
 		sounds,
 	});
 
 	const { onPreviewStart, onPreviewStop } = useHoverPreview();
-
-	const handleClose = useCallback(() => {
-		setSoundParam("");
-	}, [setSoundParam]);
 
 	return (
 		<div className="flex min-h-svh flex-col">
@@ -72,16 +65,8 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 				</div>
 			</main>
 
-			{/* ── Batch install floating bar ── */}
 			<BatchInstallBar sounds={sounds} />
-
-			{/* ── Drawer ── */}
-			<SoundDetail
-				sound={selectedSound}
-				onClose={handleClose}
-				pm={pm}
-				onPmChange={setPm}
-			/>
+			<SoundDetail sounds={deferredSounds} />
 		</div>
 	);
 }

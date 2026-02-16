@@ -1,8 +1,8 @@
 "use client";
 
 import { Check } from "lucide-react";
-import { memo, useMemo } from "react";
-import { useSoundSelection } from "@/hooks/use-sound-selection";
+import { memo } from "react";
+import { MiniSoundEqualizer } from "@/components/mini-sound-equalizer";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { formatDuration } from "@/lib/sound-catalog";
 import { cn } from "@/lib/utils";
@@ -17,14 +17,6 @@ interface SoundCardProps {
 	onPreviewStop: () => void;
 }
 
-function hashName(name: string): number {
-	let h = 0;
-	for (let i = 0; i < name.length; i++) {
-		h = h + name.charCodeAt(i) * (i + 1);
-	}
-	return h;
-}
-
 export const SoundCard = memo(function SoundCard({
 	sound,
 	selected = false,
@@ -34,15 +26,6 @@ export const SoundCard = memo(function SoundCard({
 	onPreviewStart,
 	onPreviewStop,
 }: SoundCardProps) {
-	const bars = useMemo(() => {
-		const h = hashName(sound.name);
-		return Array.from({ length: 5 }, (_, i) => ({
-			height: 30 + ((h * (i + 1) * 7) % 60),
-			duration: 0.55 + ((h * (i + 1) * 3) % 5) / 8,
-			delay: ((h * (i + 1) * 11) % 7) / 25,
-		}));
-	}, [sound.name]);
-
 	const handleClick = (e: React.MouseEvent) => {
 		// Shift+click or ctrl/cmd+click toggles selection
 		if (e.shiftKey || e.metaKey || e.ctrlKey) {
@@ -91,29 +74,7 @@ export const SoundCard = memo(function SoundCard({
 			) : null}
 
 			{/* Mini equalizer bars */}
-			<div
-				className="flex items-end justify-center gap-[3px] h-10"
-				aria-hidden="true"
-			>
-				{bars.map((bar, i) => (
-					<span
-						key={i}
-						className={cn(
-							"eq-bar-mini w-[3.5px] rounded-full transition-colors",
-							selected
-								? "bg-primary/60"
-								: "bg-muted-foreground/20 group-hover:bg-primary/70",
-						)}
-						style={
-							{
-								height: `${bar.height}%`,
-								"--eq-d": `${bar.duration}s`,
-								"--eq-del": `${bar.delay}s`,
-							} as React.CSSProperties
-						}
-					/>
-				))}
-			</div>
+			<MiniSoundEqualizer name={sound.name} selected={selected} />
 
 			{/* Sound name */}
 			<span className="line-clamp-1 text-center text-sm font-medium">
