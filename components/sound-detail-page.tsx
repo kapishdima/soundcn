@@ -1,18 +1,10 @@
 "use client";
 
-import {
-	ArrowLeft,
-	Clock,
-	Download,
-	HardDrive,
-	Scale,
-	Tag,
-} from "lucide-react";
+import { ArrowLeft, Clock, HardDrive, Scale, Tag } from "lucide-react";
 import Link from "next/link";
 import { memo, useMemo } from "react";
 import { MetaPill } from "@/components/metal-pill";
 import { MiniSoundEqualizer } from "@/components/mini-sound-equalizer";
-import { SoundPlayControl } from "@/components/sound-control";
 import { SoundCopyBlock } from "@/components/sound-copy-block";
 import { SoundDownloadButton } from "@/components/sound-download-button";
 import { SoundInstallBlock } from "@/components/sound-installation-block";
@@ -20,12 +12,10 @@ import { PlayerStrip } from "@/components/sound-player";
 import { useGridNavigation } from "@/hooks/use-grid-navigation";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
 import { usePackageManager } from "@/hooks/use-package-manager";
-import { useSoundDownload } from "@/hooks/use-sound-download";
-import { type PlayState, useSoundPlayback } from "@/hooks/use-sound-playback";
+import { useSoundPlayback } from "@/hooks/use-sound-playback";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { formatDuration, formatSizeKb } from "@/lib/sound-catalog";
 import { getSoundSnippets } from "@/lib/sound-snippets";
-import { cn } from "@/lib/utils";
 
 /* ── Main page component ── */
 
@@ -38,7 +28,7 @@ export function SoundDetailPage({
 	sound,
 	relatedSounds,
 }: SoundDetailPageProps) {
-	const [pm, setPm] = usePackageManager();
+	const [pm] = usePackageManager();
 	const { playState, toggle } = useSoundPlayback(sound.name);
 
 	const { onPreviewStart, onPreviewStop } = useHoverPreview();
