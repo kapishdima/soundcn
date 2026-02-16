@@ -18,19 +18,50 @@ npx shadcn add https://soundcn.xyz/r/click-soft.json
 
 Each sound is a self-contained TypeScript module with an inline base64 data URI — no external files, no runtime fetching, no CORS issues. Sounds are installed directly into your codebase, not as a dependency.
 
-Includes a `useSound` hook for playback via the Web Audio API. Zero dependencies.
+Includes a `useSound` React hook and a framework-agnostic `playSound` function for playback via the Web Audio API. Zero dependencies.
 
 ## How it works
 
 - Browse sounds at [soundcn.xyz](https://soundcn.xyz/)
-- Install any sound — it copies the `.ts` file and the `useSound` hook into your project
-- Import and play:
+- Install any sound — it copies the `.ts` file into your project
+- Pick the playback helper that fits your framework:
+
+### React
+
+```bash
+npx shadcn add https://soundcn.xyz/r/use-sound.json
+```
 
 ```tsx
 import { useSound } from "@/hooks/use-sound";
 import { clickSoftSound } from "@/sounds/click-soft";
 
 const [play] = useSound(clickSoftSound);
+```
+
+### Astro, Vue, Svelte, vanilla JS — any framework
+
+```bash
+npx shadcn add https://soundcn.xyz/r/play-sound.json
+```
+
+```ts
+import { playSound } from "@/lib/play-sound";
+import { clickSoftSound } from "@/sounds/click-soft";
+
+await playSound(clickSoftSound);
+```
+
+```astro
+---
+import { clickSoftSound } from "@/sounds/click-soft";
+---
+<button id="btn">Click me</button>
+<script>
+  import { playSound } from "@/lib/play-sound";
+  import { clickSoftSound } from "@/sounds/click-soft";
+  document.getElementById("btn")!.addEventListener("click", () => playSound(clickSoftSound));
+</script>
 ```
 
 ## License
