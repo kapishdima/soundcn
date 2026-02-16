@@ -2,7 +2,7 @@
 
 import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { useQueryState, parseAsString } from "nuqs";
-import { Check,  Github, ListChecks, Package } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Check, Github, ListChecks, Package } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ALL_CATEGORY, type SoundCatalogItem } from "@/lib/sound-catalog";
 import { filterSounds, buildCategoryOptions } from "@/lib/sound-filters";
@@ -189,6 +189,8 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
     [sounds]
   );
 
+  const gridFocusRef = useRef<(() => void) | null>(null);
+
   const { onPreviewStart, onPreviewStop } = useHoverPreview();
 
   const handleSelect = useCallback(
@@ -335,7 +337,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
         style={{ animationDelay: "200ms" }}
       >
         <div className="mx-auto flex w-full max-w-6xl items-center gap-3 px-6 py-3">
-          <SoundSearch value={query} onChange={setQuery} />
+          <SoundSearch value={query} onChange={setQuery} onEnterGrid={() => gridFocusRef.current?.()} />
           <div className="min-w-0 flex-1">
             <CategoryFilter
               options={categoryOptions}
@@ -361,11 +363,21 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
             {deferredSounds.length !== 1 ? "s" : ""}
           </p>
 
-          {/* Select mode hint */}
-          <p className="text-muted-foreground/60 text-xs hidden sm:flex items-center gap-1.5">
-            <ListChecks className="size-3.5" />
-            <kbd className="font-mono text-[10px]">&#8984;</kbd>+click to batch select
-          </p>
+          <div className="text-muted-foreground/60 text-xs hidden sm:flex items-center gap-4">
+            <p className="flex items-center gap-1.5">
+              <span className="flex items-center gap-0.5">
+                <ArrowUp className="size-3" />
+                <ArrowDown className="size-3" />
+                <ArrowLeft className="size-3" />
+                <ArrowRight className="size-3" />
+              </span>
+              to navigate
+            </p>
+            <p className="flex items-center gap-1.5">
+              <ListChecks className="size-3.5" />
+              <kbd className="font-mono text-[10px]">&#8984;</kbd>+click to batch select
+            </p>
+          </div>
         </div>
 
         <div
@@ -383,6 +395,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
             onPreviewStart={onPreviewStart}
             onPreviewStop={onPreviewStop}
             onClearFilters={handleClearFilters}
+            focusRef={gridFocusRef}
           />
         </div>
       </main>

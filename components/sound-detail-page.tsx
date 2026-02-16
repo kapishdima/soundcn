@@ -24,6 +24,7 @@ import { useSoundPlayback, type PlayState } from "@/hooks/use-sound-playback";
 import { useSoundDownload } from "@/hooks/use-sound-download";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
+import { useGridNavigation } from "@/hooks/use-grid-navigation";
 import { cn } from "@/lib/utils";
 
 /* ── Waveform generation (pure, deterministic) ── */
@@ -332,6 +333,7 @@ export function SoundDetailPage({ sound, relatedSounds }: SoundDetailPageProps) 
   const { playState, toggle } = useSoundPlayback(sound.name);
   const download = useSoundDownload(sound.name);
   const { onPreviewStart, onPreviewStop } = useHoverPreview();
+  const { gridRef: relatedGridRef, onKeyDown: relatedKeyDown } = useGridNavigation();
 
   const snippets = useMemo(
     () => getSoundSnippets(sound.name, pm),
@@ -458,7 +460,13 @@ export function SoundDetailPage({ sound, relatedSounds }: SoundDetailPageProps) 
                 View all
               </Link>
             </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+            <div
+              ref={relatedGridRef}
+              onKeyDown={relatedKeyDown}
+              role="grid"
+              aria-label="Related sounds"
+              className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4"
+            >
               {relatedSounds.map((s) => (
                 <RelatedSoundCard
                   key={s.name}

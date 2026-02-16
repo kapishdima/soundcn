@@ -6,9 +6,10 @@ import { Search } from "lucide-react";
 interface SoundSearchProps {
   value: string;
   onChange: (value: string) => void;
+  onEnterGrid?: () => void;
 }
 
-export function SoundSearch({ value, onChange }: SoundSearchProps) {
+export function SoundSearch({ value, onChange, onEnterGrid }: SoundSearchProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -37,6 +38,12 @@ export function SoundSearch({ value, onChange }: SoundSearchProps) {
         placeholder="Search sounds\u2026"
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            onEnterGrid?.();
+          }
+        }}
         className="border-border/60 bg-secondary/40 placeholder:text-muted-foreground/50 h-10 w-full rounded-lg border pl-9 pr-14 text-sm outline-none transition-[color,border-color,box-shadow,background-color] focus-visible:ring-[3px] focus-visible:ring-primary/20 focus-visible:border-primary/40 focus-visible:shadow-lg focus-visible:shadow-primary/15"
       />
       <kbd className="text-muted-foreground/40 pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 font-mono text-[11px]">

@@ -1,6 +1,7 @@
 import { memo } from "react";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { SoundCard } from "@/components/sound-card";
+import { useGridNavigation } from "@/hooks/use-grid-navigation";
 
 interface SoundGridProps {
   sounds: SoundCatalogItem[];
@@ -11,6 +12,7 @@ interface SoundGridProps {
   onPreviewStart: (soundName: string) => void;
   onPreviewStop: () => void;
   onClearFilters?: () => void;
+  focusRef?: React.MutableRefObject<(() => void) | null>;
 }
 
 const EMPTY_EQ = [35, 55, 25, 70, 40, 60, 30];
@@ -24,7 +26,14 @@ export const SoundGrid = memo(function SoundGrid({
   onPreviewStart,
   onPreviewStop,
   onClearFilters,
+  focusRef,
 }: SoundGridProps) {
+  const { gridRef, onKeyDown, focusFirst } = useGridNavigation();
+
+  if (focusRef) {
+    focusRef.current = focusFirst;
+  }
+
   if (sounds.length === 0) {
     return (
       <div className="border-border/40 text-muted-foreground rounded-xl border border-dashed px-6 py-20 text-center">
@@ -54,7 +63,13 @@ export const SoundGrid = memo(function SoundGrid({
   }
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+    <div
+      ref={gridRef}
+      role="grid"
+      aria-label="Sound library"
+      onKeyDown={onKeyDown}
+      className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+    >
       {sounds.map((sound) => (
         <SoundCard
           key={sound.name}
