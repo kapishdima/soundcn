@@ -6,3 +6,4 @@ export const HERO_BARS = Array.from({ length: 32 }, (_, i) => ({
 }));
 
 export const SOUNDS_LENGTH = "703+";
+export const EMPTY_EQ = [35, 55, 25, 70, 40, 60, 30];
