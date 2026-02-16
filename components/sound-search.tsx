@@ -16,6 +16,7 @@ export function SoundSearch({
 }: SoundSearchProps) {
 	const inputRef = useRef<HTMLInputElement>(null);
 
+	// TODO: Replace with useEvent
 	useEffect(() => {
 		function handleKeyDown(e: KeyboardEvent) {
 			if ((e.metaKey || e.ctrlKey) && e.key === "k") {
