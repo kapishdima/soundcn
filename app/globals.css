@@ -176,6 +176,24 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.7 0 0 / 0.18) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: oklch(0.7 0 0 / 0.18);
+    border-radius: 9999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.7 0 0 / 0.32);
+  }
 }
 
 /* ─── Pause hero bars when off-screen ─── */

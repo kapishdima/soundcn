@@ -6,6 +6,7 @@ import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
+import { InstallMethodProvider } from "@/contexts/install-method-context";
 import { PackageManagerProvider } from "@/contexts/package-manager-context";
 
 const geistSans = Geist({
@@ -101,7 +102,9 @@ export default function RootLayout({
 						disableTransitionOnChange
 					>
 						<NuqsAdapter>
-						<PackageManagerProvider>{children}</PackageManagerProvider>
+						<PackageManagerProvider>
+							<InstallMethodProvider>{children}</InstallMethodProvider>
+						</PackageManagerProvider>
 					</NuqsAdapter>
 					</ThemeProvider>
 					<Analytics />

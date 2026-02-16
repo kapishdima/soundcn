@@ -126,7 +126,7 @@ for (const dirName of soundDirs) {
       license: meta.license,
       tags,
     },
-    registryDependencies: ["use-sound"],
+    registryDependencies: ["use-sound", "sound-engine"],
   };
 
   newItems.push(item);

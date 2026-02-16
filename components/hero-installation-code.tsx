@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import { getInstallPrefix } from "@/lib/package-manager";
@@ -24,17 +25,21 @@ export function HeroInstallationCode({
 	sounds: SoundCatalogItem[];
 }) {
 	const [pm] = usePackageManager();
+	const [method] = useInstallMethod();
 	const heroWords = useMemo(() => pickHeroWords(sounds, 6), [sounds]);
 
 	const { text: typedName, isTyping: cursorActive } = useTypewriter({
 		words: heroWords,
 	});
 
+	const framework = method === "shadcn-vue" ? "vue" : "react";
+	const prefix = getInstallPrefix(pm, framework);
+
 	return (
 		<div className="bg-secondary/70 border-border/60 inline-flex items-center gap-3 rounded-lg border px-4 py-2.5 font-mono text-sm backdrop-blur-sm">
 			<span className="text-primary select-none">$</span>
 			<code className="text-foreground/80">
-				<span>{`${getInstallPrefix(pm)} add @soundcn/`}</span>
+				<span>{`${prefix} add @soundcn/`}</span>
 				<span className="text-primary">{typedName}</span>
 			</code>
 			<span
