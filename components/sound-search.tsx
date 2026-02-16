@@ -35,7 +35,7 @@ export function SoundSearch({ value, onChange, onEnterGrid }: SoundSearchProps) 
         name="search"
         aria-label="Search sounds"
         autoComplete="off"
-        placeholder="Search sounds\u2026"
+        placeholder="Search sounds&#x2026;"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={(e) => {
