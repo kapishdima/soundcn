@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"biomejs.biome",
+		"bradlc.vscode-tailwindcss",
+		"github.vscode-github-actions",
+		"eamodio.gitlens",
+		"ms-vscode.vscode-typescript-next"
+	],
+	"unwantedRecommendations": ["esbenp.prettier-vscode"]
+}

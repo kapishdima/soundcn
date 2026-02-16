@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@ai-sdk/gateway": "^3.0.45",
+    "@biomejs/biome": "2.4.0",
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^20.19.9",
