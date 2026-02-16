@@ -99,7 +99,7 @@ Plan: Sound Demo Page
 
  Copy install button
 
- Shows npx shadcn add https://soundcn.dev/r/{name}.json in monospace. Click copies to clipboard, shows checkmark for 2s.
+ Shows npx shadcn add https://soundcn.xyz/r/{name}.json in monospace. Click copies to clipboard, shows checkmark for 2s.
 
  Implementation Order
 

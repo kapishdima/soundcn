@@ -2,7 +2,7 @@
 
 ## Context
 
-Проект в стиле shadcn/ui, но для звуковых эффектов. Пользователи устанавливают звуки через `npx shadcn add https://soundcn.dev/r/click-8bit.json` и получают TypeScript-модуль с base64-закодированным звуком + React-хук для воспроизведения. Ноль зависимостей, работает офлайн, tree-shakeable.
+Проект в стиле shadcn/ui, но для звуковых эффектов. Пользователи устанавливают звуки через `npx shadcn add https://soundcn.xyz/r/click-8bit.json` и получают TypeScript-модуль с base64-закодированным звуком + React-хук для воспроизведения. Ноль зависимостей, работает офлайн, tree-shakeable.
 
 ## Ключевое архитектурное решение: Base64 в TypeScript
 
