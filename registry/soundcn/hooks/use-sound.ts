@@ -1,39 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { getAudioContext, decodeAudioData } from "@/lib/sound-engine";
 import type {
   SoundAsset,
   UseSoundOptions,
   UseSoundReturn,
 } from "@/lib/sound-types";
-
-let audioContext: AudioContext | null = null;
-
-function getAudioContext(): AudioContext {
-  if (!audioContext) {
-    audioContext = new AudioContext();
-  }
-  return audioContext;
-}
-
-const bufferCache = new Map<string, AudioBuffer>();
-
-async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {
-  const cached = bufferCache.get(dataUri);
-  if (cached) return cached;
-
-  const ctx = getAudioContext();
-  const base64 = dataUri.split(",")[1];
-  const binaryString = atob(base64);
-  const bytes = new Uint8Array(binaryString.length);
-  for (let i = 0; i < binaryString.length; i++) {
-    bytes[i] = binaryString.charCodeAt(i);
-  }
-
-  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));
-  bufferCache.set(dataUri, audioBuffer);
-  return audioBuffer;
-}
 
 export function useSound(
   sound: SoundAsset,

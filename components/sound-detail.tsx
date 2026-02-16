@@ -2,11 +2,9 @@
 
 import { ArrowUpRight, Clock, HardDrive, Scale, Tag } from "lucide-react";
 import Link from "next/link";
-import { useMemo } from "react";
 import { MetaPill } from "@/components/metal-pill";
-import { SoundCopyBlock } from "@/components/sound-copy-block";
 import { SoundDownloadButton } from "@/components/sound-download-button";
-import { SoundInstallBlock } from "@/components/sound-installation-block";
+import { SoundInstallInstructions } from "@/components/sound-install-instructions";
 import { PlayerStrip } from "@/components/sound-player";
 import {
 	Drawer,
@@ -15,26 +13,19 @@ import {
 	DrawerHeader,
 	DrawerTitle,
 } from "@/components/ui/drawer";
-import { usePackageManager } from "@/hooks/use-package-manager";
 import { useSoundPlayback } from "@/hooks/use-sound-playback";
 import { useSoundSelection } from "@/hooks/use-sound-selection";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { formatDuration, formatSizeKb } from "@/lib/sound-catalog";
-import { getSoundSnippets } from "@/lib/sound-snippets";
 
 const EMPTY_TAGS: string[] = [];
 
 export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
-	const [pm] = usePackageManager();
 	const { selectedSound: sound, setSoundParam } = useSoundSelection({ sounds });
 	const { playState, toggle } = useSoundPlayback(sound?.name ?? null);
 
 	const onClose = () => setSoundParam(null);
 
-	const snippets = useMemo(
-		() => (sound ? getSoundSnippets(sound.name, pm) : null),
-		[sound, pm],
-	);
 	const tags = sound?.meta.tags ?? EMPTY_TAGS;
 
 	return (
@@ -44,9 +35,9 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 				if (!open) onClose();
 			}}
 		>
-			<DrawerContent>
-				{sound && snippets ? (
-					<div className="mx-auto w-full max-w-xl px-5 pb-8">
+			<DrawerContent className="data-[vaul-drawer-direction=bottom]:max-h-[90vh]">
+				{sound ? (
+					<div className="scrollbar-thin mx-auto w-full max-w-xl overflow-y-auto px-5 pb-8">
 						{/* ── 1. Identity ── */}
 						<DrawerHeader className="px-0 pb-1">
 							<div className="flex items-start justify-between gap-3">
@@ -106,9 +97,8 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 						</div>
 
 						{/* ── 4. Integration code ── */}
-						<div className="mt-6 flex flex-col gap-5">
-							<SoundInstallBlock text={snippets.installCmd} />
-							<SoundCopyBlock label="Usage" text={snippets.usageCode} />
+						<div className="mt-6">
+							<SoundInstallInstructions soundName={sound.name} />
 						</div>
 					</div>
 				) : null}

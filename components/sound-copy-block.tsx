@@ -15,7 +15,7 @@ export function SoundCopyBlock({
 				</span>
 				<CopyButton value={text} />
 			</div>
-			<pre className="overflow-x-auto rounded-lg border border-border/40 bg-secondary/30 p-3 text-[13px] leading-relaxed [scrollbar-width:none]">
+			<pre className="scrollbar-thin overflow-x-auto overflow-y-auto max-h-64 rounded-lg border border-border/40 bg-secondary/30 p-3 text-[13px] leading-relaxed">
 				<code className="font-mono">{text}</code>
 			</pre>
 		</div>

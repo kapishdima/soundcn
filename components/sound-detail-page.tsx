@@ -2,20 +2,17 @@
 
 import { ArrowLeft, Clock, HardDrive, Scale, Tag } from "lucide-react";
 import Link from "next/link";
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import { MetaPill } from "@/components/metal-pill";
 import { MiniSoundEqualizer } from "@/components/mini-sound-equalizer";
-import { SoundCopyBlock } from "@/components/sound-copy-block";
 import { SoundDownloadButton } from "@/components/sound-download-button";
-import { SoundInstallBlock } from "@/components/sound-installation-block";
+import { SoundInstallInstructions } from "@/components/sound-install-instructions";
 import { PlayerStrip } from "@/components/sound-player";
 import { useGridNavigation } from "@/hooks/use-grid-navigation";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
-import { usePackageManager } from "@/hooks/use-package-manager";
 import { useSoundPlayback } from "@/hooks/use-sound-playback";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { formatDuration, formatSizeKb } from "@/lib/sound-catalog";
-import { getSoundSnippets } from "@/lib/sound-snippets";
 
 /* ── Main page component ── */
 
@@ -28,17 +25,11 @@ export function SoundDetailPage({
 	sound,
 	relatedSounds,
 }: SoundDetailPageProps) {
-	const [pm] = usePackageManager();
 	const { playState, toggle } = useSoundPlayback(sound.name);
 
 	const { onPreviewStart, onPreviewStop } = useHoverPreview();
 	const { gridRef: relatedGridRef, onKeyDown: relatedKeyDown } =
 		useGridNavigation();
-
-	const snippets = useMemo(
-		() => getSoundSnippets(sound.name, pm),
-		[sound.name, pm],
-	);
 
 	const tags = sound.meta.tags;
 
@@ -126,11 +117,10 @@ export function SoundDetailPage({
 
 				{/* ── Integration code ── */}
 				<div
-					className="stagger-fade-up mt-8 flex flex-col gap-6"
+					className="stagger-fade-up mt-8"
 					style={{ animationDelay: "200ms" }}
 				>
-					<SoundInstallBlock text={snippets.installCmd} />
-					<SoundCopyBlock label="Usage" text={snippets.usageCode} />
+					<SoundInstallInstructions soundName={sound.name} />
 				</div>
 
 				{/* ── Related sounds ── */}

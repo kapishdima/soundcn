@@ -9,11 +9,18 @@ const PM_PREFIX: Record<PackageManager, string> = {
   bun: "bunx --bun shadcn@latest",
 };
 
+const PM_PREFIX_VUE: Record<PackageManager, string> = {
+  npm: "npx shadcn-vue@latest",
+  pnpm: "pnpm dlx shadcn-vue@latest",
+  yarn: "npx shadcn-vue@latest",
+  bun: "bunx --bun shadcn-vue@latest",
+};
+
 export const PM_STORAGE_KEY = "soundcn-pm";
 export const DEFAULT_PM: PackageManager = "npm";
 
-export function getInstallPrefix(pm: PackageManager): string {
-  return PM_PREFIX[pm];
+export function getInstallPrefix(pm: PackageManager, framework: "react" | "vue" = "react"): string {
+  return framework === "vue" ? PM_PREFIX_VUE[pm] : PM_PREFIX[pm];
 }
 
 export function loadPackageManager(): PackageManager {

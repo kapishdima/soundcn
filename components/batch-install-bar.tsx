@@ -2,6 +2,7 @@
 
 import { X } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
+import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import { useSoundSelection } from "@/hooks/use-sound-selection";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
@@ -15,13 +16,14 @@ interface BatchInstallBarProps {
 
 export function BatchInstallBar({ sounds }: BatchInstallBarProps) {
 	const [pm] = usePackageManager();
+	const [method] = useInstallMethod();
 	const { selectedNames, handleClearSelection } = useSoundSelection({ sounds });
 
 	const count = selectedNames.size;
 
 	if (count === 0) return null;
 
-	const cmd = buildInstallCommand(Array.from(selectedNames), pm);
+	const cmd = buildInstallCommand(Array.from(selectedNames), pm, method);
 
 	return (
 		<div
@@ -46,13 +48,21 @@ export function BatchInstallBar({ sounds }: BatchInstallBarProps) {
 			{/* Divider */}
 			<span className="h-6 w-px bg-border/60" aria-hidden="true" />
 
-			{/* Copy install command */}
-			<CopyButton value={cmd} />
+			{cmd ? (
+				<>
+					{/* Copy install command */}
+					<CopyButton value={cmd} />
 
-			{/* Preview command (truncated) */}
-			<code className="hidden md:block max-w-[280px] truncate text-[11px] text-muted-foreground font-mono">
-				{cmd}
-			</code>
+					{/* Preview command (truncated) */}
+					<code className="hidden md:block max-w-[280px] truncate text-[11px] text-muted-foreground font-mono">
+						{cmd}
+					</code>
+				</>
+			) : (
+				<span className="text-xs text-muted-foreground">
+					Manual install
+				</span>
+			)}
 
 			{/* Clear selection */}
 			<Button
