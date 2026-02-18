@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "impact-plate-heavy-004",
+  "title": "Impact Plate Heavy 004",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A very weighty and resonant metal plate thud, excellent for signifying major game achievements, structural failures, or significant data changes.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/impact-plate-heavy-004/impact-plate-heavy-004.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const impactPlateHeavy004Sound: SoundAsset = {\n  name: \"impact-plate-heavy-004\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.559,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.559,
+    "format": "mp3",
+    "sizeKb": 5,
+    "license": "CC0",
+    "tags": [
+      "impact",
+      "plate",
+      "heavy",
+      "004"
+    ],
+    "keywords": [
+      "impact",
+      "plate",
+      "heavy",
+      "weighty",
+      "resonant",
+      "metal",
+      "game achievement",
+      "structural failure",
+      "data change",
+      "ui alert",
+      "deep",
+      "thud",
+      "rumble",
+      "powerful",
+      "success",
+      "failure",
+      "warning",
+      "important",
+      "epic",
+      "strong"
+    ]
+  },
+  "categories": [
+    "impact"
+  ],
+  "type": "registry:block"
+}

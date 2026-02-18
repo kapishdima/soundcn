@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footstep-wood-002",
+  "title": "Footstep Wood 002",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A resonant footstep sound on wood, ideal for indicating indoor movement, exploration in a cozy setting, or navigation on a wooden surface.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/footstep-wood-002/footstep-wood-002.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const footstepWood002Sound: SoundAsset = {\n  name: \"footstep-wood-002\",\n  dataUri: \"data:audio/mpeg;base64,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fwPkG540xQYZfa29vHGGWBKBEHJinbu7diICUxZZEycRN/+3vxZAuQiBBzdAZsc8if1/azb3xmCcYihFCcGbIObl8m/7f//+T4zBBDRzA0GbIOVy4yZBCKf////////5UJ83AAgAAAICQY7faf/zVRzIrKWr/mpSGfNc//tSxK4Dxawe6U/hIABzgt0B9gRQ7/hYiFpteBGgCLA89Sn4G0hfILghZ/X4joLfgCQDZQud/8aJDRCULOh+wYq//E7SOD0hHIatEFf/8mj4pEUkILCCxASCj6///HJFAh8I5QzRfJoZYQsOSLl///8qmJDRCUcoWUQZZwWcOSLlFymR/////8dJAhcwuZVMQU1FMy4xMDBVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/+1LE5oALKDzmFfMAAn9B42s7EAJVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/7UsTIABIpoRa5qQAAAAA0g4AABFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV\",\n  duration: 0.248,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.248,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "footstep",
+      "wood",
+      "002"
+    ],
+    "keywords": [
+      "footstep",
+      "wood",
+      "resonant",
+      "indoor",
+      "movement",
+      "cozy",
+      "walk",
+      "step",
+      "hollow",
+      "floorboard",
+      "creak",
+      "progress",
+      "navigation",
+      "character",
+      "environment",
+      "short",
+      "warm",
+      "inviting",
+      "subtle",
+      "vintage",
+      "echo"
+    ]
+  },
+  "categories": [
+    "footstep"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "open-004",
+  "title": "Open 004",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A fluid and clear opening sound, ideal for a refined UI experience where elements elegantly expand or appear.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/open-004/open-004.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const open004Sound: SoundAsset = {\n  name: \"open-004\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.323,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.323,
+    "format": "mp3",
+    "sizeKb": 3,
+    "license": "CC0",
+    "tags": [
+      "open",
+      "004"
+    ],
+    "keywords": [
+      "open",
+      "reveal",
+      "ui",
+      "fluid",
+      "clear",
+      "elegant",
+      "expand",
+      "positive",
+      "refined",
+      "modal open",
+      "dialog show",
+      "menu expand",
+      "panel slide",
+      "new content",
+      "confirmation",
+      "smooth",
+      "medium",
+      "sophisticated",
+      "active"
+    ]
+  },
+  "categories": [
+    "open"
+  ],
+  "type": "registry:block"
+}

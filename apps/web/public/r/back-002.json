@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "back-002",
+  "title": "Back 002",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A slightly more pronounced but still short sound for navigating back or cancelling an action in a UI.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/back-002/back-002.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const back002Sound: SoundAsset = {\n  name: \"back-002\",\n  dataUri: \"data:audio/mpeg;base64,SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYyLjMuMTAwAAAAAAAAAAAAAAD/+1DAAAAAAAAAAAAAAAAAAAAAAABJbmZvAAAADwAAAAUAAATkAFVVVVVVVVVVVVVVVVVVVVVVVVV/f39/f39/f39/f39/f39/f39/f6qqqqqqqqqqqqqqqqqqqqqqqqqq1dXV1dXV1dXV1dXV1dXV1dXV1dX//////////////////////////wAAAABMYXZjNjIuMTEAAAAAAAAAAAAAAAAkBIAAAAAAAAAE5OVi6eEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//tQxAAACbAjTvWAgBFvkepDNvAAACCSSnQYwprr4ABDQo1IMgC4iuGvv+/7/v/G5fTg4CAIBiGOkH5cHwQBAEAQBMHwfB8HwQBAEAQAYPg/u/pBAEAx/BAEP/+f1g4GJQEDZboxkVN0WjbF5/E5jDA1OYzYMDA4wESYKoMu4wgEV49qVSlQ0SQpLJ5DW5mQ8vCnQ5mZn1XsFC3qjnljZbcWtmrPGeTwL1rnWv//ExE8QTKCj+Hg+H3Tv0kEISo4wzcoCgtg1FQS8VCQNyIRFv/7UsQIgAwYmVYZl4ABbRDrQzDwAMGWyBkihIvRFZOYQ6IBYCXx0eJqSIti8p6O4BxkqV7AxNsKZkzdQqVUrp893Gi33r0qxQ31596vumtZvfxYMWEWC4JizaIPEg0Ksd/CrBoxdb9CERlMYhA4DmGUYKNWhAIAg+zdgRf4FAbRWVHyPSPgWB+dCsLi3Mzo0FQyKNnj7xaE/QiCzvKa/gvXsKM4Q38V/733SkISnS4PlzQP8sJQUCwZDHqBrkClz4cQTCRzIRdtQAoe0GjMQ4lB//tSxAiAC3yNWBmHgAGUm2pnMSAATSi/wkoHMcmGoa8IQGellUTqdiMwhRkqmJRRQn1jzTaMQ9vg78kauNt7ZK9fZpjWa/NfWaLPEBMOlDgu6IAqBgH6uBAuKht3/QaWAgBB5x5hhhAAYGjqoAkUHeaYm1EMyn/AiRES9Tf4WOgbsZPgh8LmgCBLpie4N5AxSHtCU0lOvwy8M+N4QlIgtlfxmhyh3DknSC//kcakWKZeKJp//kyYGxkfLpiamX/hUGQRIh00ujE3MKUxpF4wgGP/+1LEBgML/GsIHdeACQUHng2XmCAwkDwxZBAwwDsRBUYRgSYTgcYFBCDASKArMEgJCoHFpxYEQCAAQoLsGKGcSseI9RsnAXE3lehKHMayol+Oytz9xfQ5n0k8WFeLCuhlJJaUspJLZvYCSciZj0HWQpiRiVNZWIUfw3S8sKoJArMCo6aChLcrAYkBnqdEUkLlkDNL20bPsq8g5XTt7G9+z/5Z/3UneGuWyFUAS4QMeNEX8YQkYEqohuq9EI8uMy8Jsj3HKmAUCYiEM58EQatYVf/7UsQTA83ooMYsPSNAAAA0gAAABCWyWxUAMBo0VAMAITJikUslgsKWaRInqkIpatVDkkSJFkpSuKFkaCoiBpdYKjAZLA1wVcWh33dmrf/4h5V+InowVfU8KAVIaHvVTEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV\",\n  duration: 0.091,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.091,
+    "format": "mp3",
+    "sizeKb": 1,
+    "license": "CC0",
+    "tags": [
+      "back",
+      "002"
+    ],
+    "keywords": [
+      "back",
+      "undo",
+      "return",
+      "navigate",
+      "ui",
+      "menu",
+      "previous",
+      "step",
+      "distinct",
+      "short",
+      "quick",
+      "cancel",
+      "dismiss",
+      "close",
+      "feedback",
+      "digital",
+      "moderate",
+      "revert",
+      "action",
+      "transition",
+      "crisp"
+    ]
+  },
+  "categories": [
+    "back"
+  ],
+  "type": "registry:block"
+}

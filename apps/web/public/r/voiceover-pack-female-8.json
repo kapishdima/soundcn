@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "voiceover-pack-female-8",
+  "title": "Voiceover Pack Female 8",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A clear, professional female voice delivering a short spoken phrase, ideal for game prompts, tutorial instructions, or informational alerts in a UI.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/voiceover-pack-female-8/voiceover-pack-female-8.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const voiceoverPackFemale8Sound: SoundAsset = {\n  name: \"voiceover-pack-female-8\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.466,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.466,
+    "format": "mp3",
+    "sizeKb": 4,
+    "license": "CC0",
+    "tags": [
+      "voiceover",
+      "pack",
+      "female",
+      "8"
+    ],
+    "keywords": [
+      "voiceover",
+      "female",
+      "spoken",
+      "speech",
+      "dialogue",
+      "narration",
+      "ui",
+      "game",
+      "prompt",
+      "instruction",
+      "tutorial",
+      "alert",
+      "confirmation",
+      "announcement",
+      "informative",
+      "professional",
+      "clear",
+      "human",
+      "feedback"
+    ]
+  },
+  "categories": [
+    "voiceover"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "belt-handle-2",
+  "title": "Belt Handle 2",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A distinct, slightly more prominent mechanical sound for operating a belt or strap handle, suggesting a firm action.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/belt-handle-2/belt-handle-2.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const beltHandle2Sound: SoundAsset = {\n  name: \"belt-handle-2\",\n  dataUri: \"data:audio/mpeg;base64,SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYyLjMuMTAwAAAAAAAAAAAAAAD/+1DAAAAAAAAAAAAAAAAAAAAAAABJbmZvAAAADwAAABQAABEjABgYGBgkJCQkJDAwMDAwPDw8PDxJSUlJSVVVVVVVYWFhYWFtbW1tbXl5eXl5hoaGhoaSkpKSkp6enp6eqqqqqqq2tra2tsPDw8PDz8/Pz8/b29vb2+fn5+fn8/Pz8/P//////wAAAABMYXZjNjIuMTEAAAAAAAAAAAAAAAAkBacAAAAAAAARIwZUQsEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//tQxAAACSVRETQRAAGEHqj3EoAAAHkGAAAGMeQAKY8syE5zu5CEIQmx1O+QjKcDAwMDPIc5znP+c5znOQhP/U53//58hznOd+c/I2Qn//kIQhP5znO+pzhzh9b+D+3/n2vn8//okWwtEQRSBRYfFaJgkAUEdl7VUqUuDUUQOLtAJnUZpwh9UyyYeYEIsmgdFm1LCif1J/+HIt94gCbr3j6+D3Z+YT3RE/jlpQf1dJL4/ydFwRVVyiUruk/0HvQqV123kVQAAASBgGy5KzC0S//7UsQIAAxlZzW8koABaCGmtJGKoCKVSjGCKhgCHkFliJWYREZDdiPUYHSgCArIYxm/rM5gGAIDFrpX1UrStERVtaldUeqld2dv/6m9M6+r1ddSqUqVK66o7Nb0GOhyjBQMg9Zdgd/GOWbb//RlpEJtyyr5wpn9rKhHrUvIZ1FaE86ULzco5XhemgsQt9simXDI0QxbrdHe080P9Ut2cpg0q0Kiux/TT7sSzq0G+9v6SJI2xwEfLmgCs0PIqKoxR6V01VI64JNYgAAAEwkEkFjK//tSxAcADDVPL7RSgAFXnaz3CoAC5zJr6yjRQpTDimldSsFiRXeLqczmQWIz/qjuZBak1KOdL1TIrIydkotxxkNrS6tkeq/MjOzCyznYl3OdabK1dC7UMQxxxr2pSQSihDCArAcmX1xu34AAH/H//92v8umrERLQhZf/+bGBSo/z6/0+riHFLmVUbLQew51I7i+nhLrQYS5iRRiNwugxP55nn//4TuvisaaMmAcm0KvXekhtijf/ROFJpJlrVtWAaf9/gP//4iY+P//7q/n9JWH/+1LECQAMxUE+uBQAAXCnrjcC0ALW4minr5ogF4MjpogFojit3YfFynIxzaguYtZib6+GLK2kfVxPcCz3fTLPNXUVY0tg/cy52nldRv93xESMyMmBxpZhcFbzk68moYk5eyEFf/t//uQAAOBx+P/po+yIgiCQl/8HmPWoY4U/ZOmghUmj30V3UmtBBswRRQTUYmCToxxjzp1E0lqv++m/1KQ//Ugyeg1RfQf//+y3Q3pqNEzxcRf/AeUg+BATLJ70////+hVmZmeHEmqIAAAByv/7UsQFgAudo1n8YoARcpzp9JKi0kt3+t7EkiIGBgEJ6ipnaQfKhqG7epmIYWIcjro8xBjBEMYaOUct2Wt0ZVEdbFKXzGl/ejB4BgNzPL/9WKlsrUlKKlRzQ6MulWv/6f////yiSiNu+29myIJBILQ2nNj6nhC73ZzKVTZCSrT4iarI3KpxPVmM+rXEWs5vnQezgDFxlys0x1lHKVtFqsiqJc/9fz/9QVYggACIArRFtLH4dIulni6oOHlhK3qkv/9iAUW7bbDTVoEglFQmjgMh//tSxAaADCWjTbTDgBFoMSy3AlACFxqNbG27b5mZYiHnjUi5xIRo6RZ3MRHU5loUZEImpMHX+rCkvHHOtRXvVjVc2mhx97f+1djxgBI1SYzV90//bXzD7kjLa/+mbXenp/Wq76JPPSMnigAADbba6RppNJEskFa//9VIVmVRQggLISszsofo6qSiKA4HFGh008KFORS9V9jt89OtenUWtoSynYTP040F71O5WlPdCGEGRl1mWn//5FOc97I3NlAQNYlLKnbcMNLYikAzZkRnvmX/+1LEBoAMDV9NvBUAEW4r6fSxluLOGQnDwkLyMocaYe6TXNQ50vL3zCcvZ/Y1ixc4uSDYlPSY1+5x+QqYh5M9GXfX/nHDZNfqSt///JTTT2Q8cFUdQ85kf5QfExMKw2QVgFjAN/9+kjKABvZc0WiU4Y53//zcPYynoEiF9xoSDoeyUDAezAfQDwQX3OZvmijpsd+WR3IlXDk+0p7GxJ5ErRezs7ts7LephKkpehZf//9WZ5Hbu0zf31GAcFIzvs+VMAU1ibuq24Y7GEgRJxsx7//7UsQGggu9o1HjCHmBfDSsVAEiMfzwgYqiEmGpoO9n3ERJOzyYDQ9k7aEP7oRnkITqc6nOLO/OL6EbkaELFkZ0st7dkETsf/Qi2ff+p6vq0nJb//+wQmiV7wnPfhTN3edd4URRBib/Rv/3V+jlQqXp90ggQx3+ipRtLlliShzELajDIq4VjRYIBHBYCssOBDgtMx3o+sy5s8tkFKm/+5IrGjg4VAfOkQFUhcu5ipivebRN4q/jv6/+JiomOfj4osaMWmmGCaAKuHZD6hLhXwlQ//tSxAYACz2hf8CYfjFGK+p8MwmQcJHEaaIP/OT8hpOKYv9Kw7XLV/tXwkTAOzLNXlT1qtG89fjVmOHZD8MKcBKASwCYKAgKAShgI1WH59/nt5exsZVS2PjdLZuMfV/4f5jLE5ubvXDaEIAgPOyycISC74W+8ciNMYy2mssMa7PValNt/lhmY5mch2mcqjE/uEFHu7L9kqMQIdKL+lTb9S11ysRXLiVUj+///SwEb/+6MOitdXutwM23bWFgtqkdDaB1TDzXCb2DGw9jX6fvGKr/+1LEDgAJ0NdT4JhuQUWa6X6CUADaqkRE85884OzEdiDYpukfz/Q///6e0ZzA3KGsw0BAa2qZIBU4bEDzT9DMXj1hP//U8VZ4CrsHVIkCQSUF32YBDQfmEygMPCJBEcHlZqDRZWU1c4mOM1D/9DGIs6MqFabVZrUCLO2lOtVM8bAJkhGE7NnYWEg8JDAweYtxm7sB7//tFdhmYAAHZHhVVUSSNttJptRITZG/8gEGo1JID6AE4YHHOjwMwi4ScPDE1RcTL5oaEkRCGalaJmtE8f/7UsQcABFVh2H4FoARdprs9wKwAn1oEwd5EHGZHJiaoKdEzbcsHG51FOYOaLoLUcMzyDqROWMUlIILb3VSTpoMXi+amKkDAv17LTOrXstNNBBBalLopKSNS6k6SN6r6vU3t/6mdZW//4H410DcslbjcTaDbgiDAb+IMspA5m0pAfEWv+/uDnmx7eCC0lFJIWPzRtLjeFn3ZWPlPSg1a30zl1NT1uVNPvh8Pa+v4uajhcWEmei1CzIqGH/9T4lEZ72RX7lk6g/wAA8P6LqZqM22//tSxAWAC9VphfgTgAE7M+7/iiAC4wSCREM7/58cFo8BOp5hgBA2FrDrTJ6whERTkXnGLQeE9jkW3x0xLjVzv7fZWT/2/qVYcL/3f7f0mrM6mdW/fz3P57nujmGETA4poh///8+X//DcUFVV2yNogkVCWRMrI0LkCJVAGhgJyOo0jl3dO1ZX9DJM30ey4UpTWTt9//RP/pVH2KqOrfX/9fYSJBxApDFjWAgiForI6lEwv////+olVQmqq6qWaxlsppxssYtJxNJIEgAUdEPtyj3/+1LEDIBJhJFv4DBB0UM0bPxkCXIKSgoiwJF6J1nRHsiat1yTCmsWKcwwaiuili8t1MixOJ+e4UexG1KyVDKLTQBULf/80Oe8TM1Mwz6oHcyg1UjdAoRfHrsoWi7LZA9YfK1wqtUKNR/+tUclwopk1f/5ZHs6ciGdyJ/rQAHI+BE9P/9KkyKxaq9fNMTM9G3VC/0///6XUKhWcHeIhW0YLBRUAQdHI622daDw24jJHdtkPaqRJ2Yy5krmLzCQ9TO2czsb/pRWsR2Isplb+9YoVv/7UsQcAAoFL1vgmKsRQ52qdBQd8hRsBG27f/oqullZVWJGhR+QFMvd/9WISd12231tYCBRgMC2ZlqvdxKLA2Bsesx6z9w3SsZQzVGiqvX7kjLGC4UJk3Zf/s5tT2/f/zlQeBYIrHIcN3ImtPDIYCo8FQO5BvUSerF//9S2n7vv//97AYE0yUxFPiItLefajWGaWKuyS6rZituqKqsrJR8p0nJBa2Qz//czmKgxr+v+rQ6VAUrIotWb/77zKKmeylmq1NTXrdStN7/f///8k5RS//tSxCmAClmjVaGgsJEmpem0MIhyWUbbf+sGBM1RTlfJbVTTFDhAJSsVxASUm5G1L/z87HRhM4xme3/e2U4JysXOq/+Y0KMZDiG///so5R2MznUSDc7VTETEf//LQ3VyC227aoFhMop1XuYjH5911OCnZkElU1iuVSs7p/p7PyOMsUvHGW3/r+Vn+v+pWuGN1O33X/9xQk1DMUYBARLoauDZ4Gkj3f//CZ1NtiQS2IA7HR6tbO1/ymoMVFuqWTVmZzbtvJnYLqSqkbB1UmPhJq//+1LEOQBJYS1FophaETw0J3QmC0L/11s6a6fouoCDOLarBW6G//qoh1NMKYSKKJdOUrVPaqX//////DCkBTYgku6AYLBBk3Qrt3bqvIb762VRBUOpRH9ye6pLFW/i6g8WCHQgMqNSKP//1NV/07dznNJBCI4kj5qi04///9VNObONqrfzW1p//////7ZZwBULdACAAKIE67NI//diqtUbc6zMdiqpG/T3yPZWnajAYpGdPl4HWLnK+qfstuY77LdDqPRzjzFGQLocLOTnly5n/P/7UsRKAAopoy2hYPoBMR3kaCwrQEQldXu////xwZUABFvAgAJxEoyslbNrrrurnWdT3WymtQoaW9ujWe4ky5jDGyWEs25DiWKbpvar9f90bX/qWtaJikfErDcKVzoe/5Ya6S////+SWiAWY2EE2Pmhia06TL6Do9dn9f9VbvrVZtE03EiSxozAJyTkDEgkYRFjTLN+1NvNStW36GrLLOB0KY5DSpj/+T0P9PR3f/d4xaoAASagQgASDU6McSHJTtqmvd1WrOcuej0NnGMxqVZU//tSxFkCCTTrHyO9ugEiHaME16tAvbE7urIUIdSderkUdk9P/0v7f9JlKKhogYcG1/++1jmYpu///5YEASFIWOsXBFt/LCHXKeQvNVikyew5SEbvUscMgAw0Gxg+Wac7POpr0//+llY9yUiJoafd8lqJNv/+jdj/t9ZGAEAAJCaYH7j9L9WUv+2X/lsv/LZfihgZcX+0nFvDs7WiSJGlHwWUBgQEfG92eM3//+ZZ//6mWdno0UBgZlmTICCpHVqFhX/9vFhX//xUWkxBTUUzLjH/+1LEbYIIoOUbJTy6AP8cYoiQqXgwMKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqv/7UsSJA8nY3t6mDMnAAAA0gAAABKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\",\n  duration: 0.477,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.477,
+    "format": "mp3",
+    "sizeKb": 4,
+    "license": "CC0",
+    "tags": [
+      "belt",
+      "handle",
+      "2"
+    ],
+    "keywords": [
+      "belt",
+      "handle",
+      "adjust",
+      "click",
+      "secure",
+      "mechanical",
+      "interface",
+      "control",
+      "distinct",
+      "feedback",
+      "latch",
+      "engage",
+      "unbuckle",
+      "firm",
+      "item",
+      "object",
+      "interaction",
+      "manipulate",
+      "strap",
+      "confirm",
+      "heavy"
+    ]
+  },
+  "categories": [
+    "belt"
+  ],
+  "type": "registry:block"
+}

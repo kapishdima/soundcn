@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "jingles-nes-15",
+  "title": "Jingles Nes 15",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A brief, cheerful 8-bit jingle with a simple, happy tune, perfect for a minor achievement, task completion, or receiving a small reward.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/jingles-nes-15/jingles-nes-15.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const jinglesNes15Sound: SoundAsset = {\n  name: \"jingles-nes-15\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.426,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.426,
+    "format": "mp3",
+    "sizeKb": 4,
+    "license": "CC0",
+    "tags": [
+      "jingles",
+      "nes",
+      "15"
+    ],
+    "keywords": [
+      "8-bit",
+      "retro",
+      "chiptune",
+      "cheerful",
+      "happy",
+      "minor achievement",
+      "task complete",
+      "reward",
+      "game ui",
+      "positive feedback",
+      "short",
+      "playful",
+      "success",
+      "light",
+      "unlock",
+      "collect",
+      "complete",
+      "notification",
+      "subtle"
+    ]
+  },
+  "categories": [
+    "jingles"
+  ],
+  "type": "registry:block"
+}

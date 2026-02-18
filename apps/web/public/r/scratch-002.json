@@ -1,0 +1,59 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scratch-002",
+  "title": "Scratch 002",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A quick, sharp scratching sound, suitable for conveying a rough texture interaction, a minor error, or a quick, almost percussive UI feedback.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/scratch-002/scratch-002.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const scratch002Sound: SoundAsset = {\n  name: \"scratch-002\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.139,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.139,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "scratch",
+      "002"
+    ],
+    "keywords": [
+      "texture",
+      "rough",
+      "error",
+      "quick",
+      "sharp",
+      "percussive",
+      "feedback",
+      "interaction",
+      "minor",
+      "subtle",
+      "short",
+      "crisp",
+      "alert",
+      "warning",
+      "haptic",
+      "tactile",
+      "ui element",
+      "game ui",
+      "misclick"
+    ]
+  },
+  "categories": [
+    "scratch"
+  ],
+  "type": "registry:block"
+}

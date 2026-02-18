@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footstep-02",
+  "title": "Footstep 02",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A generic, light footstep sound, suitable for indicating movement, progress through steps, or character locomotion in an interactive environment.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/footstep-02/footstep-02.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const footstep02Sound: SoundAsset = {\n  name: \"footstep-02\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.242,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.242,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "footstep",
+      "02"
+    ],
+    "keywords": [
+      "footstep",
+      "movement",
+      "progress",
+      "step",
+      "walk",
+      "traverse",
+      "character",
+      "game sound",
+      "locomotion",
+      "subtle",
+      "short",
+      "interactive",
+      "event",
+      "navigation",
+      "user action",
+      "sequence",
+      "light",
+      "stride",
+      "advance",
+      "discrete"
+    ]
+  },
+  "categories": [
+    "footstep"
+  ],
+  "type": "registry:block"
+}
