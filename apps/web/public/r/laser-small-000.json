@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "laser-small-000",
+  "title": "Laser Small 000",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A subtle, small laser 'pew' sound, great for minor UI interactions, menu navigation, or light sci-fi effects.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/laser-small-000/laser-small-000.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const laserSmall000Sound: SoundAsset = {\n  name: \"laser-small-000\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.236,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.236,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "laser",
+      "small",
+      "000"
+    ],
+    "keywords": [
+      "laser",
+      "small",
+      "subtle",
+      "pew",
+      "light",
+      "sci-fi",
+      "ui click",
+      "menu",
+      "navigation",
+      "interaction",
+      "electronic",
+      "synthetic",
+      "digital",
+      "short",
+      "feedback",
+      "minimal",
+      "select",
+      "tap",
+      "button"
+    ]
+  },
+  "categories": [
+    "laser"
+  ],
+  "type": "registry:block"
+}

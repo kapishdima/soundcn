@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "laser-small-002",
+  "title": "Laser Small 002",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A slightly longer and more prominent small laser sound, suitable for confirming selections or low-power weapon firing in a game.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/laser-small-002/laser-small-002.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const laserSmall002Sound: SoundAsset = {\n  name: \"laser-small-002\",\n  dataUri: \"data:audio/mpeg;base64,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iNYyJZjIBCHAlDsWCRH1ckOPzF6PfX/68dPNU9gCagAGeSUGW/VfZcFF5madfY+FA+fuT+72f+j/3///+1LEcwFJLG0YzuxCwTcNo0ndjGD/+3q3U6wEJEAKKAAAAADi4zOalJOsxEM6uBhQamKACYiBLxd8SBk0yaO/4bl5KNv7g2mv1i8+bzuNv9SXkgdiJqd5/+r4PvRSNjaa//tlQxjIaamrnT//m77e95ocpyRsidraj///1Rub2yrNGJGx70kTU1c7///6Pvt73mjKplG5vKRsbInalpqkbO4/////exv///////+kiamtTEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/7UsSFAAp4fx9V0wACW7skZziwAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//tSxG2DwAABpBwAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=\",\n  duration: 0.344,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.344,
+    "format": "mp3",
+    "sizeKb": 3,
+    "license": "CC0",
+    "tags": [
+      "laser",
+      "small",
+      "002"
+    ],
+    "keywords": [
+      "laser",
+      "small",
+      "longer",
+      "prominent",
+      "pew",
+      "sci-fi",
+      "confirm",
+      "select",
+      "weapon",
+      "game",
+      "electronic",
+      "synthetic",
+      "digital",
+      "feedback",
+      "interaction",
+      "button",
+      "medium",
+      "shot",
+      "action"
+    ]
+  },
+  "categories": [
+    "laser"
+  ],
+  "type": "registry:block"
+}

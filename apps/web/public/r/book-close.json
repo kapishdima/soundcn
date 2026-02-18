@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "book-close",
+  "title": "Book Close",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A soft, conclusive thud indicating the closing of a virtual book or document within an interface.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/book-close/book-close.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const bookCloseSound: SoundAsset = {\n  name: \"book-close\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.231,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.231,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "book",
+      "close"
+    ],
+    "keywords": [
+      "book",
+      "close",
+      "shut",
+      "document",
+      "end",
+      "exit",
+      "finish",
+      "ui",
+      "menu",
+      "folder",
+      "page",
+      "soft",
+      "thud",
+      "final",
+      "action",
+      "complete",
+      "dismiss",
+      "archive",
+      "subtle",
+      "interaction"
+    ]
+  },
+  "categories": [
+    "book"
+  ],
+  "type": "registry:block"
+}

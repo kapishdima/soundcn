@@ -1,0 +1,63 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-tick",
+  "title": "Hover Tick",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A very subtle, quick tick sound, best used to provide discreet auditory feedback when a user hovers over an interactive element or focuses on it.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/hover-tick/hover-tick.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const hoverTickSound: SoundAsset = {\n  name: \"hover-tick\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.224,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.224,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "hover",
+      "tick",
+      "rollover",
+      "focus",
+      "ui"
+    ],
+    "keywords": [
+      "hover",
+      "tick",
+      "rollover",
+      "focus",
+      "subtle",
+      "gentle",
+      "cursor",
+      "interaction",
+      "feedback",
+      "ui",
+      "menu",
+      "navigation",
+      "select",
+      "hint",
+      "light",
+      "discreet",
+      "short",
+      "quick",
+      "pinpoint"
+    ]
+  },
+  "categories": [
+    "hover",
+    "ui"
+  ],
+  "type": "registry:block"
+}

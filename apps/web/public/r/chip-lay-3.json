@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chip-lay-3",
+  "title": "Chip Lay 3",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A slightly more prominent sound of a single chip being laid down, suitable for a game action like placing a bet or confirming an important choice.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/chip-lay-3/chip-lay-3.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const chipLay3Sound: SoundAsset = {\n  name: \"chip-lay-3\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.266,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.266,
+    "format": "mp3",
+    "sizeKb": 3,
+    "license": "CC0",
+    "tags": [
+      "chip",
+      "lay",
+      "3"
+    ],
+    "keywords": [
+      "item placement",
+      "selection",
+      "important confirmation",
+      "ui interaction",
+      "game piece",
+      "chip drop",
+      "distinct",
+      "prominent",
+      "game action",
+      "board game",
+      "casino",
+      "token",
+      "button press",
+      "bet",
+      "focused",
+      "clear",
+      "deliberate",
+      "decisive",
+      "game",
+      "impactful"
+    ]
+  },
+  "categories": [
+    "chip"
+  ],
+  "type": "registry:block"
+}

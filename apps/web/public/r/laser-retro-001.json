@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "laser-retro-001",
+  "title": "Laser Retro 001",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A quick, bright retro laser sound, great for fast-paced arcade-style UI elements or simple feedback.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/laser-retro-001/laser-retro-001.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const laserRetro001Sound: SoundAsset = {\n  name: \"laser-retro-001\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.236,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.236,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "laser",
+      "retro",
+      "001"
+    ],
+    "keywords": [
+      "laser",
+      "retro",
+      "arcade",
+      "pew",
+      "classic",
+      "quick",
+      "bright",
+      "sci-fi",
+      "game",
+      "click",
+      "button",
+      "select",
+      "interaction",
+      "electronic",
+      "synthetic",
+      "playful",
+      "minimal",
+      "digital",
+      "simple",
+      "feedback"
+    ]
+  },
+  "categories": [
+    "laser"
+  ],
+  "type": "registry:block"
+}

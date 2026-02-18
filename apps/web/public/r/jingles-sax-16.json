@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "jingles-sax-16",
+  "title": "Jingles Sax 16",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A very brief and light saxophone jingle, offering a quick, understated positive affirmation for fleeting interactions or minimal feedback.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/jingles-sax-16/jingles-sax-16.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const jinglesSax16Sound: SoundAsset = {\n  name: \"jingles-sax-16\",\n  dataUri: \"data:audio/mpeg;base64,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LIvr4JEa3mz0Q2n/agBlW78KwUjl8XiCdeucvZfQYLalCI7xg/1Hfb//fBft87LwzbPpyOjQYFkGC1f/+1LEKoAJ/PdPp5Ra0UmjaTWHnXogrAOflEdKOkRLy1WI2kjQdM3rAJUeOv8pAfeM707Bbb/9RDjqz/FAHaAvmSECrTUa7DFTvyj+J29H+3ob//8POfnbTRq1qist57f+peogQAxOAmQL39q5CjZOTIN5TYwUcAMo3r2Fqntc7hD5qiReWWLbkjzOv+3AqTxtnGw3X+qXbwcqjmzWU+PjzeIRbrEwJeUFviYN/f7fId2zO7fpAAgAARuABBZrssECNqyyFw9KSFYMji2Orr+iR//7UsQ3AApA0zFMvPSBPZXltQzAuHf/JupFjJr+9UCXaXMQbiHs1UssA2UZPYwDdG3WXvrbx8nvMiF85+Vv+3ft2f6dOn///VUGgAACTfvCSroBbWHJ+3IASQA/Ji9F3ZABABDvcLqBAz3lW+8l6cm//USMgSM+dAgqNkh/BJxefjv+Ppr4hVtXJwevGohedNm9vq+c7vh7Z8jp/0gGJAAATIf3cmSBQJVmrd2ICqZ3kSupXpHKDyznd1H/ProHhyklbyCJeH/8yWmheOWM0Oqn//tSxEQCCnTTHm1hrQFIleOpnCmovyEBUn8e/IfhQjusXB3xcFvyo5/zv+d/2af7P/+tGAAPy3ciJDwDgYe3SyoY1O4BtabHSHcuPljusnqN6ubf3c2isb8yAxUlsG2avmQgxt5z6B/yaOrVycHr0h19Eg/f7/S/+v1HNf1d7f6QtgA36xt8Kqg0PPWP0lqLqvJneyhBBR/p+VAE/G1ulhcaUzdhBVQK3+EY54ewPyCKehf5R/HBnxwP9SXlG/7v//s+S//+n0P1KgAACChWgzv/+1LETwIJsPUUTMG0ASKVYxmXnajdKYSYMJHQnT4gjqcnrT2HLrX1HIAw7LzJuIlPbWy5a7UsoOh0FSISPBUJD1SwdQoO7TuuqlH7/K///Z+WllrKhqGClHFmXFs7MfC0SQkCFllFs5RZRZZRcWzsWWUJDVYqZGNwZFRQWFhYWFRUVFRQWbFhVjvWK6hYXFWCoqLNxcV//4qKC1QsKspMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqv/7UsRhggi0TxshPYCBK4vXgDMY6Kqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\",\n  duration: 0.408,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.408,
+    "format": "mp3",
+    "sizeKb": 4,
+    "license": "CC0",
+    "tags": [
+      "jingles",
+      "sax",
+      "16"
+    ],
+    "keywords": [
+      "saxophone",
+      "brass",
+      "jazz",
+      "brief",
+      "light",
+      "quick",
+      "understated",
+      "positive affirmation",
+      "fleeting interaction",
+      "minimal feedback",
+      "success",
+      "ui sound",
+      "subtle",
+      "crisp",
+      "short",
+      "confirmation",
+      "jingle"
+    ]
+  },
+  "categories": [
+    "jingles"
+  ],
+  "type": "registry:block"
+}

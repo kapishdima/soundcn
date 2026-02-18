@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "close-003",
+  "title": "Close 003",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "A gentle, soft sound of a UI element closing, appropriate for a less abrupt dismissal of a notification, a tooltip, or a subtle panel.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/close-003/close-003.ts",
+      "content": "import type { SoundAsset } from \"@soundcn/engine\";\n\nexport const close003Sound: SoundAsset = {\n  name: \"close-003\",\n  dataUri: \"data:audio/mpeg;base64,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ho7rXOv/6Pos3DKpUJpQAEEQmlwqSACGw9k5SCUdjqSl9Eycspo1ucSikjW5aYT0rJB2PJyyJ0Wy5ZL/+1LEPYAJkGNRxIjUAUAOJWCWGPiexoJBqWJPKkSMiEpEkeknuhN2Fc8MrGFagLW5MYj/UR7FTEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/7UsRNA8AAAaQAAAAgAAA0gAAABFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV\",\n  duration: 0.315,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.315,
+    "format": "mp3",
+    "sizeKb": 3,
+    "license": "CC0",
+    "tags": [
+      "close",
+      "003"
+    ],
+    "keywords": [
+      "notification dismiss",
+      "tooltip close",
+      "panel close",
+      "ui feedback",
+      "dismiss",
+      "close",
+      "disappear",
+      "gentle",
+      "soft",
+      "clean",
+      "medium",
+      "exit",
+      "cancel",
+      "hide",
+      "subtle",
+      "interaction",
+      "ui",
+      "game",
+      "quiet",
+      "calm",
+      "action"
+    ]
+  },
+  "categories": [
+    "close"
+  ],
+  "type": "registry:block"
+}
