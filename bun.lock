@@ -18,6 +18,7 @@
         "@radix-ui/react-slot": "^1.2.3",
         "@soundcn/engine": "workspace:*",
         "@soundcn/react": "workspace:*",
+        "@soundcn/sounds": "workspace:*",
         "@vercel/analytics": "^1.6.1",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
@@ -28,7 +29,6 @@
         "react": "19.1.0",
         "react-dom": "19.1.0",
         "shadcn": "^3.0.0",
-        "soundcn": "workspace:*",
         "tailwind-merge": "^3.3.1",
         "tw-animate-css": "^1.3.6",
         "vaul": "^1.1.2",
@@ -91,10 +91,12 @@
       },
     },
     "packages/sounds": {
-      "name": "soundcn",
+      "name": "@soundcn/sounds",
       "version": "0.1.0",
-      "devDependencies": {
+      "dependencies": {
         "@soundcn/engine": "workspace:*",
+      },
+      "devDependencies": {
         "@types/react": "19.1.2",
         "tsup": "^8.0.0",
         "typescript": "^5.9.2",
@@ -774,6 +776,8 @@
     "@soundcn/react": ["@soundcn/react@workspace:packages/react"],
 
     "@soundcn/react-native": ["@soundcn/react-native@workspace:packages/react-native"],
+
+    "@soundcn/sounds": ["@soundcn/sounds@workspace:packages/sounds"],
 
     "@soundcn/web": ["@soundcn/web@workspace:apps/web"],
 
@@ -2094,8 +2098,6 @@
     "slash": ["slash@3.0.0", "", {}, "sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q=="],
 
     "slugify": ["slugify@1.6.6", "", {}, "sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw=="],
-
-    "soundcn": ["soundcn@workspace:packages/sounds"],
 
     "source-map": ["source-map@0.7.6", "", {}, "sha512-i5uvt8C3ikiWeNZSVZNWcfZPItFQOsYTUAOkcUPGd8DqDy1uOUikjt5dG+uRlwyvR108Fb9DOd4GvXfT0N2/uQ=="],
 
