@@ -4,7 +4,7 @@ import { SoundCard } from "@/components/sound-card";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useGridNavigation } from "@/hooks/use-grid-navigation";
 import { useSoundSelection } from "@/hooks/use-sound-selection";
-import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
+import type { SoundCatalogItem } from "soundcn/catalog";
 import { Button } from "@/registry/soundcn/ui/button";
 
 interface SoundGridProps {

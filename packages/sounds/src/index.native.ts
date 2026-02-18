@@ -1,4 +1,4 @@
-export { useSound } from "./use-sound";
+export { useSound } from "./use-sound.native";
 export type {
   SoundAsset,
   SoundEngine,

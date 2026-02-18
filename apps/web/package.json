@@ -17,7 +17,7 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@soundcn/engine": "workspace:*",
     "@soundcn/react": "workspace:*",
-    "@soundcn/sounds": "workspace:*",
+    "soundcn": "workspace:*",
     "@vercel/analytics": "^1.6.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

@@ -2,7 +2,7 @@
 
 import { memo, useMemo } from "react";
 import { useHorizontalScroll } from "@/hooks/use-horizontal-scroll";
-import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
+import type { SoundCatalogItem } from "soundcn/catalog";
 import { buildCategoryOptions } from "@/lib/sound-filters";
 import { cn } from "@/lib/utils";
 

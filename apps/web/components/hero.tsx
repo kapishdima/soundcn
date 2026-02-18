@@ -1,7 +1,7 @@
 import { HeroBars } from "@/components/hero-bars";
 import { HeroInstallationCode } from "@/components/hero-installation-code";
 import { SOUNDS_LENGTH } from "@/lib/constants";
-import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
+import type { SoundCatalogItem } from "soundcn/catalog";
 
 export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
 	return (

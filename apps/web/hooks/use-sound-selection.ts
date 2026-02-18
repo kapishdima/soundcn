@@ -2,7 +2,7 @@ import { parseAsString, useQueryState } from "nuqs";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
-import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
+import type { SoundCatalogItem } from "soundcn/catalog";
 
 export const useSoundSelection = ({
 	sounds,
