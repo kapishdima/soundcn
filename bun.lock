@@ -93,10 +93,8 @@
     "packages/sounds": {
       "name": "soundcn",
       "version": "0.1.0",
-      "dependencies": {
-        "@soundcn/engine": "workspace:*",
-      },
       "devDependencies": {
+        "@soundcn/engine": "workspace:*",
         "@types/react": "19.1.2",
         "tsup": "^8.0.0",
         "typescript": "^5.9.2",

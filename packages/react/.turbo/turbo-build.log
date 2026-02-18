@@ -1,16 +1,17 @@
-$ tsup src/index.ts --format esm,cjs --dts --clean
-CLI Building entry: src/index.ts
-CLI Using tsconfig: tsconfig.json
-CLI tsup v8.5.1
-CLI Target: es2020
-CLI Cleaning output folder
-ESM Build start
-CJS Build start
-CJS dist/index.js 3.58 KB
-CJS ⚡️ Build success in 160ms
-ESM dist/index.mjs 2.40 KB
-ESM ⚡️ Build success in 161ms
+
+[0m[2m[35m$[0m [2m[1mtsup src/index.ts --format esm,cjs --dts --clean[0m
+[34mCLI[39m Building entry: src/index.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.5.1
+[34mCLI[39m Target: es2020
+[34mCLI[39m Cleaning output folder
+[34mESM[39m Build start
+[34mCJS[39m Build start
+[32mCJS[39m [1mdist/index.js [22m[32m3.58 KB[39m
+[32mCJS[39m ⚡️ Build success in 119ms
+[32mESM[39m [1mdist/index.mjs [22m[32m2.40 KB[39m
+[32mESM[39m ⚡️ Build success in 120ms
 DTS Build start
-DTS ⚡️ Build success in 2477ms
+DTS ⚡️ Build success in 2233ms
 DTS dist/index.d.mts 299.00 B
 DTS dist/index.d.ts  299.00 B

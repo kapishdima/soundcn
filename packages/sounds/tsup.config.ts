@@ -26,5 +26,6 @@ export default defineConfig({
   clean: true,
   sourcemap: false,
   treeshake: true,
+  noExternal: ["@soundcn/engine"],
   external: ["expo-av", "react", "react-native"],
 });
