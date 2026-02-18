@@ -46,3 +46,5 @@ next-env.d.ts
 
 # raw sound files (downloaded packs)
 raw-sounds
+
+.turbo-log
