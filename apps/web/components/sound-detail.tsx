@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/drawer";
 import { useSoundPlayback } from "@/hooks/use-sound-playback";
 import { useSoundSelection } from "@/hooks/use-sound-selection";
-import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
-import { formatDuration, formatSizeKb } from "@soundcn/sounds/catalog";
+import type { SoundCatalogItem } from "soundcn/catalog";
+import { formatDuration, formatSizeKb } from "soundcn/catalog";
 
 const EMPTY_TAGS: string[] = [];
 

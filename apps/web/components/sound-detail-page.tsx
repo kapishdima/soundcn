@@ -11,8 +11,8 @@ import { PlayerStrip } from "@/components/sound-player";
 import { useGridNavigation } from "@/hooks/use-grid-navigation";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
 import { useSoundPlayback } from "@/hooks/use-sound-playback";
-import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
-import { formatDuration, formatSizeKb } from "@soundcn/sounds/catalog";
+import type { SoundCatalogItem } from "soundcn/catalog";
+import { formatDuration, formatSizeKb } from "soundcn/catalog";
 
 /* ── Main page component ── */
 

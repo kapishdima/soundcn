@@ -5,7 +5,7 @@ import { CopyButton } from "@/components/copy-button";
 import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import { useSoundSelection } from "@/hooks/use-sound-selection";
-import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
+import type { SoundCatalogItem } from "soundcn/catalog";
 import { buildInstallCommand } from "@/lib/sound-install";
 import { cn } from "@/lib/utils";
 import { Button } from "@/registry/soundcn/ui/button";

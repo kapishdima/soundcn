@@ -1,7 +1,7 @@
 {
-  "name": "@soundcn/sounds",
+  "name": "soundcn",
   "version": "0.1.0",
-  "description": "700+ tree-shakable sound assets for soundcn",
+  "description": "Sound effects for React and React Native — useSound hook + 700+ sounds",
   "sideEffects": false,
   "scripts": {
     "build": "tsup --format esm,cjs --dts --clean",
@@ -11,19 +11,29 @@
   },
   "exports": {
     ".": {
+      "react-native": {
+        "types": "./dist/index.native.d.ts",
+        "import": "./dist/index.native.js",
+        "require": "./dist/index.native.cjs"
+      },
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./sounds": {
+      "types": "./dist/sounds/index.d.ts",
+      "import": "./dist/sounds/index.js",
+      "require": "./dist/sounds/index.cjs"
+    },
+    "./sounds/*": {
+      "types": "./dist/sounds/*.d.ts",
+      "import": "./dist/sounds/*.js",
+      "require": "./dist/sounds/*.cjs"
     },
     "./catalog": {
       "types": "./dist/catalog.d.ts",
       "import": "./dist/catalog.js",
       "require": "./dist/catalog.cjs"
-    },
-    "./*": {
-      "types": "./dist/sounds/*.d.ts",
-      "import": "./dist/sounds/*.js",
-      "require": "./dist/sounds/*.cjs"
     }
   },
   "main": "./dist/index.cjs",
@@ -33,7 +43,21 @@
   "dependencies": {
     "@soundcn/engine": "workspace:*"
   },
+  "peerDependencies": {
+    "expo-av": ">=15.0.0",
+    "react": ">=18",
+    "react-native": ">=0.73"
+  },
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    },
+    "expo-av": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@types/react": "19.1.2",
     "tsup": "^8.0.0",
     "typescript": "^5.9.2"
   }

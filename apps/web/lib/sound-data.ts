@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { getBroadCategory, type SoundCatalogItem } from "@soundcn/sounds/catalog";
+import { getBroadCategory, type SoundCatalogItem } from "soundcn/catalog";
 import registry from "@/registry.json";
 
 function buildCatalog(): SoundCatalogItem[] {
