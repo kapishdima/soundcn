@@ -11,7 +11,7 @@ import { SoundGrid } from "@/components/sound-grid";
 import { SoundsCountTitle } from "@/components/sounds-count-title";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
-import type { SoundCatalogItem } from "@/lib/sound-catalog";
+import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
 import { cn } from "@/lib/utils";
 
 const SoundDetail = dynamic(() =>

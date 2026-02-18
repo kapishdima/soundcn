@@ -1,0 +1,40 @@
+{
+  "name": "@soundcn/sounds",
+  "version": "0.1.0",
+  "description": "700+ tree-shakable sound assets for soundcn",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup --format esm,cjs --dts --clean",
+    "dev": "tsup --format esm,cjs --dts --watch",
+    "check-types": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./catalog": {
+      "types": "./dist/catalog.d.ts",
+      "import": "./dist/catalog.js",
+      "require": "./dist/catalog.cjs"
+    },
+    "./*": {
+      "types": "./dist/sounds/*.d.ts",
+      "import": "./dist/sounds/*.js",
+      "require": "./dist/sounds/*.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "dependencies": {
+    "@soundcn/engine": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.9.2"
+  }
+}
