@@ -3,7 +3,7 @@ import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import { getInstallPrefix } from "@/lib/package-manager";
-import type { SoundCatalogItem } from "@/lib/sound-catalog";
+import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
 
 // Pick a diverse subset of sound names for the hero typewriter
 function pickHeroWords(sounds: SoundCatalogItem[], count: number): string[] {

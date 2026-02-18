@@ -3,7 +3,7 @@ import {
 	ALL_CATEGORY,
 	CATEGORY_ORDER,
 	type SoundCatalogItem,
-} from "@/lib/sound-catalog";
+} from "@soundcn/sounds/catalog";
 
 const WHITESPACE_RE = /\s+/;
 

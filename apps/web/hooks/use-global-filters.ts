@@ -1,6 +1,6 @@
 import { parseAsString, useQueryState } from "nuqs";
 import { useCallback, useDeferredValue, useMemo } from "react";
-import { ALL_CATEGORY, type SoundCatalogItem } from "@/lib/sound-catalog";
+import { ALL_CATEGORY, type SoundCatalogItem } from "@soundcn/sounds/catalog";
 import { filterSounds } from "@/lib/sound-filters";
 
 export const useGlobalFilters = ({

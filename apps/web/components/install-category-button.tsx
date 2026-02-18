@@ -2,7 +2,7 @@ import { Package } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
-import type { SoundCatalogItem } from "@/lib/sound-catalog";
+import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
 import { buildInstallCommand } from "@/lib/sound-install";
 
 export function InstallAllInCategoryButton({

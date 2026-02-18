@@ -2,7 +2,7 @@ import { CategoryFilter } from "@/components/category-filter";
 import { InstallAllInCategoryButton } from "@/components/install-category-button";
 import { SoundSearch } from "@/components/sound-search";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
-import { ALL_CATEGORY, type SoundCatalogItem } from "@/lib/sound-catalog";
+import { ALL_CATEGORY, type SoundCatalogItem } from "@soundcn/sounds/catalog";
 
 type GlobalFiltersProps = {
 	sounds: SoundCatalogItem[];

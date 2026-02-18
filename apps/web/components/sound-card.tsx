@@ -3,8 +3,8 @@
 import { Check } from "lucide-react";
 import { memo } from "react";
 import { MiniSoundEqualizer } from "@/components/mini-sound-equalizer";
-import type { SoundCatalogItem } from "@/lib/sound-catalog";
-import { formatDuration } from "@/lib/sound-catalog";
+import type { SoundCatalogItem } from "@soundcn/sounds/catalog";
+import { formatDuration } from "@soundcn/sounds/catalog";
 import { cn } from "@/lib/utils";
 
 interface SoundCardProps {

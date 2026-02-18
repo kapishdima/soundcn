@@ -16,6 +16,7 @@
     "registry:enrich": "turbo run registry:enrich"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.8",
     "turbo": "latest",
     "typescript": "^5.9.2"
   },
