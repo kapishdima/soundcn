@@ -1,0 +1,91 @@
+name: "🎵 Showcase Submission"
+description: "Submit your project built with soundcn to be featured on the Showcases page."
+title: "[Showcase] "
+labels: ["showcase"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for building something with soundcn! Fill in the details below and your project may appear on the [Showcases page](https://soundcn.dev/showcases).
+
+  - type: input
+    id: project-name
+    attributes:
+      label: Project Name
+      description: The name of your project as it should appear on the site.
+      placeholder: "e.g. My Awesome App"
+    validations:
+      required: true
+
+  - type: input
+    id: project-url
+    attributes:
+      label: Project URL
+      description: The live URL of your project.
+      placeholder: "https://myapp.example.com"
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Your Name / Handle
+      description: How you'd like to be credited.
+      placeholder: "e.g. Jane Doe or @janedoe"
+    validations:
+      required: true
+
+  - type: input
+    id: twitter-url
+    attributes:
+      label: Twitter / X URL (optional)
+      description: Your Twitter/X profile URL.
+      placeholder: "https://twitter.com/janedoe"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "A short description of your project (max ~160 characters)."
+      placeholder: "A productivity app that uses soundcn click and notification sounds to guide users through their workflow."
+    validations:
+      required: true
+
+  - type: textarea
+    id: sounds-used
+    attributes:
+      label: Sounds Used
+      description: |
+        List the soundcn sound slugs used in your project, one per line.
+        You can find a sound's slug in its URL: `soundcn.dev/sound/[slug]`
+      placeholder: |
+        click-soft
+        notification-pop
+        success-chime
+    validations:
+      required: true
+
+  - type: input
+    id: video-url
+    attributes:
+      label: Video Preview URL
+      description: |
+        A short video (.mp4) demonstrating your project with sounds.
+        You can upload directly to this GitHub issue by dragging a file into the text area, or provide a direct URL.
+      placeholder: "https://... (direct .mp4 link or GitHub upload)"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - label: I confirm this project uses soundcn sounds.
+          required: true
+        - label: I agree for this project to be featured on soundcn.dev.
+          required: true
+        - label: The video and content I'm submitting does not contain offensive or inappropriate material.
+          required: true
