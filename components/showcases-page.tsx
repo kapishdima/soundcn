@@ -14,9 +14,9 @@ function OfficialEmptyState() {
 				className="mb-4 flex items-end justify-center gap-[3px] opacity-20"
 				aria-hidden="true"
 			>
-				{[20, 45, 65, 80, 100, 80, 65, 45, 20].map((h, i) => (
+				{[20, 45, 65, 80, 100, 80, 65, 45, 20].map((h) => (
 					<div
-						key={i}
+						key={h}
 						className="rounded-t-sm bg-primary"
 						style={{ width: 4, height: h * 0.5 }}
 					/>
@@ -39,9 +39,9 @@ function CommunityEmptyState() {
 				className="mb-4 flex items-end justify-center gap-[3px] opacity-25"
 				aria-hidden="true"
 			>
-				{[20, 45, 65, 80, 100, 80, 65, 45, 20].map((h, i) => (
+				{[20, 45, 65, 80, 100, 80, 65, 45, 20].map((h) => (
 					<div
-						key={i}
+						key={h}
 						className="rounded-t-sm bg-primary"
 						style={{ width: 4, height: h * 0.5 }}
 					/>
@@ -54,7 +54,7 @@ function CommunityEmptyState() {
 				Be the first to submit yours!
 			</p>
 			<a
-				href="https://github.com/kapishdima/soundcn/issues/new?template=showcase.yml"
+				href="https://github.com/kapishdima/soundcn/issues/new?template=project-showcase.md"
 				target="_blank"
 				rel="noopener noreferrer"
 				className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/[0.08] px-4 py-2 text-xs font-medium text-primary transition-[background-color,border-color] hover:bg-primary/[0.14] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
@@ -222,7 +222,7 @@ export function ShowcasesPage({ official, community }: ShowcasesPageProps) {
 							</p>
 							<div className="mt-7 flex flex-wrap items-center justify-center gap-3">
 								<a
-									href="https://github.com/kapishdima/soundcn/issues/new?template=showcase.yml"
+									href="https://github.com/kapishdima/soundcn/issues/new?template=project-showcase.md"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground shadow-sm shadow-primary/15 transition-[background-color,box-shadow,opacity] hover:opacity-90 hover:shadow-primary/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
