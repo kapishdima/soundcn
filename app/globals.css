@@ -164,8 +164,23 @@
   transition: background-color 0.2s ease;
 }
 .group:hover .eq-bar-mini,
-.group:focus-within .eq-bar-mini {
+.group:focus-within .eq-bar-mini,
+.eq-bar-playing {
   animation: eq var(--eq-d, 0.8s) ease-in-out var(--eq-del, 0s) infinite;
+}
+
+/* ─── Roadmap scroll-reveal ─── */
+@keyframes reveal-line {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+@keyframes reveal-number {
+  from { opacity: 0; transform: scale(1.25); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes sound-ping {
+  0%   { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 0;   transform: scale(2.2); }
 }
 
 @layer utilities {
