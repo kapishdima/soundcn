@@ -28,7 +28,7 @@ const ROADMAP_STEPS: RoadmapStep[] = [
 		title: "New Components",
 		description:
 			"shadcn-style wrappers with sounds already wired in. A Button that clicks, a Toast that pops, a Dialog that whooshes open. Drop them in, they just work.",
-		status: "shipped",
+		status: "building",
 		soundName: "click-8bit",
 	},
 	{
