@@ -17,11 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{
 			url: `${baseUrl}/roadmap`,
 			lastModified: now,
-			changeFrequency: "monthly" as const,
-			priority: 0.8,
-		},
-		{
-			url: `${baseUrl}/showcases`,
+		// {
+		// 	url: `${baseUrl}/showcases`,
+		// 	lastModified: now,
+		// 	changeFrequency: "weekly" as const,
+		// 	priority: 0.8,
+		// },
 			lastModified: now,
 			changeFrequency: "weekly" as const,
 			priority: 0.8,
