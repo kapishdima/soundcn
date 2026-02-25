@@ -33,6 +33,10 @@ import { clickSoftSound } from "@/sounds/click-soft";
 const [play] = useSound(clickSoftSound);
 ```
 
+## Stats
+
+[![RepoStars](https://repostars.dev/api/embed?repo=kapishdima%2Fsoundcn&theme=minimal)](https://repostars.dev/?repos=kapishdima%2Fsoundcn&theme=minimal)
+
 ## License
 
 Sounds are sourced from CC0-licensed collections (primarily [Kenney](https://kenney.nl)).
