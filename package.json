@@ -8,7 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "registry:build": "shadcn build",
-    "registry:enrich": "bun scripts/enrich-registry.ts"
+    "registry:enrich": "bun scripts/enrich-registry.ts",
+    "sounds:encode": "bun scripts/encode-all.ts",
+    "sounds:encode-one": "bun scripts/encode-sound.ts",
+    "sounds:update-registry": "bun scripts/update-registry.ts",
+    "sounds:fetch-wowhead": "bun scripts/fetch-wowhead.ts"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
