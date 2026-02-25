@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { HeroBars } from "@/components/hero-bars";
 import type { Collection } from "@/lib/collections";
@@ -138,6 +139,8 @@ export function CollectionsListPage({ collections }: CollectionsListPageProps) {
 					})}
 				</div>
 			</main>
+
+			<Footer />
 		</div>
 	);
 }

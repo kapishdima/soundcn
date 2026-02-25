@@ -2,6 +2,7 @@
 
 import { Check } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { HeroBars } from "@/components/hero-bars";
 import { playSound } from "@/lib/play-sound";
@@ -450,6 +451,8 @@ export function RoadmapPage() {
 					/>
 				))}
 			</main>
+
+			<Footer />
 		</div>
 	);
 }

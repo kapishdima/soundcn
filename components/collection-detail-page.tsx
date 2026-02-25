@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { ChevronLeft } from "lucide-react";
 import { BatchInstallBar } from "@/components/batch-install-bar";
+import { Footer } from "@/components/footer";
 import { GlobalFilters } from "@/components/global-fiters";
 import { Header } from "@/components/header";
 import { HeroBars } from "@/components/hero-bars";
@@ -111,6 +112,7 @@ export function CollectionDetailPage({
 				</div>
 			</main>
 
+			<Footer />
 			<BatchInstallBar sounds={sounds} />
 			<SoundDetail sounds={deferredSounds} />
 		</div>

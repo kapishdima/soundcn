@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { BatchInstallBar } from "@/components/batch-install-bar";
+import { Footer } from "@/components/footer";
 import { GlobalFilters } from "@/components/global-fiters";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
@@ -65,6 +66,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 				</div>
 			</main>
 
+			<Footer />
 			<BatchInstallBar sounds={sounds} />
 			<SoundDetail sounds={deferredSounds} />
 		</div>
