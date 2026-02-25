@@ -27,6 +27,7 @@ export function Header() {
 					[
 						{ href: "/collections", label: "Collections" },
 						{ href: "/roadmap", label: "Roadmap" },
+						{ href: "/sponsors", label: "Sponsors" },
 					] as const
 				).map(
 						({ href, label }) => (
