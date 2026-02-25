@@ -22,7 +22,12 @@ export function Header() {
 					className="hidden sm:flex items-center gap-1 pr-10"
 					aria-label="Primary navigation"
 				>
-					{([{ href: "/roadmap", label: "Roadmap" }] as const).map(
+					{(
+					[
+						{ href: "/collections", label: "Collections" },
+						{ href: "/roadmap", label: "Roadmap" },
+					] as const
+				).map(
 						({ href, label }) => (
 							<Link
 								key={href}

@@ -1,12 +1,19 @@
 import { cache } from "react";
-import { getBroadCategory, type SoundCatalogItem } from "@/lib/sound-catalog";
+import {
+	COLLECTION_NAMES,
+	getBroadCategory,
+	type SoundCatalogItem,
+} from "@/lib/sound-catalog";
 import registry from "@/registry.json";
 
 function buildCatalog(): SoundCatalogItem[] {
 	return registry.items
 		.filter((item) => item.type === "registry:block")
 		.map((item) => {
-			const primaryCategory = item.categories?.[0] ?? "uncategorized";
+			const firstCat = item.categories?.[0] ?? "uncategorized";
+		const primaryCategory = COLLECTION_NAMES.has(firstCat)
+			? (item.categories?.[1] ?? "uncategorized")
+			: firstCat;
 			return {
 				name: item.name,
 				title: item.title,

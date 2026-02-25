@@ -1,5 +1,8 @@
 export const ALL_CATEGORY = "all" as const;
 
+/** Collection identifiers — sounds with these as categories[0] use categories[1] as primaryCategory. */
+export const COLLECTION_NAMES = new Set(["warcraft"]);
+
 export interface SoundCatalogItem {
   name: string;
   title: string;
@@ -105,6 +108,16 @@ const BROAD_CATEGORY_MAP: Record<string, string> = {
   jingles: "Jingles",
   pep: "Jingles",
 
+  // Warcraft subcategories
+  ui: "UI",
+  voice: "Voice",
+  combat: "Combat",
+  ambient: "Ambient",
+  loot: "Loot",
+  crafting: "Crafting",
+  fishing: "Fishing",
+  quest: "Quest",
+
   // Voiceover
   voiceover: "Voiceover",
 
@@ -142,16 +155,23 @@ export const CATEGORY_ORDER = [
   "UI",
   "Feedback",
   "Game",
+  "Quest",
   "Impact",
+  "Combat",
   "Sci-Fi",
   "Retro",
   "Cards & Board",
   "Tones",
   "Jingles",
   "Voiceover",
+  "Voice",
   "Footsteps",
   "Items",
+  "Loot",
+  "Crafting",
+  "Fishing",
   "Environment",
+  "Ambient",
   "Other",
 ] as const;
 

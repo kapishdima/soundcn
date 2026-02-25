@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orc-male-yes-03",
+  "type": "registry:block",
+  "title": "Orc Male Yes 03",
+  "author": "Kenney <https://kenney.nl>",
+  "description": "Orc Male Yes 03 sound effect.",
+  "files": [
+    {
+      "path": "registry/soundcn/sounds/orc-male-yes-03/orc-male-yes-03.ts",
+      "content": "import type { SoundAsset } from \"@/lib/sound-types\";\n\nexport const orcMaleYes03Sound: SoundAsset = {\n  name: \"orc-male-yes-03\",\n  dataUri: \"data:audio/mpeg;base64,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\",\n  duration: 0.220,\n  format: \"mp3\",\n  license: \"CC0\",\n  author: \"Kenney\",\n};\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-types.ts",
+      "content": "export interface SoundAsset {\r\n  /** Unique identifier for the sound */\r\n  name: string;\r\n  /** Base64-encoded data URI (data:audio/mpeg;base64,...) */\r\n  dataUri: string;\r\n  /** Duration in seconds */\r\n  duration: number;\r\n  /** Audio format */\r\n  format: \"mp3\" | \"wav\" | \"ogg\";\r\n  /** License identifier */\r\n  license: \"CC0\" | \"OGA-BY\" | \"MIT\";\r\n  /** Original author/creator */\r\n  author: string;\r\n}\r\n\r\nexport interface UseSoundOptions {\r\n  /** Volume level from 0 to 1. Default: 1 */\r\n  volume?: number;\r\n  /** Playback speed multiplier. Default: 1 */\r\n  playbackRate?: number;\r\n  /** If true, calling play() stops current playback first. Default: false */\r\n  interrupt?: boolean;\r\n  /** If false, play() does nothing. Useful for user preferences. Default: true */\r\n  soundEnabled?: boolean;\r\n  /** Called when playback starts */\r\n  onPlay?: () => void;\r\n  /** Called when playback ends naturally */\r\n  onEnd?: () => void;\r\n  /** Called when pause() is called */\r\n  onPause?: () => void;\r\n  /** Called when stop() is called */\r\n  onStop?: () => void;\r\n}\r\n\r\nexport type PlayFunction = (overrides?: {\r\n  volume?: number;\r\n  playbackRate?: number;\r\n}) => void;\r\n\r\nexport interface SoundControls {\r\n  stop: () => void;\r\n  pause: () => void;\r\n  isPlaying: boolean;\r\n  duration: number | null;\r\n  sound: SoundAsset;\r\n}\r\n\r\nexport type UseSoundReturn = readonly [PlayFunction, SoundControls];\r\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/soundcn/lib/sound-engine.ts",
+      "content": "let audioContext: AudioContext | null = null;\nconst bufferCache = new Map<string, AudioBuffer>();\n\nexport function getAudioContext(): AudioContext {\n  if (!audioContext) {\n    audioContext = new AudioContext();\n  }\n  return audioContext;\n}\n\nexport async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {\n  const cached = bufferCache.get(dataUri);\n  if (cached) return cached;\n\n  const ctx = getAudioContext();\n  const base64 = dataUri.split(\",\")[1];\n  const binaryString = atob(base64);\n  const bytes = new Uint8Array(binaryString.length);\n  for (let i = 0; i < binaryString.length; i++) {\n    bytes[i] = binaryString.charCodeAt(i);\n  }\n\n  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));\n  bufferCache.set(dataUri, audioBuffer);\n  return audioBuffer;\n}\n\nexport interface PlaySoundOptions {\n  volume?: number;\n  playbackRate?: number;\n  onEnd?: () => void;\n}\n\nexport interface SoundPlayback {\n  stop: () => void;\n}\n\nexport async function playSound(\n  dataUri: string,\n  options: PlaySoundOptions = {}\n): Promise<SoundPlayback> {\n  const { volume = 1, playbackRate = 1, onEnd } = options;\n  const ctx = getAudioContext();\n  if (ctx.state === \"suspended\") {\n    await ctx.resume();\n  }\n\n  const buffer = await decodeAudioData(dataUri);\n  const source = ctx.createBufferSource();\n  const gain = ctx.createGain();\n\n  source.buffer = buffer;\n  source.playbackRate.value = playbackRate;\n  gain.gain.value = volume;\n\n  source.connect(gain);\n  gain.connect(ctx.destination);\n\n  source.onended = () => {\n    onEnd?.();\n  };\n\n  source.start(0);\n\n  return {\n    stop: () => {\n      try {\n        source.stop();\n      } catch {\n        // No-op if already stopped.\n      }\n    },\n  };\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "meta": {
+    "duration": 0.22,
+    "format": "mp3",
+    "sizeKb": 2,
+    "license": "CC0",
+    "tags": [
+      "orc",
+      "male",
+      "yes",
+      "03"
+    ]
+  },
+  "categories": [
+    "warcraft",
+    "voice"
+  ]
+}
