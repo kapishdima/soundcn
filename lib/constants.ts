@@ -7,3 +7,6 @@ export const HERO_BARS = Array.from({ length: 32 }, (_, i) => ({
 
 export const SOUNDS_LENGTH = "703+";
 export const EMPTY_EQ = [35, 55, 25, 70, 40, 60, 30];
+
+export const SPONSOR_URL =
+	"https://www.creem.io/test/payment/prod_1d4kMAf1u1PcP0nnQy8L4f";
