@@ -6,6 +6,8 @@ import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { InstallMethodProvider } from "@/contexts/install-method-context";
 import { PackageManagerProvider } from "@/contexts/package-manager-context";
 
@@ -102,10 +104,16 @@ export default function RootLayout({
 						disableTransitionOnChange
 					>
 						<NuqsAdapter>
-						<PackageManagerProvider>
-							<InstallMethodProvider>{children}</InstallMethodProvider>
-						</PackageManagerProvider>
-					</NuqsAdapter>
+							<PackageManagerProvider>
+								<InstallMethodProvider>
+									<div className="flex min-h-svh flex-col">
+										<Header />
+										{children}
+										<Footer />
+									</div>
+								</InstallMethodProvider>
+							</PackageManagerProvider>
+						</NuqsAdapter>
 					</ThemeProvider>
 					<Analytics />
 				</Suspense>

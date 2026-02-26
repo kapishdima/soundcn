@@ -13,3 +13,13 @@ export const SPONSOR_URL =
 
 export const SPONSOR_PRICE = "$5";
 export const SPONSOR_PRICE_TYPE = "one-time";
+
+export const MENU = [
+	{ href: "/collections", label: "Collections" },
+	{ href: "/roadmap", label: "Roadmap" },
+	{ href: "/sponsors", label: "Sponsors" },
+] as const;
+
+export const GITHUB_URL = "https://github.com/kapishdima/soundcn";
+
+export const SUPPORT_EMAIL = "kapishdima@gmail.com";
