@@ -8,4 +8,10 @@ export interface Sponsor {
 }
 
 // Add sponsors here as they come in
-export const SPONSORS: Sponsor[] = [];
+export const SPONSORS: Sponsor[] = [
+	{
+		name: "Ali Bey",
+		url: "https://x.com/AliBey_10",
+		logo: "https://avatars.githubusercontent.com/u/42802922?v=4",
+	},
+];
