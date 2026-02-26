@@ -4,6 +4,7 @@ import { HeroBars } from "@/components/hero-bars";
 import { BecomeSponsorButton } from "@/components/sponsor-button";
 import { SponsorCard } from "@/components/sponsor-card";
 import { SponsorTicker } from "@/components/sponsor-ticket";
+import { SUPPORT_EMAIL } from "@/lib/constants";
 import { SPONSORS } from "@/lib/sponsors";
 
 export function SponsorsPage() {
@@ -72,10 +73,10 @@ export function SponsorsPage() {
 							<span className="text-xs text-muted-foreground/60">
 								Questions?{" "}
 								<a
-									href="mailto:kapishdima@gmail.com"
+									href={`mailto:${SUPPORT_EMAIL}`}
 									className="text-muted-foreground hover:text-foreground transition-colors duration-150 underline underline-offset-2"
 								>
-									kapishdima@gmail.com
+									{SUPPORT_EMAIL}
 								</a>
 							</span>
 						</div>

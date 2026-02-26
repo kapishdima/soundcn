@@ -21,3 +21,5 @@ export const MENU = [
 ] as const;
 
 export const GITHUB_URL = "https://github.com/kapishdima/soundcn";
+
+export const SUPPORT_EMAIL = "kapishdima@gmail.com";

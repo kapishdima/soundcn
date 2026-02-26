@@ -1,3 +1,5 @@
+import { GITHUB_URL, SUPPORT_EMAIL } from "@/lib/constants";
+
 export interface Section {
 	id: string;
 	title: string;
@@ -113,13 +115,9 @@ export const PRIVACY_SECTIONS: Section[] = [
 		content: (
 			<p>
 				Questions about privacy? Email us at{" "}
-				<a href="mailto:kapishdima@gmail.com">kapishdima@gmail.com</a> or open
-				an issue on{" "}
-				<a
-					href="https://github.com/kapishdima/soundcn"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
+				<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> or open an issue
+				on{" "}
+				<a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
 					GitHub
 				</a>
 				.
@@ -136,7 +134,7 @@ export const TERMS_SECTIONS: Section[] = [
 			<p>
 				soundcn is open-source software released under the{" "}
 				<a
-					href="https://github.com/kapishdima/soundcn/blob/main/LICENSE"
+					href={`${GITHUB_URL}/blob/main/LICENSE`}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -234,9 +232,9 @@ export const TERMS_SECTIONS: Section[] = [
 				</p>
 				<p>
 					If you believe a payment was made in error, contact us at{" "}
-					<a href="mailto:kapishdima@gmail.com">kapishdima@gmail.com</a> within
-					14 days of the transaction. We will review each request individually
-					and issue a refund at our discretion.
+					<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> within 14 days
+					of the transaction. We will review each request individually and issue
+					a refund at our discretion.
 				</p>
 			</>
 		),
@@ -249,11 +247,7 @@ export const TERMS_SECTIONS: Section[] = [
 				We may update this page from time to time. Continued use of soundcn
 				after changes are posted constitutes acceptance of the updated terms.
 				Changes are tracked in the{" "}
-				<a
-					href="https://github.com/kapishdima/soundcn"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
+				<a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
 					public GitHub repository
 				</a>
 				.

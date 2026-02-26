@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { EqLogo } from "@/components/logo";
+import { GITHUB_URL, SUPPORT_EMAIL } from "@/lib/constants";
 
 export function Footer() {
 	return (
@@ -18,13 +19,13 @@ export function Footer() {
 						Privacy & Terms
 					</Link>
 					<a
-						href="mailto:kapishdima@gmail.com"
+						href={`mailto:${SUPPORT_EMAIL}`}
 						className="hover:text-foreground transition-colors duration-150"
 					>
 						Support
 					</a>
 					<a
-						href="https://github.com/kapishdima/soundcn"
+						href={GITHUB_URL}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="hover:text-foreground transition-colors duration-150"
