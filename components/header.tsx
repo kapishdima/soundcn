@@ -1,11 +1,11 @@
 "use client";
 
-import { Github, Heart } from "lucide-react";
+import { Github } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { EqLogo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { SPONSOR_URL } from "@/lib/constants";
+// import { SPONSOR_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Header() {
