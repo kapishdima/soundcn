@@ -14,4 +14,9 @@ export const SPONSORS: Sponsor[] = [
 		url: "https://x.com/AliBey_10",
 		logo: "https://avatars.githubusercontent.com/u/42802922?v=4",
 	},
+	{
+		name: "Bro Bro",
+		url: "https://x.com/brobro",
+		logo: "https://pbs.twimg.com/profile_images/2004979173547270144/rDHpaxF-_400x400.jpg",
+	},
 ];

@@ -16,7 +16,8 @@ export function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
 			{/* Avatar / Logo */}
 			<div className="size-20 rounded-full overflow-hidden border border-border/50 bg-muted flex items-center justify-center shrink-0">
 				{sponsor.logo ? (
-					<Image
+					// biome-ignore lint/performance/noImgElement: <temp>
+					<img
 						src={sponsor.logo}
 						alt={sponsor.name}
 						width={80}
