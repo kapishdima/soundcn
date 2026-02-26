@@ -19,4 +19,9 @@ export const SPONSORS: Sponsor[] = [
 		url: "https://x.com/brobro",
 		logo: "https://pbs.twimg.com/profile_images/2004979173547270144/rDHpaxF-_400x400.jpg",
 	},
+	{
+		name: "Edu Calvo",
+		url: "https://educalvolopez.com/",
+		logo: "https://avatars.githubusercontent.com/u/13372238?v=4",
+	},
 ];
