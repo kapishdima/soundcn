@@ -1,5 +1,4 @@
 import { ExternalLink } from "lucide-react";
-import Image from "next/image";
 import type { Sponsor } from "@/lib/sponsors";
 
 export function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
