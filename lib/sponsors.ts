@@ -55,7 +55,7 @@ export const SPONSORS: Sponsor[] = [
 		logo: "https://pbs.twimg.com/profile_images/2024177105110781953/zPXZyKbx_400x400.jpg",
 	},
 	{
-		name: "Duncan",
+		name: "Ephraim Duncan",
 		url: "https://ephraimduncan.com/",
 		logo: "https://pbs.twimg.com/profile_images/1740764353408753664/uPGbBhm0_400x400.jpg",
 	},
@@ -63,5 +63,10 @@ export const SPONSORS: Sponsor[] = [
 		name: "Dmytro Tovstokoryi",
 		url: "https://lucide-animated.com/",
 		logo: "https://pbs.twimg.com/profile_images/2008873143859888128/SH9UlBBa_400x400.jpg",
+	},
+	{
+		name: "Manu Arora",
+		url: "https://ui.aceternity.com/",
+		logo: "https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg",
 	},
 ];
