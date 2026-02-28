@@ -69,4 +69,9 @@ export const SPONSORS: Sponsor[] = [
 		url: "https://ui.aceternity.com/",
 		logo: "https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg",
 	},
+	{
+		name: "Aniket Pawar",
+		url: "https://www.aniketpawar.com/",
+		logo: "https://pbs.twimg.com/profile_images/2026346581998579718/sTG3FVKy_400x400.jpg",
+	},
 ];
