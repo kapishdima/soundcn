@@ -216,6 +216,12 @@
   animation-play-state: paused !important;
 }
 
+/* ─── Sponsor marquee scroll ─── */
+@keyframes sponsor-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* ─── Reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {
   .eq-bar-mini,
@@ -227,6 +233,9 @@
   .stagger-fade-up {
     animation: none !important;
     opacity: 1 !important;
+  }
+  [style*="sponsor-scroll"] {
+    animation: none !important;
   }
 }
 
