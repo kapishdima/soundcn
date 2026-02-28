@@ -10,6 +10,16 @@ export interface Sponsor {
 // Add sponsors here as they come in
 export const SPONSORS: Sponsor[] = [
 	{
+		name: "Shoogle",
+		url: "https://shoogle.dev/",
+		logo: "/sponsors/shoogle.png",
+	},
+	{
+		name: "nuqs",
+		url: "https://nuqs.dev/",
+		logo: "https://pbs.twimg.com/profile_images/1825629130852859904/TvP7rOsK_400x400.jpg",
+	},
+	{
 		name: "Ali Bey",
 		url: "https://x.com/AliBey_10",
 		logo: "https://avatars.githubusercontent.com/u/42802922?v=4",
@@ -45,11 +55,6 @@ export const SPONSORS: Sponsor[] = [
 		logo: "https://avatars.githubusercontent.com/u/48634587?v=4",
 	},
 	{
-		name: "nuqs",
-		url: "https://nuqs.dev/",
-		logo: "https://pbs.twimg.com/profile_images/1825629130852859904/TvP7rOsK_400x400.jpg",
-	},
-	{
 		name: "Shaban",
 		url: "https://efferd.com/",
 		logo: "https://pbs.twimg.com/profile_images/2024177105110781953/zPXZyKbx_400x400.jpg",
@@ -73,5 +78,10 @@ export const SPONSORS: Sponsor[] = [
 		name: "Aniket Pawar",
 		url: "https://www.aniketpawar.com/",
 		logo: "https://pbs.twimg.com/profile_images/2026346581998579718/sTG3FVKy_400x400.jpg",
+	},
+	{
+		name: "AAlex Kostyniuk",
+		url: "https://mellowlines.dev/",
+		logo: "https://pbs.twimg.com/profile_images/1780553225067692032/GAal_jdo_400x400.jpg",
 	},
 ];
