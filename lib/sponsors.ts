@@ -109,4 +109,9 @@ export const SPONSORS: Sponsor[] = [
 		url: "https://brodin.dev/",
 		logo: "https://pbs.twimg.com/profile_images/1842594307569573888/1ZQfD1w0_400x400.jpg",
 	},
+	{
+		name: "LN",
+		url: "https://pro.lndev.me/",
+		logo: "https://pbs.twimg.com/profile_images/1890537843908374528/wvFcdsEl_400x400.jpg",
+	},
 ];
