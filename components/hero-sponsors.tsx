@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { playSound } from "@/lib/sound-engine";
 import { loadSoundAsset } from "@/lib/sound-loader";
 import type { Sponsor } from "@/lib/sponsors";
-import { SPONSORS } from "@/lib/sponsors";
+import { SPONSORS, isSvgSource } from "@/lib/sponsors";
 import { cn } from "@/lib/utils";
 
 // Cache the asset promise so we don't load it on every hover
@@ -58,14 +58,22 @@ function SponsorPill({ sponsor }: { sponsor: Sponsor }) {
 			)}
 		>
 			{sponsor.logo ? (
-				// biome-ignore lint/performance/noImgElement: sponsor avatar in pill
-				<img
-					src={sponsor.logo}
-					alt={sponsor.name}
-					width={20}
-					height={20}
-					className="size-5 rounded-full object-cover shrink-0"
-				/>
+				isSvgSource(sponsor.logo) ? (
+					<div
+						className="size-5 rounded-full bg-muted overflow-hidden flex items-center justify-center p-[3px] shrink-0 [&>svg]:size-full"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: trusted sponsor SVG source
+						dangerouslySetInnerHTML={{ __html: sponsor.logo }}
+					/>
+				) : (
+					// biome-ignore lint/performance/noImgElement: sponsor avatar in pill
+					<img
+						src={sponsor.logo}
+						alt={sponsor.name}
+						width={20}
+						height={20}
+						className="size-5 rounded-full object-cover shrink-0"
+					/>
+				)
 			) : (
 				<span className="size-5 rounded-full bg-muted flex items-center justify-center text-[9px] font-bold text-muted-foreground/70 shrink-0">
 					{sponsor.name[0].toUpperCase()}
