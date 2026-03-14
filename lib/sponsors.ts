@@ -138,4 +138,9 @@ export const SPONSORS: Sponsor[] = [
 		url: "https://pro.lndev.me/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/1890537843908374528/wvFcdsEl_400x400.jpg",
 	},
+	{
+		name: "Ricardo Ruiz",
+		url: "https://ruizrica.io?utm_source=soundcn.xyz",
+		logo: "https://avatars.githubusercontent.com/u/3713144?v=4",
+	},
 ];
