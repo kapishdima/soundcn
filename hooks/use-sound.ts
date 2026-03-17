@@ -31,6 +31,11 @@ export function useSound(
   const sourceRef = useRef<AudioBufferSourceNode | null>(null);
   const gainRef = useRef<GainNode | null>(null);
   const bufferRef = useRef<AudioBuffer | null>(null);
+  const stopOnUnmountRef = useRef(stopOnUnmount);
+
+  useEffect(() => {
+    stopOnUnmountRef.current = stopOnUnmount;
+  });
 
   useEffect(() => {
     let cancelled = false;
@@ -109,7 +114,7 @@ export function useSound(
 
   useEffect(() => {
     return () => {
-      if (stopOnUnmount && sourceRef.current) {
+      if (stopOnUnmountRef.current && sourceRef.current) {
         try {
           sourceRef.current.stop();
         } catch {
@@ -118,7 +123,7 @@ export function useSound(
       }
       sourceRef.current = null;
     };
-  }, [stopOnUnmount]);
+  }, []);
 
   return [play, { stop, pause, isPlaying, duration, sound }] as const;
 }
