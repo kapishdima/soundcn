@@ -17,7 +17,7 @@ export function useSound(
     playbackRate = 1,
     interrupt = false,
     soundEnabled = true,
-    stopOnUnmount = false,
+    stopOnUnmount = true,
     onPlay,
     onEnd,
     onPause,

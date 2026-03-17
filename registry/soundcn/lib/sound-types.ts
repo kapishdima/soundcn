@@ -30,7 +30,7 @@ export interface UseSoundOptions {
   onPause?: () => void;
   /** Called when stop() is called */
   onStop?: () => void;
-  /** If true, stop playback when the component unmounts. Default: false (let short feedback sounds play to completion) */
+  /** If true, stop playback when the component unmounts. Default: true (matches original behavior) */
   stopOnUnmount?: boolean;
 }
 
