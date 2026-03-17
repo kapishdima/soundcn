@@ -17,6 +17,7 @@ export function useSound(
     playbackRate = 1,
     interrupt = false,
     soundEnabled = true,
+    stopOnUnmount = false,
     onPlay,
     onEnd,
     onPause,
@@ -108,15 +109,16 @@ export function useSound(
 
   useEffect(() => {
     return () => {
-      if (sourceRef.current) {
+      if (stopOnUnmount && sourceRef.current) {
         try {
           sourceRef.current.stop();
         } catch {
           // Already stopped
         }
       }
+      sourceRef.current = null;
     };
-  }, []);
+  }, [stopOnUnmount]);
 
   return [play, { stop, pause, isPlaying, duration, sound }] as const;
 }
