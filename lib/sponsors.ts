@@ -131,7 +131,7 @@ export const SPONSORS: Sponsor[] = [
 	{
 		name: "Aniket Pawar",
 		url: "https://www.aniketpawar.com/?utm_source=soundcn.xyz",
-		logo: "https://pbs.twimg.com/profile_images/2026346581998579718/sTG3FVKy_400x400.jpg",
+		logo: "https://pbs.twimg.com/profile_images/2031999290869153792/hNRxbUiT_400x400.jpg",
 	},
 	{
 		name: "Alex Kostyniuk",
