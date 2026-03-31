@@ -26,7 +26,7 @@ export const SPONSORS: Sponsor[] = [
 	{
 		name: "Beste",
 		url: "https://beste.co/?utm_source=soundcn.xyz",
-		logo: "https://pbs.twimg.com/profile_images/2019696450482184192/64Ony09u_400x400.png",
+		logo: "https://pbs.twimg.com/profile_images/2035322348702662656/ksCD3WyB_400x400.jpg",
 	},
 	{
 		name: "Shadcn Studio",
@@ -72,6 +72,23 @@ export const SPONSORS: Sponsor[] = [
 </defs>
 </svg>
 `
+	},
+	{
+		name: "Vanklass",
+		url: "https://vanklass.com/",
+		logo: `
+		<svg width="492" height="481" viewBox="0 0 492 481" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_54_26)" style="transform: scale(0.9);">
+<path d="M44.2101 107.97C47.1101 141.44 65.9501 169.45 94.2601 186.14C107.08 192.46 120.42 198.21 135.46 198.27L241.67 198.73L241.44 97.23C241.32 46.62 201.07 5.63999 150.84 1.16999C131.5 -1.17272e-05 111.56 3.51999 94.2801 13.47C61.0701 32.59 40.8601 69.18 44.2201 107.97H44.2101Z" fill="#1D0754"/>
+<path d="M2.36998 322.09L159.92 479.64C161.72 481.44 164.62 481.44 166.46 479.68C254.76 394.98 392.7 393.22 483.73 474.87C486.72 477.55 491.46 475.41 491.46 471.4L491.52 123.02C491.52 121.26 490.52 119.64 488.94 118.86L334.81 41.9799C331.72 40.4399 328.09 42.6799 328.08 46.1399L327.69 318.63C236.62 228.45 92.57 228.71 2.38998 315.5C0.529984 317.29 0.529984 320.28 2.35998 322.11L2.36998 322.09Z" fill="#7756FD"/>
+</g>
+<defs>
+<clipPath id="clip0_54_26">
+<rect width="492" height="481" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+`,
 	},
 	{
 		name: "Ali Bey",
