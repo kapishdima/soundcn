@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { EqLogo } from "@/components/logo";
+import { TrackedExternalLink } from "@/components/tracked-external-link";
 import { GITHUB_URL, SUPPORT_EMAIL } from "@/lib/constants";
 
 export function Footer() {
@@ -24,14 +25,13 @@ export function Footer() {
 					>
 						Support
 					</a>
-					<a
+					<TrackedExternalLink
 						href={GITHUB_URL}
-						target="_blank"
-						rel="noopener noreferrer"
+						label="GitHub"
 						className="hover:text-foreground transition-colors duration-150"
 					>
 						GitHub
-					</a>
+					</TrackedExternalLink>
 				</div>
 
 				<p className="text-xs text-muted-foreground/50">

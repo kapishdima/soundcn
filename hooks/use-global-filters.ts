@@ -1,5 +1,6 @@
 import { parseAsString, useQueryState } from "nuqs";
-import { useCallback, useDeferredValue, useMemo } from "react";
+import { useCallback, useDeferredValue, useEffect, useMemo } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { ALL_CATEGORY, type SoundCatalogItem } from "@/lib/sound-catalog";
 import { filterSounds } from "@/lib/sound-filters";
 
@@ -23,6 +24,13 @@ export const useGlobalFilters = ({
 		setQuery("");
 		setActiveCategory(ALL_CATEGORY);
 	}, [setQuery, setActiveCategory]);
+
+	useEffect(() => {
+		const trimmed = query.trim();
+		if (trimmed) {
+			trackEvent("search_used", { query: trimmed });
+		}
+	}, [query]);
 
 	const filteredSounds = useMemo(
 		() => filterSounds(sounds, query, activeCategory),

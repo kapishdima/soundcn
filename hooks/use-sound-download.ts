@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { loadSoundAsset } from "@/lib/sound-loader";
 
 export function useSoundDownload(soundName: string | null) {
@@ -16,6 +17,7 @@ export function useSoundDownload(soundName: string | null) {
       a.download = `${soundName}.${asset.format}`;
       a.click();
       URL.revokeObjectURL(url);
+      trackEvent("sound_downloaded", { soundName });
     } catch (err) {
       console.error(`[useSoundDownload] Failed to download "${soundName}":`, err);
     }

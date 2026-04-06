@@ -7,6 +7,7 @@ import { usePackageManager } from "@/hooks/use-package-manager";
 import { useSoundSelection } from "@/hooks/use-sound-selection";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { buildInstallCommand } from "@/lib/sound-install";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { Button } from "@/registry/soundcn/ui/button";
 
@@ -51,7 +52,15 @@ export function BatchInstallBar({ sounds }: BatchInstallBarProps) {
 			{cmd ? (
 				<>
 					{/* Copy install command */}
-					<CopyButton value={cmd} />
+					<CopyButton
+						value={cmd}
+						onCopy={() =>
+							trackEvent("batch_install_copied", {
+								count,
+								packageManager: pm,
+							})
+						}
+					/>
 
 					{/* Preview command (truncated) */}
 					<code className="hidden md:block max-w-[280px] truncate text-[11px] text-muted-foreground font-mono">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { loadSoundAsset } from "@/lib/sound-loader";
 import { playSound, type SoundPlayback } from "@/lib/play-sound";
 
@@ -38,6 +39,8 @@ export function useHoverPreview(): HoverPreviewHandlers {
         timerRef.current = null;
         // Guard: might have been cancelled during the timeout
         if (activeNameRef.current !== soundName) return;
+
+        trackEvent("sound_previewed", { soundName });
 
         try {
           const asset = await loadSoundAsset(soundName);

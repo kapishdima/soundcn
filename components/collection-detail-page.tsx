@@ -3,7 +3,7 @@
 import { ChevronLeft, ShieldAlert } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { AppHero } from "@/components/app-hero";
 import { BatchInstallBar } from "@/components/batch-install-bar";
 import { GlobalFilters } from "@/components/global-fiters";
@@ -14,6 +14,7 @@ import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
 import type { Collection } from "@/lib/collections";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 const SoundDetail = dynamic(() =>
@@ -31,6 +32,10 @@ export function CollectionDetailPage({
 }: CollectionDetailPageProps) {
 	const gridFocusRef = useRef<(() => void) | null>(null);
 	const { deferredSounds, isPending } = useGlobalFilters({ sounds });
+
+	useEffect(() => {
+		trackEvent("collection_viewed", { collectionName: collection.title });
+	}, [collection.title]);
 	const { onPreviewStart, onPreviewStop } = useHoverPreview();
 
 	return (

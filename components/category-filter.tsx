@@ -5,6 +5,7 @@ import { ClickableWithSound } from "@/components/clickable-with-sound";
 import { useHorizontalScroll } from "@/hooks/use-horizontal-scroll";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { buildCategoryOptions } from "@/lib/sound-filters";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 export interface CategoryFilterOption {
@@ -42,7 +43,10 @@ export const CategoryFilter = memo(function CategoryFilter({
 						<ClickableWithSound key={option.key}>
 							<button
 								type="button"
-								onClick={() => onChange(option.key)}
+								onClick={() => {
+									onChange(option.key);
+									trackEvent("category_filtered", { category: option.key });
+								}}
 								className={cn(
 									"inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-[color,border-color,box-shadow,background-color] duration-150 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
 									isActive

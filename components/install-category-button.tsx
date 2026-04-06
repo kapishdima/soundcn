@@ -3,6 +3,7 @@ import { CopyButton } from "@/components/copy-button";
 import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
+import { trackEvent } from "@/lib/analytics";
 import { buildInstallCommand } from "@/lib/sound-install";
 
 export function InstallAllInCategoryButton({
@@ -22,7 +23,15 @@ export function InstallAllInCategoryButton({
 	if (!cmd) return null;
 
 	return (
-		<CopyButton value={cmd}>
+		<CopyButton
+			value={cmd}
+			onCopy={() =>
+				trackEvent("category_install_copied", {
+					category: sounds[0]?.broadCategory ?? "unknown",
+					count: sounds.length,
+				})
+			}
+		>
 			<Package className="size-3.5" />
 			<span className="hidden sm:inline">Install all</span>
 			<span className="sm:hidden">All</span>

@@ -7,6 +7,7 @@ import { PackageManagerSwitcher } from "@/components/package-manager-switcher";
 import { SoundCopyBlock } from "@/components/sound-copy-block";
 import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
+import { trackEvent } from "@/lib/analytics";
 import { getSoundSnippets, type SetupStep } from "@/lib/sound-snippets";
 
 interface SoundInstallInstructionsProps {
@@ -109,7 +110,17 @@ export function SoundInstallInstructions({
 						<span className="text-muted-foreground text-[11px] font-semibold uppercase tracking-wide">
 							Command
 						</span>
-						<CopyButton value={snippets.installCmd} successText="Copied!" />
+						<CopyButton
+							value={snippets.installCmd}
+							successText="Copied!"
+							onCopy={() =>
+								trackEvent("sound_install_copied", {
+									soundName,
+									packageManager: pm,
+									installMethod: method,
+								})
+							}
+						/>
 					</div>
 					<div className="rounded-lg border border-border/40 bg-secondary/30">
 						<div className="border-b border-border/40 px-3 py-1.5">

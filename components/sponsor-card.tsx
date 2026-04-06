@@ -1,4 +1,7 @@
+"use client";
+
 import { ExternalLink } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import type { Sponsor } from "@/lib/sponsors";
 import { isSvgSource } from "@/lib/sponsors";
 
@@ -8,6 +11,7 @@ export function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
 			href={sponsor.url}
 			target="_blank"
 			rel="noopener noreferrer"
+			onClick={() => trackEvent("sponsor_link_clicked")}
 			className="group relative flex flex-col items-center gap-4 rounded-xl text-foreground border border-border/50 bg-card p-6 text-center transition-[border-color,box-shadow,transform] duration-200 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/[0.08] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
 		>
 			{/* External link — appears on hover */}

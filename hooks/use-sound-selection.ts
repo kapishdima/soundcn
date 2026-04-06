@@ -2,6 +2,7 @@ import { parseAsString, useQueryState } from "nuqs";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
+import { trackEvent } from "@/lib/analytics";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 
 export const useSoundSelection = ({
@@ -24,6 +25,7 @@ export const useSoundSelection = ({
 	const selectMode = selectedNames.size > 0;
 
 	const handleBatchSelect = (name: string) => {
+		const wasSelected = selectedNames.has(name);
 		setSelectedNames((prev) => {
 			const next = new Set(prev);
 			if (next.has(name)) {
@@ -32,6 +34,10 @@ export const useSoundSelection = ({
 				next.add(name);
 			}
 			return next;
+		});
+		trackEvent("batch_selection_changed", {
+			action: wasSelected ? "remove" : "add",
+			count: wasSelected ? selectedNames.size - 1 : selectedNames.size + 1,
 		});
 	};
 
@@ -54,6 +60,7 @@ export const useSoundSelection = ({
 	const handleSelect = (sound: SoundCatalogItem) => {
 		onPreviewStop();
 		setSoundParam(sound.name);
+		trackEvent("sound_detail_opened", { soundName: sound.name });
 	};
 
 	useEffect(() => {

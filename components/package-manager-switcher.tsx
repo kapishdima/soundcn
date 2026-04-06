@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { PACKAGE_MANAGERS, type PackageManager } from "@/lib/package-manager";
 import { cn } from "@/lib/utils";
 
@@ -77,7 +78,10 @@ export function PackageManagerSwitcher({
 						key={pm}
 						role="radio"
 						aria-checked={isActive}
-						onClick={() => onChange(pm)}
+						onClick={() => {
+							onChange(pm);
+							trackEvent("package_manager_changed", { value: pm });
+						}}
 						className={cn(
 							"relative z-10 rounded-md px-2.5 py-1 font-mono text-xs font-medium transition-colors duration-150",
 							"focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",

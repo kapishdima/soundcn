@@ -7,12 +7,14 @@ type CopyButtonProps = {
 	value: string;
 	successText?: string;
 	children?: React.ReactNode;
+	onCopy?: () => void;
 };
 
 export function CopyButton({
 	value,
 	successText = "Copied!",
 	children,
+	onCopy,
 }: CopyButtonProps) {
 	const [copied, setCopied] = useState(false);
 
@@ -20,6 +22,7 @@ export function CopyButton({
 		try {
 			await navigator.clipboard.writeText(value);
 			setCopied(true);
+			onCopy?.();
 			setTimeout(() => setCopied(false), 2000);
 		} catch {
 			/* noop */

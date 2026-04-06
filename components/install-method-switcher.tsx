@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import {
 	INSTALL_METHODS,
 	INSTALL_METHOD_LABELS,
@@ -80,7 +81,10 @@ export function InstallMethodSwitcher({
 						key={method}
 						role="radio"
 						aria-checked={isActive}
-						onClick={() => onChange(method)}
+						onClick={() => {
+							onChange(method);
+							trackEvent("install_method_changed", { value: method });
+						}}
 						className={cn(
 							"relative z-10 rounded-md px-3 py-1.5 text-xs font-medium transition-colors duration-150",
 							"focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
