@@ -1,6 +1,5 @@
 "use client";
 
-import { Github } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import { GITHUB_URL } from "@/lib/constants";
 
