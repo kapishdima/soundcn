@@ -9,6 +9,8 @@ import { SPONSORS } from "@/lib/sponsors";
 
 export function SponsorsPage() {
 	const count = SPONSORS.length;
+	const active = SPONSORS.filter((s) => s.isCurrent);
+	const past = SPONSORS.filter((s) => !s.isCurrent);
 
 	return (
 		<>
@@ -71,10 +73,51 @@ export function SponsorsPage() {
 				{count === 0 ? (
 					<EmptySponsors />
 				) : (
-					<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-						{SPONSORS.map((sponsor) => (
-							<SponsorCard key={sponsor.name} sponsor={sponsor} />
-						))}
+					<div className="space-y-12">
+						{active.length > 0 && (
+							<section>
+								<div className="mb-5 flex items-baseline gap-3">
+									<h2 className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+										Currently sponsoring
+									</h2>
+									<span
+										className="h-px flex-1"
+										style={{
+											background:
+												"linear-gradient(to right, color-mix(in oklch, var(--primary) 30%, transparent), transparent)",
+										}}
+										aria-hidden
+									/>
+								</div>
+								<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+									{active.map((sponsor) => (
+										<SponsorCard key={sponsor.name} sponsor={sponsor} />
+									))}
+								</div>
+							</section>
+						)}
+						{past.length > 0 && (
+							<section>
+								<div className="mb-5 flex items-baseline gap-3">
+									<h2 className="text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground/60">
+										Past supporters
+									</h2>
+									<span
+										className="h-px flex-1"
+										style={{
+											background:
+												"linear-gradient(to right, color-mix(in oklch, var(--border) 70%, transparent), transparent)",
+										}}
+										aria-hidden
+									/>
+								</div>
+								<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+									{past.map((sponsor) => (
+										<SponsorCard key={sponsor.name} sponsor={sponsor} />
+									))}
+								</div>
+							</section>
+						)}
 					</div>
 				)}
 			</main>

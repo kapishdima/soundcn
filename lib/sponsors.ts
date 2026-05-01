@@ -5,6 +5,7 @@ export interface Sponsor {
 	logo?: string;
 	/** Short tagline shown on the card */
 	tagline?: string;
+	isCurrent?: boolean;
 }
 
 export function isSvgSource(logo: string): boolean {
@@ -14,32 +15,46 @@ export function isSvgSource(logo: string): boolean {
 // Add sponsors here as they come in
 export const SPONSORS: Sponsor[] = [
 	{
+		name: "Mayven",
+		isCurrent: true,
+		url: "https://www.mayven.computer/?utm_source=soundcn.xyz",
+		logo: "https://pbs.twimg.com/profile_images/2028157033443192832/v1pumG1O_400x400.jpg",
+	},
+
+	// Paste sponsors
+	{
 		name: "Shoogle",
+		isCurrent: false,
 		url: "https://shoogle.dev/?utm_source=soundcn.xyz",
 		logo: "/sponsors/shoogle.png",
 	},
 	{
 		name: "nuqs",
+		isCurrent: false,
 		url: "https://nuqs.dev/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/1825629130852859904/TvP7rOsK_400x400.jpg",
 	},
 	{
 		name: "Beste",
+		isCurrent: false,
 		url: "https://beste.co/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/2035322348702662656/ksCD3WyB_400x400.jpg",
 	},
 	{
 		name: "Shadcn Studio",
+		isCurrent: false,
 		url: "https://shadcnstudio.com/?utm_source=soundcn&utm_medium=banner&utm_campaign=github",
 		logo: "https://cdn.shadcnstudio.com/ss-assets/marketing/shadcn-studio-logos/shadcn-studio-symbol.svg",
 	},
 	{
 		name: "Shadcn Space",
+		isCurrent: false,
 		url: "https://shadcnspace.com/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/1998745226710757379/OKDPM3p-_400x400.jpg",
 	},
 	{
 		name: "Shadcnblocks",
+		isCurrent: false,
 		url: "https://shadcnblocks.com/?utm_source=soundcn.xyz",
 		logo: `<svg width="78" height="90" viewBox="0 0 78 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g clip-path="url(#clip0_33_3)">
@@ -60,6 +75,7 @@ export const SPONSORS: Sponsor[] = [
 	},
 	{
 		name: "TurboStarter",
+		isCurrent: false,
 		url: "https://www.turbostarter.dev/",
 		logo: `<svg width="46" height="56" viewBox="0 0 46 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0.8);">
 <g clip-path="url(#clip0_1_2)">
@@ -75,6 +91,7 @@ export const SPONSORS: Sponsor[] = [
 	},
 	{
 		name: "Vanklass",
+		isCurrent: false,
 		url: "https://vanklass.com/",
 		logo: `
 		<svg width="492" height="481" viewBox="0 0 492 481" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,86 +109,103 @@ export const SPONSORS: Sponsor[] = [
 	},
 	{
 		name: "Ali Bey",
+		isCurrent: false,
 		url: "https://x.com/AliBey_10",
 		logo: "https://avatars.githubusercontent.com/u/42802922?v=4",
 	},
 	{
 		name: "Bro Bro",
+		isCurrent: false,
 		url: "https://x.com/brobro",
 		logo: "https://pbs.twimg.com/profile_images/2004979173547270144/rDHpaxF-_400x400.jpg",
 	},
 	{
 		name: "Edu Calvo",
+		isCurrent: false,
 		url: "https://educalvolopez.com/?utm_source=soundcn.xyz",
 		logo: "https://avatars.githubusercontent.com/u/13372238?v=4",
 	},
 	{
 		name: "OrcDev",
+		isCurrent: false,
 		url: "https://www.orcdev.com/?utm_source=soundcn.xyz",
 		logo: "https://avatars.githubusercontent.com/u/7549148?v=4",
 	},
 	{
 		name: "Irsyad A. Panjaitan",
+		isCurrent: false,
 		url: "https://irsyad.co/?utm_source=soundcn.xyz",
 		logo: "https://avatars.githubusercontent.com/u/44585532?v=4",
 	},
 	{
 		name: "Chánh Đại",
+		isCurrent: false,
 		url: "https://chanhdai.com/?utm_source=soundcn.xyz",
 		logo: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
 	},
 	{
 		name: "David Haz",
+		isCurrent: false,
 		url: "https://pro.reactbits.dev/?utm_source=soundcn.xyz",
 		logo: "https://avatars.githubusercontent.com/u/48634587?v=4",
 	},
 	{
 		name: "Shaban",
+		isCurrent: false,
 		url: "https://efferd.com/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/2024177105110781953/zPXZyKbx_400x400.jpg",
 	},
 	{
 		name: "Ephraim Duncan",
+		isCurrent: false,
 		url: "https://ephraimduncan.com/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/1740764353408753664/uPGbBhm0_400x400.jpg",
 	},
 	{
 		name: "Dmytro Tovstokoryi",
+		isCurrent: false,
 		url: "https://lucide-animated.com/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/2008873143859888128/SH9UlBBa_400x400.jpg",
 	},
 	{
 		name: "Manu Arora",
+		isCurrent: false,
 		url: "https://ui.aceternity.com/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg",
 	},
 	{
 		name: "Aniket Pawar",
+		isCurrent: false,
 		url: "https://www.aniketpawar.com/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/2031999290869153792/hNRxbUiT_400x400.jpg",
 	},
 	{
 		name: "Alex Kostyniuk",
+		isCurrent: false,
 		url: "https://mellowlines.dev/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/1780553225067692032/GAal_jdo_400x400.jpg",
 	},
 	{
 		name: "Kartik",
+		isCurrent: false,
 		url: "https://www.kartikk.tech/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/2002424842470203392/4ZusYS4Y_400x400.jpg",
 	},
 	{
 		name: "Nathan Brodin",
+		isCurrent: false,
 		url: "https://brodin.dev/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/1842594307569573888/1ZQfD1w0_400x400.jpg",
 	},
 	{
 		name: "LN",
+		isCurrent: false,
 		url: "https://pro.lndev.me/?utm_source=soundcn.xyz",
 		logo: "https://pbs.twimg.com/profile_images/1890537843908374528/wvFcdsEl_400x400.jpg",
 	},
 	{
 		name: "Ricardo Ruiz",
+		isCurrent: false,
 		url: "https://ruizrica.io?utm_source=soundcn.xyz",
 		logo: "https://avatars.githubusercontent.com/u/3713144?v=4",
 	},
