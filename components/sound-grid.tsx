@@ -34,10 +34,7 @@ export const SoundGrid = memo(function SoundGrid({
 			<div className="border-border/40 text-muted-foreground rounded-xl border border-dashed px-6 py-20 text-center">
 				<EmptyBars />
 				<p className="text-sm text-pretty">No sounds match your filters.</p>
-				<Button
-					onClick={handleClearFilters}
-					className="mt-4 inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors duration-150 hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none"
-				>
+				<Button onClick={handleClearFilters} variant="outline">
 					Clear filters
 				</Button>
 			</div>
@@ -47,8 +44,6 @@ export const SoundGrid = memo(function SoundGrid({
 	return (
 		<div
 			ref={gridRef}
-			role="grid"
-			aria-label="Sound library"
 			onKeyDown={onKeyDown}
 			className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
 		>
