@@ -5,6 +5,7 @@ import {
 	ArrowUp,
 	ListChecks,
 } from "lucide-react";
+import { Kbd } from "@/components/ui/kbd";
 
 export function KeyboardTips() {
 	return (
@@ -20,8 +21,7 @@ export function KeyboardTips() {
 			</p>
 			<p className="flex items-center gap-1.5">
 				<ListChecks className="size-3.5" />
-				<kbd className="font-mono text-[10px]">&#8984;</kbd>+click to batch
-				select
+				<Kbd>CMD+click</Kbd> to batch select
 			</p>
 		</div>
 	);
