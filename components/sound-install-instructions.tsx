@@ -72,7 +72,7 @@ function ManualStepBlock({ step }: { step: SetupStep }) {
 export function SoundInstallInstructions({
 	soundName,
 }: SoundInstallInstructionsProps) {
-	const [method, setMethod] = useInstallMethod();
+	const [method] = useInstallMethod();
 	const [pm, setPm] = usePackageManager();
 
 	const snippets = useMemo(
@@ -100,7 +100,7 @@ export function SoundInstallInstructions({
 				<span className="text-muted-foreground text-[11px] font-semibold uppercase tracking-wide">
 					Install
 				</span>
-				<InstallMethodSwitcher value={method} onChange={setMethod} />
+				<InstallMethodSwitcher />
 			</div>
 
 			{/* Install command (CLI methods only) */}
