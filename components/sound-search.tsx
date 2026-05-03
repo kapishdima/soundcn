@@ -8,17 +8,20 @@ import {
 	InputGroupInput,
 } from "@/components/ui/input-group";
 import { Kbd } from "@/components/ui/kbd";
+import { cn } from "@/lib/utils";
 
 interface SoundSearchProps {
 	value: string;
 	onChange: (value: string) => void;
 	onEnterGrid?: () => void;
+	className?: string;
 }
 
 export function SoundSearch({
 	value,
 	onChange,
 	onEnterGrid,
+	className,
 }: SoundSearchProps) {
 	const inputRef = useRef<HTMLInputElement>(null);
 
@@ -34,7 +37,7 @@ export function SoundSearch({
 	}, []);
 
 	return (
-		<InputGroup className="max-w-[20vw]">
+		<InputGroup className={cn("max-w-[20vw]", className)}>
 			<InputGroupAddon align="inline-start">
 				<Search aria-hidden="true" />
 			</InputGroupAddon>

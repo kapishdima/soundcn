@@ -16,21 +16,20 @@ export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
 
 			<div className="relative mx-auto max-w-6xl">
 				<h1
-					className="stagger-fade-up font-display text-4xl font-bold text-balance sm:text-5xl lg:text-6xl"
+					className="font-display text-4xl font-bold text-balance sm:text-5xl lg:text-6xl"
 					style={{ animationDelay: "50ms" }}
 				>
-					<span className="text-primary">{SOUNDS_LENGTH}</span> curated UI
-					sounds.
+					Curated UI sounds
 					<br />
-					<span className="text-muted-foreground">Copy. Paste. Play.</span>
+					<span className="text-primary">Copy. Paste. Play</span>
 				</h1>
 
 				<p
 					className="stagger-fade-up text-muted-foreground mt-5 max-w-lg text-base text-pretty leading-relaxed sm:text-lg"
 					style={{ animationDelay: "100ms" }}
 				>
-					Open-source sound effects for modern web apps. Install any sound with
-					a single CLI command.
+					Open-source sound effects for creative web apps. Install any sound
+					with a shadcn
 				</p>
 
 				<div

@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { BatchInstallBar } from "@/components/batch-install-bar";
-import { GlobalFilters } from "@/components/global-fiters";
+import { GlobalFiltersSidebar } from "@/components/global-filters-sidebar";
 import { Hero } from "@/components/hero";
 import { KeyboardTips } from "@/components/keyboard-tips";
 import { SoundGrid } from "@/components/sound-grid";
@@ -29,39 +29,47 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 
 	const { onPreviewStart, onPreviewStop } = useHoverPreview();
 
+	const onApplySearch = () => gridFocusRef.current?.();
+
 	return (
 		<>
 			<Hero sounds={sounds} />
-			<GlobalFilters
-				sounds={sounds}
-				onApplySearch={() => gridFocusRef.current?.()}
-			/>
 
-			{/* ── Content ── */}
-			<main
-				id="main-content"
-				className="stagger-fade-up mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 px-6 py-8"
+			<div
+				className="stagger-fade-up mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-6 py-8 lg:flex-row lg:items-start"
 				style={{ animationDelay: "260ms" }}
 			>
-				<div className="flex items-center justify-between">
-					<SoundsCountTitle count={deferredSounds.length} />
-					<KeyboardTips />
-				</div>
-
-				<div
-					className={cn(
-						"transition-opacity duration-150",
-						isPending ? "opacity-50" : "opacity-100",
-					)}
-				>
-					<SoundGrid
-						sounds={deferredSounds}
-						onPreviewStart={onPreviewStart}
-						onPreviewStop={onPreviewStop}
-						focusRef={gridFocusRef}
+				<aside className="w-full lg:w-auto">
+					<GlobalFiltersSidebar
+						sounds={sounds}
+						onApplySearch={onApplySearch}
 					/>
-				</div>
-			</main>
+				</aside>
+
+				<main
+					id="main-content"
+					className="flex min-w-0 flex-1 flex-col gap-6"
+				>
+					<div className="flex items-center justify-between">
+						<SoundsCountTitle count={deferredSounds.length} />
+						<KeyboardTips />
+					</div>
+
+					<div
+						className={cn(
+							"transition-opacity duration-150",
+							isPending ? "opacity-50" : "opacity-100",
+						)}
+					>
+						<SoundGrid
+							sounds={deferredSounds}
+							onPreviewStart={onPreviewStart}
+							onPreviewStop={onPreviewStop}
+							focusRef={gridFocusRef}
+						/>
+					</div>
+				</main>
+			</div>
 
 			<BatchInstallBar sounds={sounds} />
 			<SoundDetail sounds={deferredSounds} />
