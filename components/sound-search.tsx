@@ -22,7 +22,6 @@ export function SoundSearch({
 }: SoundSearchProps) {
 	const inputRef = useRef<HTMLInputElement>(null);
 
-	// TODO: Replace with useEvent
 	useEffect(() => {
 		function handleKeyDown(e: KeyboardEvent) {
 			if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -35,12 +34,9 @@ export function SoundSearch({
 	}, []);
 
 	return (
-		<InputGroup>
+		<InputGroup className="max-w-[20vw]">
 			<InputGroupAddon align="inline-start">
-				<Search
-					className="text-muted-foreground/60 absolute left-3 top-1/2 size-4 -translate-y-1/2"
-					aria-hidden="true"
-				/>
+				<Search aria-hidden="true" />
 			</InputGroupAddon>
 			<InputGroupInput
 				value={value}
