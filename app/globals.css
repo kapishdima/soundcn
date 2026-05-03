@@ -135,6 +135,13 @@
   }
 }
 
+@utility container {
+  width: 100%;
+  margin-inline: auto;
+  max-width: var(--container-6xl);
+  padding-inline: --spacing(6);
+}
+
 /* ─── Equalizer animation ─── */
 @keyframes eq {
   0%, 100% { transform: scaleY(0.15); }

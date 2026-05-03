@@ -6,7 +6,7 @@ import type { SoundCatalogItem } from "@/lib/sound-catalog";
 
 export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
 	return (
-		<section className="relative -mt-20 overflow-hidden px-6 pt-28 pb-14 sm:pt-32 sm:pb-20">
+		<section className="relative -mt-20 overflow-hidden pt-28 pb-14 sm:pt-32 sm:pb-20">
 			<div
 				className="pointer-events-none absolute -top-48 -left-32 size-[400px] rounded-full bg-primary opacity-[0.07] blur-2xl dark:opacity-[0.12]"
 				aria-hidden="true"
@@ -29,7 +29,7 @@ export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
 			</div>
 			{/* <HeroBars /> */}
 
-			<div className="relative mx-auto max-w-6xl">
+			<div className="container relative">
 				<h1
 					className="font-display text-4xl font-bold text-balance sm:text-5xl lg:text-6xl"
 					style={{ animationDelay: "50ms" }}

@@ -36,20 +36,14 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 			<Hero sounds={sounds} />
 
 			<div
-				className="stagger-fade-up mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-6 py-8 lg:flex-row lg:items-start"
+				className="stagger-fade-up container flex flex-1 flex-col gap-8 py-8 lg:flex-row lg:items-start"
 				style={{ animationDelay: "260ms" }}
 			>
-				<aside className="w-full lg:w-auto">
-					<GlobalFiltersSidebar
-						sounds={sounds}
-						onApplySearch={onApplySearch}
-					/>
+				<aside className="w-full lg:w-auto sticky top-2 self-start">
+					<GlobalFiltersSidebar sounds={sounds} onApplySearch={onApplySearch} />
 				</aside>
 
-				<main
-					id="main-content"
-					className="flex min-w-0 flex-1 flex-col gap-6"
-				>
+				<main id="main-content" className="flex min-w-0 flex-1 flex-col gap-6">
 					<div className="flex items-center justify-between">
 						<SoundsCountTitle count={deferredSounds.length} />
 						<KeyboardTips />
