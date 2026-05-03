@@ -1,11 +1,15 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { playSound } from "@/lib/sound-engine";
 import { loadSoundAsset } from "@/lib/sound-loader";
 import type { Sponsor } from "@/lib/sponsors";
-import { SPONSORS, isSvgSource } from "@/lib/sponsors";
+import { isSvgSource, SPONSORS } from "@/lib/sponsors";
 import { cn } from "@/lib/utils";
 
 // Cache the asset promise so we don't load it on every hover
@@ -40,55 +44,28 @@ function SponsorPill({ sponsor }: { sponsor: Sponsor }) {
 	};
 
 	return (
-		<a
-			href={sponsor.url}
-			target="_blank"
-			rel="noopener noreferrer"
-			aria-label={sponsor.name}
-			onMouseEnter={handleEnter}
-			className={cn(
-				"flex items-center gap-2 shrink-0 select-none",
-				"px-3 py-[7px] rounded-full",
-				"border border-border bg-card shadow-sm",
-				"hover:border-primary/60 hover:shadow-md hover:shadow-primary/[0.08] hover:-translate-y-px",
-				"transition-all duration-200",
-				"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-				isOrc &&
-					"hover:border-[#4ade80]/60 hover:shadow-md hover:shadow-[#4ade80]/15",
-			)}
-		>
-			{sponsor.logo ? (
-				isSvgSource(sponsor.logo) ? (
-					<div
-						className="size-5 rounded-full bg-muted overflow-hidden flex items-center justify-center p-[3px] shrink-0 [&>svg]:size-full"
-						// biome-ignore lint/security/noDangerouslySetInnerHtml: trusted sponsor SVG source
-						dangerouslySetInnerHTML={{ __html: sponsor.logo }}
-					/>
-				) : (
-					// biome-ignore lint/performance/noImgElement: sponsor avatar in pill
-					<img
-						src={sponsor.logo}
-						alt={sponsor.name}
-						width={20}
-						height={20}
-						className="size-5 rounded-full object-cover shrink-0"
-					/>
-				)
-			) : (
-				<span className="size-5 rounded-full bg-muted flex items-center justify-center text-[9px] font-bold text-muted-foreground/70 shrink-0">
-					{sponsor.name[0].toUpperCase()}
-				</span>
-			)}
-			<span
-				className={cn(
-					"text-[11.5px] font-semibold whitespace-nowrap leading-none",
-					"text-foreground/70",
-					isOrc && "text-foreground/70",
-				)}
+		<Badge variant="outline" asChild className="py-4 px-2">
+			<a
+				href={sponsor.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label={sponsor.name}
+				onMouseEnter={handleEnter}
 			>
-				{sponsor.name}
-			</span>
-		</a>
+				<Avatar className="size-4">
+					{sponsor.logo && isSvgSource(sponsor.logo) ? (
+						<div
+							className="size-4 rounded-full bg-muted overflow-hidden flex items-center justify-center p-[3px] shrink-0 [&>svg]:size-full"
+							// biome-ignore lint/security/noDangerouslySetInnerHtml: trusted sponsor SVG source
+							dangerouslySetInnerHTML={{ __html: sponsor.logo }}
+						/>
+					) : (
+						<AvatarImage src={sponsor.logo} alt={sponsor.name} />
+					)}
+				</Avatar>
+				<span>{sponsor.name}</span>
+			</a>
+		</Badge>
 	);
 }
 
@@ -104,8 +81,8 @@ export function HeroSponsors() {
 		<div className="stagger-fade-up mt-8" style={{ animationDelay: "200ms" }}>
 			{/* Header row */}
 			<div className="flex items-center gap-3 mb-3">
-				<span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/40">
-					backed by
+				<span className="shrink-0 text-xs font-semibold tracking-tighter text-muted-foreground/40">
+					Backed by
 				</span>
 				<div
 					className="h-px flex-1 max-w-[48px]"
@@ -115,12 +92,11 @@ export function HeroSponsors() {
 					}}
 					aria-hidden
 				/>
-				<Link
-					href="/sponsors"
-					className="ml-auto text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/40 hover:text-primary transition-colors duration-150"
-				>
-					Become a sponsor →
-				</Link>
+				<Button asChild variant="ghost" size="xs" className="ml-auto">
+					<Link href="/sponsors">
+						Become a sponsor <ArrowRight />
+					</Link>
+				</Button>
 			</div>
 
 			{/* Marquee strip */}
