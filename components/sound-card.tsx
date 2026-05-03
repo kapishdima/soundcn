@@ -57,6 +57,11 @@ export const SoundCard = memo(function SoundCard({
 			onPointerLeave={onPreviewStop}
 			onFocus={() => onPreviewStart(sound.name)}
 			onBlur={onPreviewStop}
+			className={cn(
+				"cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/10 hover:ring-primary/30",
+				selected &&
+					"border-primary bg-primary/[0.06] ring-primary/30 scale-[0.99]",
+			)}
 		>
 			<CardHeader>
 				{(selectMode || selected) && (

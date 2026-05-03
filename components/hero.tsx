@@ -1,6 +1,7 @@
-import { HeroBars } from "@/components/hero-bars";
+// import { HeroBars } from "@/components/hero-bars";
 import { HeroInstallationCode } from "@/components/hero-installation-code";
 import { HeroSponsors } from "@/components/hero-sponsors";
+import PixelBlast from "@/components/PixelBlast";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 
 export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
@@ -10,8 +11,23 @@ export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
 				className="pointer-events-none absolute -top-48 -left-32 size-[400px] rounded-full bg-primary opacity-[0.07] dark:opacity-[0.12] blur-2xl"
 				aria-hidden="true"
 			/>
-
-			<HeroBars />
+			<div className="w-full absolute inset-0">
+				<PixelBlast
+					variant="square"
+					pixelSize={8}
+					color="#ffe8e0"
+					patternScale={2.5}
+					patternDensity={1.2}
+					enableRipples={false}
+					rippleSpeed={0.35}
+					rippleThickness={0.1}
+					rippleIntensityScale={1}
+					speed={0.2}
+					transparent
+					edgeFade={0.35}
+				/>
+			</div>
+			{/* <HeroBars /> */}
 
 			<div className="relative mx-auto max-w-6xl">
 				<h1
