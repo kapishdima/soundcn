@@ -6,6 +6,8 @@ import { MetaPill } from "@/components/metal-pill";
 import { SoundDownloadButton } from "@/components/sound-download-button";
 import { SoundInstallInstructions } from "@/components/sound-install-instructions";
 import { PlayerStrip } from "@/components/sound-player";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Drawer,
 	DrawerContent,
@@ -43,9 +45,7 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 							<div className="flex items-start justify-between gap-3">
 								<div className="min-w-0 flex-1">
 									<div className="flex items-center gap-2 mb-1">
-										<span className="inline-flex shrink-0 items-center rounded-md bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-primary">
-											{sound.broadCategory}
-										</span>
+										<Badge>{sound.broadCategory}</Badge>
 									</div>
 									<DrawerTitle className="truncate text-xl font-bold">
 										{sound.title}
@@ -58,13 +58,14 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 								</div>
 
 								<div className="flex shrink-0 items-center gap-1 mt-1">
-									<Link
-										href={`/sound/${sound.name}`}
-										className="text-muted-foreground hover:text-primary hover:bg-primary/10 flex size-9 items-center justify-center rounded-lg transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none"
-										aria-label="Open sound page"
-									>
-										<ArrowUpRight className="size-[18px]" aria-hidden="true" />
-									</Link>
+									<Button asChild variant="ghost" size="icon-sm">
+										<Link
+											href={`/sound/${sound.name}`}
+											aria-label="Open sound page"
+										>
+											<ArrowUpRight aria-hidden="true" />
+										</Link>
+									</Button>
 									<SoundDownloadButton name={sound.name} />
 								</div>
 							</div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useInstallMethod } from "@/hooks/use-install-method";
 import { trackEvent } from "@/lib/analytics";
 import {
@@ -35,7 +35,6 @@ export function InstallMethodSwitcher() {
 					);
 				})}
 			</TabsList>
-			<TabsContent value="overview"></TabsContent>
 		</Tabs>
 	);
 }

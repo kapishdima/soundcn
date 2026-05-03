@@ -104,6 +104,7 @@ export function SoundInstallInstructions({
 			</div>
 
 			{/* Install command (CLI methods only) */}
+			{/* TODO: Replace with chandai */}
 			{snippets.installCmd !== null ? (
 				<div className="space-y-2">
 					<div className="flex items-center justify-between">
