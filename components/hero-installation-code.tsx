@@ -1,4 +1,9 @@
 import { useMemo } from "react";
+import {
+	CodeBlockCommand,
+	convertNpmCommand,
+} from "@/components/code-block-command/code-block-command";
+import { Card } from "@/components/ui/card";
 import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import { useTypewriter } from "@/hooks/use-typewriter";
@@ -24,33 +29,17 @@ export function HeroInstallationCode({
 }: {
 	sounds: SoundCatalogItem[];
 }) {
-	const [pm] = usePackageManager();
-	const [method] = useInstallMethod();
 	const heroWords = useMemo(() => pickHeroWords(sounds, 6), [sounds]);
 
-	const { text: typedName, isTyping: cursorActive } = useTypewriter({
+	const { text: typedName } = useTypewriter({
 		words: heroWords,
 	});
 
-	const framework = method === "shadcn-vue" ? "vue" : "react";
-	const prefix = getInstallPrefix(pm, framework);
-
 	return (
-		<div className="bg-secondary/70 border-border/60 inline-flex items-center gap-3 rounded-lg border px-4 py-2.5 font-mono text-sm backdrop-blur-sm">
-			<span className="text-primary select-none">$</span>
-			<code className="text-foreground/80">
-				<span>{`${prefix} add @soundcn/`}</span>
-				<span className="text-primary">{typedName}</span>
-			</code>
-			<span
-				className="inline-block w-[7px] h-[15px] rounded-[1px] bg-primary/60"
-				style={{
-					animation: cursorActive
-						? "none"
-						: "blink-caret 1.1s step-end infinite",
-				}}
-				aria-hidden="true"
+		<Card className="p-0 max-w-[35vw]">
+			<CodeBlockCommand
+				{...convertNpmCommand(`npx shadcn add @soundcn/${typedName}`)}
 			/>
-		</div>
+		</Card>
 	);
 }
