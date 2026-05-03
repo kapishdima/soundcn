@@ -13,6 +13,7 @@ import {
 	TabsList,
 	TabsTrigger,
 } from "@/components/base/ui/tabs";
+import { CodeBlock } from "@/components/code-block/code-block";
 import { CopyButton } from "@/components/copy-button/copy-button";
 import { cn } from "@/lib/utils";
 
@@ -98,6 +99,9 @@ export type CodeBlockCommandProps = {
 	 * ```
 	 */
 	onCopyError?: (error: Error) => void;
+
+	// Optional additional class names for the root container, allowing further customization of styles
+	classNames?: string;
 };
 
 export function CodeBlockCommand({
@@ -108,6 +112,7 @@ export function CodeBlockCommand({
 	bun,
 	onCopySuccess,
 	onCopyError,
+	classNames,
 }: CodeBlockCommandProps) {
 	const [packageManager, setPackageManager] = usePackageManager();
 
@@ -127,7 +132,9 @@ export function CodeBlockCommand({
 	);
 
 	return (
-		<div className="relative overflow-hidden rounded-xl bg-code">
+		<div
+			className={cn("relative overflow-hidden rounded-xl bg-code", classNames)}
+		>
 			<Tabs
 				className="gap-0"
 				value={packageManager}
@@ -165,21 +172,7 @@ export function CodeBlockCommand({
 				{tabsFiltered.map(([key, value]) => {
 					return (
 						<TabsContent key={key} value={key}>
-							<pre
-								data-pm={key}
-								className="group/tabs-content-pre overscroll-x-contain p-4 leading-6 not-data-[pm=prompt]:overflow-x-auto"
-							>
-								<code
-									data-slot="code-block"
-									data-language="bash"
-									className="font-mono text-sm/none text-muted-foreground group-data-[pm=prompt]/tabs-content-pre:whitespace-normal"
-								>
-									<span className="select-none group-data-[pm=prompt]/tabs-content-pre:hidden">
-										${" "}
-									</span>
-									{value}
-								</code>
-							</pre>
+							<CodeBlock dataPm={key}>{value}</CodeBlock>
 						</TabsContent>
 					);
 				})}

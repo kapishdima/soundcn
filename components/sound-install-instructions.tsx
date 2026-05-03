@@ -1,9 +1,13 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { CopyButton } from "@/components/copy-button";
+import {
+	CodeBlockCommand,
+	convertNpmCommand,
+} from "@/components/code-block-command/code-block-command";
+import { CopyButton } from "@/components/copy-button/copy-button";
 import { InstallMethodSwitcher } from "@/components/install-method-switcher";
-import { PackageManagerSwitcher } from "@/components/package-manager-switcher";
+
 import { SoundCopyBlock } from "@/components/sound-copy-block";
 import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
@@ -73,7 +77,7 @@ export function SoundInstallInstructions({
 	soundName,
 }: SoundInstallInstructionsProps) {
 	const [method] = useInstallMethod();
-	const [pm, setPm] = usePackageManager();
+	const [pm] = usePackageManager();
 
 	const snippets = useMemo(
 		() => getSoundSnippets(soundName, pm, method),
@@ -97,14 +101,10 @@ export function SoundInstallInstructions({
 		<div className="flex flex-col gap-5">
 			{/* Method selector */}
 			<div className="flex items-center justify-between">
-				<span className="text-muted-foreground text-[11px] font-semibold uppercase tracking-wide">
-					Install
-				</span>
 				<InstallMethodSwitcher />
 			</div>
 
 			{/* Install command (CLI methods only) */}
-			{/* TODO: Replace with chandai */}
 			{snippets.installCmd !== null ? (
 				<div className="space-y-2">
 					<div className="flex items-center justify-between">
@@ -113,7 +113,8 @@ export function SoundInstallInstructions({
 						</span>
 						<CopyButton
 							value={snippets.installCmd}
-							successText="Copied!"
+							size="icon-sm"
+							text="Copied!"
 							onCopy={() =>
 								trackEvent("sound_install_copied", {
 									soundName,
@@ -123,14 +124,11 @@ export function SoundInstallInstructions({
 							}
 						/>
 					</div>
-					<div className="rounded-lg border border-border/40 bg-secondary/30">
-						<div className="border-b border-border/40 px-3 py-1.5">
-							<PackageManagerSwitcher value={pm} onChange={setPm} />
-						</div>
-						<pre className="overflow-x-auto p-3 text-[13px] leading-relaxed [scrollbar-width:none]">
-							<code className="font-mono">{snippets.installCmd}</code>
-						</pre>
-					</div>
+					<CodeBlockCommand
+						classNames="rounded-none"
+						prompt={`Add the @soundcn/${soundName} component to my project`}
+						{...convertNpmCommand(`npx shadcn add @soundcn/${soundName}`)}
+					/>
 				</div>
 			) : null}
 

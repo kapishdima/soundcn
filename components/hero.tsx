@@ -1,7 +1,7 @@
 // import { HeroBars } from "@/components/hero-bars";
 import { HeroInstallationCode } from "@/components/hero-installation-code";
-import { HeroSponsors } from "@/components/hero-sponsors";
 import PixelBlast from "@/components/PixelBlast";
+import { Button } from "@/components/ui/button";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 
 export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
@@ -27,7 +27,6 @@ export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
 					edgeFade={0.35}
 				/>
 			</div>
-			{/* <HeroBars /> */}
 
 			<div className="container relative">
 				<h1
@@ -51,10 +50,9 @@ export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
 					className="stagger-fade-up mt-7"
 					style={{ animationDelay: "150ms" }}
 				>
-					<HeroInstallationCode sounds={sounds} />
+					<Button>Show an example</Button>
+					{/* <HeroInstallationCode sounds={sounds} /> */}
 				</div>
-
-				<HeroSponsors />
 			</div>
 		</section>
 	);
