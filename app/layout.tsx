@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Syne } from "next/font/google";
+import { Geist, Geist_Mono, Syne, Outfit, Oxanium } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "./globals.css";
@@ -10,6 +10,11 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { InstallMethodProvider } from "@/contexts/install-method-context";
 import { PackageManagerProvider } from "@/contexts/package-manager-context";
+import { cn } from "@/lib/utils";
+
+const oxaniumHeading = Oxanium({subsets:['latin'],variable:'--font-heading'});
+
+const outfit = Outfit({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -92,7 +97,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning className={cn("font-sans", outfit.variable, oxaniumHeading.variable)}>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased`}
 			>
