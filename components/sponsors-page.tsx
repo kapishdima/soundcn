@@ -1,7 +1,7 @@
 import { Heart } from "lucide-react";
 import { AppHero } from "@/components/app-hero";
 import { EmptySponsors } from "@/components/empty-sponsors";
-import { BecomeSponsorButton } from "@/components/sponsor-button";
+import { SponsorButton } from "@/components/sponsor-button";
 import { SponsorCard } from "@/components/sponsor-card";
 import { SponsorTicker } from "@/components/sponsor-ticket";
 import { SUPPORT_EMAIL } from "@/lib/constants";
@@ -51,7 +51,7 @@ export function SponsorsPage() {
 					<SponsorTicker />
 
 					<div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
-						<BecomeSponsorButton />
+						<SponsorButton title="Become a sponsor" />
 						<span className="text-xs text-muted-foreground/60">
 							Questions?{" "}
 							<a
