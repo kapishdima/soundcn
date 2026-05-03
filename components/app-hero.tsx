@@ -1,5 +1,7 @@
+"use client";
+
 import type { ReactNode } from "react";
-import { HeroBars } from "@/components/hero-bars";
+import PixelBlast from "@/components/PixelBlast";
 
 interface AppHeroProps {
 	/** Inner content of the pill badge rendered above the title */
@@ -23,7 +25,22 @@ export function AppHero({
 
 	return (
 		<section className="relative overflow-hidden px-6 pt-8 pb-14 sm:pt-14 sm:pb-20">
-			<HeroBars />
+			<div className="absolute inset-0 w-full">
+				<PixelBlast
+					variant="square"
+					pixelSize={8}
+					color="#ffe8e0"
+					patternScale={2.5}
+					patternDensity={1.2}
+					enableRipples={false}
+					rippleSpeed={0.35}
+					rippleThickness={0.1}
+					rippleIntensityScale={1}
+					speed={0.2}
+					transparent
+					edgeFade={0.35}
+				/>
+			</div>
 
 			<div
 				className="pointer-events-none absolute -top-48 -left-32 size-[400px] rounded-full bg-primary opacity-[0.07] dark:opacity-[0.12] blur-2xl"

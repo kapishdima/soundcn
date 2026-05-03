@@ -2,8 +2,10 @@
 
 import { ArrowUpRight, Clock, HardDrive, Scale, Tag } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { SoundDownloadButton } from "@/components/sound-download-button";
 import { SoundInstallInstructions } from "@/components/sound-install-instructions";
+import { SoundNavigation } from "@/components/sound-navigation";
 import { PlayerStrip } from "@/components/sound-player";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,6 +26,24 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 	const { selectedSound: sound, setSoundParam } = useSoundSelection({ sounds });
 	const { playState, toggle } = useSoundPlayback(sound?.name ?? null);
 
+	const autoPlayPendingRef = useRef(false);
+
+	const navigateTo = (name: string | null) => {
+		if (name) autoPlayPendingRef.current = true;
+		setSoundParam(name);
+	};
+
+	useEffect(() => {
+		if (!sound) {
+			autoPlayPendingRef.current = false;
+			return;
+		}
+		if (autoPlayPendingRef.current && playState === "idle") {
+			autoPlayPendingRef.current = false;
+			toggle();
+		}
+	}, [sound, playState, toggle]);
+
 	const onClose = () => setSoundParam(null);
 
 	const tags = sound?.meta.tags ?? EMPTY_TAGS;
@@ -43,8 +63,10 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 						<DrawerHeader className="flex flex-col gap-3 px-0 pb-0">
 							<div className="flex items-start justify-between gap-3">
 								<div className="min-w-0 flex-1 space-y-2">
-									<div className="text-xs font-medium tracking-tight text-muted-foreground">
-										{sound.broadCategory}
+									<div className="flex items-center gap-2">
+										<div className="text-xs font-medium tracking-tight text-muted-foreground">
+											{sound.broadCategory}
+										</div>
 									</div>
 									<DrawerTitle className="text-2xl font-semibold tracking-tight text-balance">
 										{sound.title}
@@ -56,6 +78,11 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 									) : null}
 								</div>
 								<div className="flex shrink-0 items-center gap-1">
+									<SoundNavigation
+										sounds={sounds}
+										sound={sound}
+										setSoundParam={navigateTo}
+									/>
 									<Button asChild variant="ghost" size="icon-sm">
 										<Link
 											href={`/sound/${sound.name}`}

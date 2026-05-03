@@ -1,6 +1,5 @@
-import { Heart } from "lucide-react";
-import { AppHero } from "@/components/app-hero";
 import { EmptySponsors } from "@/components/empty-sponsors";
+import { Hero } from "@/components/hero";
 import { SponsorButton } from "@/components/sponsor-button";
 import { SponsorCard } from "@/components/sponsor-card";
 import { SponsorTicker } from "@/components/sponsor-ticket";
@@ -14,13 +13,7 @@ export function SponsorsPage() {
 
 	return (
 		<>
-			<AppHero
-				eyebrow={
-					<>
-						<Heart className="size-3 fill-current" aria-hidden="true" />
-						Sponsors
-					</>
-				}
+			<Hero
 				title={
 					<>
 						People who make
@@ -63,7 +56,7 @@ export function SponsorsPage() {
 						</span>
 					</div>
 				</div>
-			</AppHero>
+			</Hero>
 
 			<main
 				id="main-content"

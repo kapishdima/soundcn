@@ -8,6 +8,7 @@ import { Hero } from "@/components/hero";
 import { KeyboardTips } from "@/components/keyboard-tips";
 import { SoundGrid } from "@/components/sound-grid";
 import { SoundsCountTitle } from "@/components/sounds-count-title";
+import { Button } from "@/components/ui/button";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
@@ -33,7 +34,16 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 
 	return (
 		<>
-			<Hero sounds={sounds} />
+			<Hero
+				title={
+					<>
+						Curated UI sounds for <br />
+						<span className="text-primary">Copy. Paste. Play</span>
+					</>
+				}
+				description="Open-source sound effects for creative web apps. Install any sound with a shadcn"
+				action={<Button>Show an example</Button>}
+			/>
 
 			<div
 				className="stagger-fade-up container flex flex-1 flex-col gap-8 py-8 lg:flex-row lg:items-start"
@@ -46,7 +56,6 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 				<main id="main-content" className="flex min-w-0 flex-1 flex-col gap-6">
 					<div className="flex items-center justify-between">
 						<SoundsCountTitle count={deferredSounds.length} />
-						<KeyboardTips />
 					</div>
 
 					<div

@@ -1,10 +1,16 @@
-// import { HeroBars } from "@/components/hero-bars";
-import { HeroInstallationCode } from "@/components/hero-installation-code";
-import PixelBlast from "@/components/PixelBlast";
-import { Button } from "@/components/ui/button";
-import type { SoundCatalogItem } from "@/lib/sound-catalog";
+"use client";
 
-export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
+import type { ReactNode } from "react";
+import PixelBlast from "@/components/PixelBlast";
+
+type HeroProps = {
+	title: ReactNode;
+	description: ReactNode;
+	action?: ReactNode;
+	children?: ReactNode;
+};
+
+export function Hero({ title, description, action, children }: HeroProps) {
 	return (
 		<section className="relative -mt-20 overflow-hidden pt-28 pb-14 sm:pt-32 sm:pb-20">
 			<div
@@ -30,30 +36,25 @@ export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
 
 			<div className="container relative">
 				<h1
-					className="font-display text-4xl font-bold text-balance sm:text-5xl lg:text-6xl"
+					className="font-heading text-4xl font-bold text-balance sm:text-5xl lg:text-6xl"
 					style={{ animationDelay: "50ms" }}
 				>
-					Curated UI sounds
-					<br />
-					<span className="text-primary">Copy. Paste. Play</span>
+					{title}
 				</h1>
 
 				<p
-					className="stagger-fade-up text-muted-foreground mt-5 max-w-lg text-base text-pretty leading-relaxed sm:text-lg"
+					className="text-muted-foreground mt-5 max-w-lg text-base text-balance leading-tight sm:text-lg"
 					style={{ animationDelay: "100ms" }}
 				>
-					Open-source sound effects for creative web apps. Install any sound
-					with a shadcn
+					{description}
 				</p>
 
-				<div
-					className="stagger-fade-up mt-7"
-					style={{ animationDelay: "150ms" }}
-				>
-					<Button>Show an example</Button>
-					{/* <HeroInstallationCode sounds={sounds} /> */}
+				<div className="mt-7" style={{ animationDelay: "150ms" }}>
+					{action}
 				</div>
 			</div>
+
+			<div className="container">{children}</div>
 		</section>
 	);
 }

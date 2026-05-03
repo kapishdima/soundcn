@@ -1,11 +1,4 @@
-import {
-	ArrowDown,
-	ArrowLeft,
-	ArrowRight,
-	ArrowUp,
-	ListChecks,
-} from "lucide-react";
-import { Kbd } from "@/components/ui/kbd";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp } from "lucide-react";
 
 export function KeyboardTips() {
 	return (
@@ -18,10 +11,6 @@ export function KeyboardTips() {
 					<ArrowRight className="size-3" />
 				</span>
 				to navigate
-			</p>
-			<p className="flex items-center gap-1.5">
-				<ListChecks className="size-3.5" />
-				<Kbd>CMD+click</Kbd> to batch select
 			</p>
 		</div>
 	);

@@ -86,7 +86,7 @@ export const SoundCard = memo(function SoundCard({
 				</CardDescription>
 
 				<div className="mt-1 flex items-center justify-between gap-2 text-[10px] tabular-nums text-muted-foreground">
-					<span className="inline-flex items-center rounded-sm bg-primary/10 px-1.5 py-0.5 font-medium text-primary/80">
+					<span className="inline-flex items-center rounded-none bg-primary/10 px-1.5 py-0.5 font-medium text-primary/80">
 						{sound.broadCategory}
 					</span>
 					<span className="inline-flex items-center gap-2">
