@@ -21,10 +21,10 @@ export function PlayerStrip({
 			type="button"
 			onClick={onToggle}
 			className={cn(
-				"group/player relative flex w-full items-center gap-3 rounded-xl border px-4 py-3 transition-[color,background-color,border-color,box-shadow] duration-200 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
+				"group/player relative flex w-full items-center gap-3 rounded-none border px-4 py-3 transition-[color,background-color,border-color,box-shadow] duration-200 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
 				isPlaying
 					? "border-primary/30 bg-primary/[0.06]"
-					: "border-border/60 bg-secondary/40 hover:border-primary/20 hover:bg-secondary/70",
+					: "border-border/60 bg-code hover:bg-code/70",
 			)}
 			aria-label={isPlaying ? "Stop sound" : "Play sound"}
 		>
