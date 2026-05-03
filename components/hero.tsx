@@ -6,12 +6,12 @@ import type { SoundCatalogItem } from "@/lib/sound-catalog";
 
 export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
 	return (
-		<section className="relative overflow-hidden px-6 pt-8 pb-14 sm:pt-14 sm:pb-20">
+		<section className="relative -mt-20 overflow-hidden px-6 pt-28 pb-14 sm:pt-32 sm:pb-20">
 			<div
-				className="pointer-events-none absolute -top-48 -left-32 size-[400px] rounded-full bg-primary opacity-[0.07] dark:opacity-[0.12] blur-2xl"
+				className="pointer-events-none absolute -top-48 -left-32 size-[400px] rounded-full bg-primary opacity-[0.07] blur-2xl dark:opacity-[0.12]"
 				aria-hidden="true"
 			/>
-			<div className="w-full absolute inset-0">
+			<div className="absolute inset-0 w-full">
 				<PixelBlast
 					variant="square"
 					pixelSize={8}
