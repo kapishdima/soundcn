@@ -1,13 +1,15 @@
 "use client";
 
-import { Clock, HardDrive, Scale, Tag } from "lucide-react";
+import { Clock, HardDrive, Scale, Tag, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { SoundDownloadButton } from "@/components/sounds/sound-download-button";
 import { SoundInstallInstructions } from "@/components/sounds/sound-install-instructions";
 import { SoundNavigation } from "@/components/sounds/sound-navigation";
 import { PlayerStrip } from "@/components/sounds/sound-player";
+import { Button } from "@/components/ui/button";
 import {
 	Drawer,
+	DrawerClose,
 	DrawerContent,
 	DrawerDescription,
 	DrawerHeader,
@@ -54,11 +56,11 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 				if (!open) onClose();
 			}}
 		>
-			<DrawerContent className="data-[vaul-drawer-direction=right]:sm:max-w-xl">
+			<DrawerContent className="data-[vaul-drawer-direction=right]:w-full data-[vaul-drawer-direction=right]:sm:w-3/4 data-[vaul-drawer-direction=right]:sm:max-w-xl">
 				{sound ? (
 					<div
 						data-vaul-no-drag
-						className="scrollbar-thin flex w-full flex-1 flex-col gap-7 overflow-y-auto px-6 pt-4 pb-10 select-text"
+						className="scrollbar-thin flex w-full flex-1 flex-col gap-6 overflow-y-auto px-4 pt-4 pb-10 select-text sm:gap-7 sm:px-6"
 					>
 						{/* Header */}
 						<DrawerHeader className="flex flex-col gap-3 px-0 pb-0">
@@ -69,11 +71,11 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 											{sound.broadCategory}
 										</div>
 									</div>
-									<DrawerTitle className="text-2xl font-semibold tracking-tight text-balance">
+									<DrawerTitle className="text-xl font-semibold tracking-tight text-balance sm:text-2xl">
 										{sound.title}
 									</DrawerTitle>
 									{sound.description ? (
-										<DrawerDescription className="max-w-[60ch] text-sm text-pretty leading-relaxed text-muted-foreground">
+										<DrawerDescription className="max-w-[60ch] text-base/6 text-pretty leading-relaxed text-muted-foreground sm:text-sm sm:leading-relaxed">
 											{sound.description}
 										</DrawerDescription>
 									) : null}
@@ -85,6 +87,16 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 										setSoundParam={navigateTo}
 									/>
 									<SoundDownloadButton name={sound.name} />
+									<DrawerClose asChild>
+										<Button
+											variant="ghost"
+											size="icon-sm"
+											aria-label="Close"
+											className="sm:hidden"
+										>
+											<X aria-hidden="true" />
+										</Button>
+									</DrawerClose>
 								</div>
 							</div>
 						</DrawerHeader>

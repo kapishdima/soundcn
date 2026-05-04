@@ -37,7 +37,7 @@ export function SoundSearch({
 	}, []);
 
 	return (
-		<InputGroup className={cn("max-w-[20vw] bg-card", className)}>
+		<InputGroup className={cn("w-full bg-card sm:max-w-[20vw]", className)}>
 			<InputGroupAddon align="inline-start">
 				<Search aria-hidden="true" />
 			</InputGroupAddon>
@@ -56,7 +56,7 @@ export function SoundSearch({
 				}}
 				ref={inputRef}
 			/>
-			<InputGroupAddon align="inline-end">
+			<InputGroupAddon align="inline-end" className="max-sm:hidden">
 				<Kbd>CMD+K</Kbd>
 			</InputGroupAddon>
 		</InputGroup>

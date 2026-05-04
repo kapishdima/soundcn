@@ -139,14 +139,23 @@
 	width: 100%;
 	margin-inline: auto;
 	max-width: var(--container-6xl);
-	padding-inline: --spacing(6);
+	padding-inline: --spacing(4);
+	@variant sm {
+		padding-inline: --spacing(6);
+	}
 }
 
 @utility container-wide {
 	width: 100%;
 	margin-inline: auto;
 	max-width: var(--container-8xl);
-	padding-inline: --spacing(8);
+	padding-inline: --spacing(4);
+	@variant sm {
+		padding-inline: --spacing(6);
+	}
+	@variant lg {
+		padding-inline: --spacing(8);
+	}
 }
 
 /* ─── Equalizer animation ─── */

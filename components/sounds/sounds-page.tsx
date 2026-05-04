@@ -58,16 +58,16 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 					</p>
 				}
 				action={
-					<div className="flex items-end gap-x-2">
-						<Card className="py-1.5 px-4 font-mono">
+					<div className="flex w-full max-w-full items-end gap-x-2">
+						<Card className="scrollbar-hide max-w-full overflow-x-auto whitespace-nowrap px-4 py-1.5 font-mono text-sm sm:text-base">
 							$ {convertNpmCommand(`npx shadcn add @soundcn/belt-handle-2`).bun}
 						</Card>
 					</div>
 				}
 			/>
 
-			<div className="container-wide flex flex-1 flex-col gap-8 pb-8 lg:flex-row lg:items-start">
-				<aside className="w-full lg:w-auto sticky top-2">
+			<div className="container-wide flex flex-1 flex-col gap-4 pb-8 sm:gap-6 lg:flex-row lg:items-start lg:gap-8">
+				<aside className="w-full lg:sticky lg:top-2 lg:w-auto">
 					<GlobalFilters sounds={sounds} onApplySearch={onApplySearch} />
 				</aside>
 

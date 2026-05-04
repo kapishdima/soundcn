@@ -24,7 +24,12 @@ export const CategoryFilter = memo(function CategoryFilter({
 	const options = useMemo(() => buildCategoryOptions(sounds), [sounds]);
 
 	return (
-		<div className={cn("flex flex-col gap-1", className)}>
+		<div
+			className={cn(
+				"scrollbar-hide flex flex-row gap-1 overflow-x-auto -mx-4 px-4 lg:mx-0 lg:px-0 lg:flex-col",
+				className,
+			)}
+		>
 			{options.map((option) => {
 				const isActive = option.key === activeCategory;
 				return (
@@ -36,7 +41,7 @@ export const CategoryFilter = memo(function CategoryFilter({
 								window.scrollTo({ top: 0, behavior: "smooth" });
 							}}
 							variant={isActive ? "default" : "ghost"}
-							className="w-full justify-between gap-3 px-3"
+							className="h-8 shrink-0 justify-between gap-2 px-3 text-xs lg:h-9 lg:w-full lg:gap-3 lg:text-sm"
 						>
 							<span className="truncate text-left">{option.label}</span>
 							<span

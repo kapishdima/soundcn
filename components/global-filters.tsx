@@ -19,7 +19,7 @@ export function GlobalFilters({ sounds, onApplySearch }: GlobalFiltersProps) {
 				value={query}
 				onChange={setQuery}
 				onEnterGrid={onApplySearch}
-				className="max-w-none w-full"
+				className="w-full"
 			/>
 			<CategoryFilter
 				sounds={sounds}

@@ -15,7 +15,7 @@ export const SponsorButton: React.FC<SponsorButtonProps> = ({
 		<Button asChild size="sm">
 			<Link href="/sponsors" aria-label="Sponsor soundcn">
 				<Heart className="size-3 fill-current" aria-hidden="true" />
-				{title}
+				<span className="max-sm:sr-only">{title}</span>
 			</Link>
 		</Button>
 	);
