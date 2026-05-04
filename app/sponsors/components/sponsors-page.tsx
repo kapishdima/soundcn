@@ -37,13 +37,9 @@ export function SponsorsPage() {
 				}
 			/>
 
-			<main
-				id="main-content"
-				className="stagger-fade-up flex-1"
-				style={{ animationDelay: "200ms" }}
-			>
+			<main id="main-content" className="flex-1">
 				{/* ─── Stats ─── */}
-				<section className="container py-12 sm:py-16">
+				<section className="container pb-12 sm:pb-16">
 					<div className="mb-5 flex items-center gap-3">
 						<span className="text-xs font-medium text-primary">
 							Last 30 days
