@@ -1,47 +1,62 @@
-import { HeroBars } from "@/components/hero-bars";
-import { HeroInstallationCode } from "@/components/hero-installation-code";
-import { HeroSponsors } from "@/components/hero-sponsors";
-import { SOUNDS_LENGTH } from "@/lib/constants";
-import type { SoundCatalogItem } from "@/lib/sound-catalog";
+"use client";
 
-export function Hero({ sounds }: { sounds: SoundCatalogItem[] }) {
+import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+
+type HeroProps = {
+	title: ReactNode;
+	description: ReactNode;
+	action?: ReactNode;
+	aside?: ReactNode;
+	children?: ReactNode;
+};
+
+export function Hero({
+	title,
+	description,
+	action,
+	aside,
+	children,
+}: HeroProps) {
+	const hasAside = Boolean(aside);
+
 	return (
-		<section className="relative overflow-hidden px-6 pt-8 pb-14 sm:pt-14 sm:pb-20">
-			<div
-				className="pointer-events-none absolute -top-48 -left-32 size-[400px] rounded-full bg-primary opacity-[0.07] dark:opacity-[0.12] blur-2xl"
-				aria-hidden="true"
-			/>
-
-			<HeroBars />
-
-			<div className="relative mx-auto max-w-6xl">
-				<h1
-					className="stagger-fade-up font-display text-4xl font-bold text-balance sm:text-5xl lg:text-6xl"
-					style={{ animationDelay: "50ms" }}
-				>
-					<span className="text-primary">{SOUNDS_LENGTH}</span> curated UI
-					sounds.
-					<br />
-					<span className="text-muted-foreground">Copy. Paste. Play.</span>
-				</h1>
-
-				<p
-					className="stagger-fade-up text-muted-foreground mt-5 max-w-lg text-base text-pretty leading-relaxed sm:text-lg"
-					style={{ animationDelay: "100ms" }}
-				>
-					Open-source sound effects for modern web apps. Install any sound with
-					a single CLI command.
-				</p>
-
+		<section className="relative -mt-20 pt-28 pb-14 sm:pt-32 sm:pb-20 ">
+			<div className="container relative">
 				<div
-					className="stagger-fade-up mt-7"
-					style={{ animationDelay: "150ms" }}
+					className={cn(
+						hasAside &&
+							"grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-center lg:gap-14",
+					)}
 				>
-					<HeroInstallationCode sounds={sounds} />
-				</div>
+					<div className="flex flex-col justify-center items-center text-center">
+						<h1
+							className="font-heading text-4xl font-bold text-balance sm:text-5xl lg:text-6xl"
+							style={{ animationDelay: "50ms" }}
+						>
+							{title}
+						</h1>
 
-				<HeroSponsors />
+						<p
+							className="text-muted-foreground mt-5 max-w-xl text-base text-balance leading-tight sm:text-lg"
+							style={{ animationDelay: "100ms" }}
+						>
+							{description}
+						</p>
+
+						<div
+							className="mt-7 max-w-full"
+							style={{ animationDelay: "150ms" }}
+						>
+							{action}
+						</div>
+					</div>
+
+					{hasAside ? <div className="hidden lg:block">{aside}</div> : null}
+				</div>
 			</div>
+
+			{children ? <div className="container">{children}</div> : null}
 		</section>
 	);
 }

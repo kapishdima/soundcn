@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Syne } from "next/font/google";
+import { Geist, Geist_Mono, Outfit, Oxanium, Syne } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "./globals.css";
@@ -7,9 +7,18 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { Footer } from "@/components/footer";
+import { GlobalSettings } from "@/components/global-settings";
 import { Header } from "@/components/header";
 import { InstallMethodProvider } from "@/contexts/install-method-context";
 import { PackageManagerProvider } from "@/contexts/package-manager-context";
+import { cn } from "@/lib/utils";
+
+const oxaniumHeading = Oxanium({
+	subsets: ["latin"],
+	variable: "--font-heading",
+});
+
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -60,9 +69,9 @@ export const metadata: Metadata = {
 			"700+ curated UI sound effects for modern web apps. Browse, preview, and install sounds with a single command.",
 		images: [
 			{
-				url: "/hero-dark.png",
-				width: 2896,
-				height: 944,
+				url: "/og-dark.png",
+				width: 560,
+				height: 315,
 				alt: "soundcn - Free Sound Effects for Modern Web Apps",
 			},
 		],
@@ -72,7 +81,7 @@ export const metadata: Metadata = {
 		title: "soundcn - Free Sound Effects for Modern Web Apps",
 		description:
 			"700+ curated UI sound effects for modern web apps. Browse, preview, and install sounds with a single command.",
-		images: ["/hero-dark.png"],
+		images: ["/og-dark.png"],
 	},
 	alternates: {
 		canonical: siteUrl,
@@ -92,7 +101,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html
+			lang="en"
+			suppressHydrationWarning
+			className={cn("font-sans", outfit.variable, oxaniumHeading.variable)}
+		>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased`}
 			>
@@ -110,6 +123,7 @@ export default function RootLayout({
 										<Header />
 										{children}
 										<Footer />
+										<GlobalSettings />
 									</div>
 								</InstallMethodProvider>
 							</PackageManagerProvider>

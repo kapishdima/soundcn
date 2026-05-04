@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SponsorsPage } from "@/components/sponsors-page";
+import { SponsorsPage } from "@/app/sponsors/components/sponsors-page";
 
 const siteUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://soundcn.dev";
 

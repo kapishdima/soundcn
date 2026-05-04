@@ -1,3 +1,6 @@
+import { getDefaultStore } from "jotai";
+import { audioSettingsAtom } from "@/hooks/use-audio-settings";
+
 let audioContext: AudioContext | null = null;
 const bufferCache = new Map<string, AudioBuffer>();
 
@@ -39,7 +42,9 @@ export async function playSound(
   dataUri: string,
   options: PlaySoundOptions = {}
 ): Promise<SoundPlayback> {
+
   const { volume = 1, playbackRate = 1, onEnd } = options;
+  const settings = getDefaultStore().get(audioSettingsAtom);
   const ctx = getAudioContext();
   if (ctx.state === "suspended") {
     await ctx.resume();
@@ -51,7 +56,7 @@ export async function playSound(
 
   source.buffer = buffer;
   source.playbackRate.value = playbackRate;
-  gain.gain.value = volume;
+  gain.gain.value = settings.muted ? 0 : volume * settings.volume;
 
   source.connect(gain);
   gain.connect(ctx.destination);

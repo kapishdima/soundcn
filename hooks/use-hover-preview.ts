@@ -1,9 +1,10 @@
 "use client";
 
-import { useCallback, useRef } from "react";
+import { use, useCallback, useRef } from "react";
+import { useAudioSettings } from "@/hooks/use-audio-settings";
 import { trackEvent } from "@/lib/analytics";
-import { loadSoundAsset } from "@/lib/sound-loader";
 import { playSound, type SoundPlayback } from "@/lib/play-sound";
+import { loadSoundAsset } from "@/lib/sound-loader";
 
 const DEBOUNCE_MS = 150;
 
@@ -71,7 +72,7 @@ export function useHoverPreview(): HoverPreviewHandlers {
         }
       }, DEBOUNCE_MS);
     },
-    [stop]
+    [stop],
   );
 
   return {

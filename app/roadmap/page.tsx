@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { RoadmapPage } from "@/components/roadmap-page";
+import { RoadmapPage } from "@/app/roadmap/components/roadmap-page";
 
 const siteUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://soundcn.dev";
 
