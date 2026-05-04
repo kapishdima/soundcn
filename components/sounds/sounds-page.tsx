@@ -2,9 +2,15 @@
 
 import dynamic from "next/dynamic";
 import { useRef } from "react";
+import {
+	CodeBlockCommand,
+	convertNpmCommand,
+} from "@/components/code-block-command/code-block-command";
 import { GlobalFilters } from "@/components/global-filters";
 import { Hero } from "@/components/hero";
 import { SoundGrid } from "@/components/sounds/sound-grid";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
@@ -37,31 +43,46 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 						<span className="text-primary">Copy. Paste. Play</span>
 					</>
 				}
-				description="Open-source sound effects for creative web apps. Install any sound with a shadcn"
-			/>
+				description={
+					<p className="text-md ">
+						Open-source collection (CC0-licensed primarily{" "}
+						<a
+							href="https://kenney.nl/assets/category:Audio"
+							className="underline"
+						>
+							Kenney
+						</a>
+						) of sound effects for creative web apps. Install any sound with a
+						shadcn
+					</p>
+				}
+			>
+				<div className="flex items-end gap-x-2">
+					<Card className="py-1.5 px-4 font-mono">
+						$ {convertNpmCommand(`npx shadcn add @soundcn/belt-handle-2`).bun}
+					</Card>
+					<Button>Watch example</Button>
+				</div>
+			</Hero>
 
 			<div
-				className="stagger-fade-up container flex flex-1 flex-col gap-8 py-8 lg:flex-row lg:items-start"
+				className="container flex flex-1 flex-col gap-8 pb-8 lg:flex-row lg:items-start"
 				style={{ animationDelay: "260ms" }}
 			>
 				<aside className="w-full lg:w-auto sticky top-2 self-start">
 					<GlobalFilters sounds={sounds} onApplySearch={onApplySearch} />
 				</aside>
 
-				<main id="main-content" className="flex min-w-0 flex-1 flex-col gap-6">
-					<div
-						className={cn(
-							"transition-opacity duration-150",
-							isPending ? "opacity-50" : "opacity-100",
-						)}
-					>
-						<SoundGrid
-							sounds={deferredSounds}
-							onPreviewStart={onPreviewStart}
-							onPreviewStop={onPreviewStop}
-							focusRef={gridFocusRef}
-						/>
-					</div>
+				<main
+					id="main-content"
+					className="flex flex-1 flex-col gap-6 min-h-screen h-full"
+				>
+					<SoundGrid
+						sounds={deferredSounds}
+						onPreviewStart={onPreviewStart}
+						onPreviewStop={onPreviewStop}
+						focusRef={gridFocusRef}
+					/>
 				</main>
 			</div>
 

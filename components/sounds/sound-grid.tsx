@@ -1,11 +1,11 @@
 import { memo } from "react";
 import { EmptyBars } from "@/components/empty-bars";
 import { SoundCard } from "@/components/sounds/sound-card";
+import { Button } from "@/components/ui/button";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useGridNavigation } from "@/hooks/use-grid-navigation";
 import { useSoundSelection } from "@/hooks/use-sound-selection";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
-import { Button } from "@/registry/soundcn/ui/button";
 
 interface SoundGridProps {
 	sounds: SoundCatalogItem[];
@@ -31,12 +31,16 @@ export const SoundGrid = memo(function SoundGrid({
 
 	if (sounds.length === 0) {
 		return (
-			<div className="border-border/40 text-muted-foreground rounded-xl border border-dashed px-6 py-20 text-center">
-				<EmptyBars />
-				<p className="text-sm text-pretty">No sounds match your filters.</p>
-				<Button onClick={handleClearFilters} variant="outline">
-					Clear filters
-				</Button>
+			<div className="flex min-h-[50vh] items-center justify-center text-center text-muted-foreground">
+				<div>
+					<EmptyBars />
+					<p className="text-sm text-pretty my-2">
+						No sounds match your filters.
+					</p>
+					<Button onClick={handleClearFilters} variant="outline">
+						Clear filters
+					</Button>
+				</div>
 			</div>
 		);
 	}
@@ -45,7 +49,7 @@ export const SoundGrid = memo(function SoundGrid({
 		<div
 			ref={gridRef}
 			onKeyDown={onKeyDown}
-			className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+			className="grid min-h-screen grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
 		>
 			{sounds.map((sound) => (
 				<SoundCard

@@ -8,7 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
 	return (
-		<header className="stagger-fade-up container relative z-10 flex items-center justify-between py-5">
+		<header className="container relative z-10 flex items-center justify-between py-5">
 			<AppLogo />
 
 			<div className="flex items-center">
