@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllSounds } from "@/lib/sound-data";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://soundcn.dev";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://www.soundcn.xyz";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const sounds = getAllSounds();

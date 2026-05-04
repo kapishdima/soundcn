@@ -35,7 +35,7 @@ const syne = Syne({
 	subsets: ["latin"],
 });
 
-const siteUrl = "https://soundcn.dev";
+const siteUrl = "https://www.soundcn.xyz";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(siteUrl),
