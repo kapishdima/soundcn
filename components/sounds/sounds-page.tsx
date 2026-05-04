@@ -58,8 +58,8 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 					</p>
 				}
 				action={
-					<div className="flex w-full max-w-full items-end gap-x-2">
-						<Card className="scrollbar-hide max-w-full overflow-x-auto whitespace-nowrap px-4 py-1.5 font-mono text-sm sm:text-base">
+					<div className="flex items-end gap-x-2">
+						<Card className="scrollbar-hide max-w-[calc(100vw-2rem)] overflow-x-auto whitespace-nowrap px-4 py-1.5 font-mono sm:max-w-none">
 							$ {convertNpmCommand(`npx shadcn add @soundcn/belt-handle-2`).bun}
 						</Card>
 					</div>

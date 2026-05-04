@@ -27,7 +27,7 @@ export function GlobalFilters({ sounds, onApplySearch }: GlobalFiltersProps) {
 				onChange={setActiveCategory}
 				className="min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-2"
 			/>
-			<PremiumSponsorBanner className="hidden lg:flex" />
+			<PremiumSponsorBanner />
 		</div>
 	);
 }
