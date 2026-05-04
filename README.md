@@ -11,7 +11,7 @@ Adding sound to web interfaces is tedious. You either hunt for free samples, dea
 ## What is soundcn
 
 A curated registry of 700+ short sound effects (clicks, notifications, transitions, game sounds) that you can add to any React project with a single command:
-
+…
 ```bash
 npx shadcn add @soundcn/click-soft
 ```
