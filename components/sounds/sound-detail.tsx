@@ -56,7 +56,10 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 		>
 			<DrawerContent className="data-[vaul-drawer-direction=right]:sm:max-w-xl">
 				{sound ? (
-					<div className="scrollbar-thin flex w-full flex-1 flex-col gap-7 overflow-y-auto px-6 pt-4 pb-10">
+					<div
+						data-vaul-no-drag
+						className="scrollbar-thin flex w-full flex-1 flex-col gap-7 overflow-y-auto px-6 pt-4 pb-10 select-text"
+					>
 						{/* Header */}
 						<DrawerHeader className="flex flex-col gap-3 px-0 pb-0">
 							<div className="flex items-start justify-between gap-3">
