@@ -1,13 +1,27 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { Check, Copy, Tag, Terminal } from "lucide-react";
+import type React from "react";
 import { memo } from "react";
+import {
+	convertNpmCommand,
+	type PackageManagerWithoutPrompt,
+	usePackageManager,
+} from "@/components/code-block-command/code-block-command";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardDescription,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { formatDuration, formatSizeKb } from "@/lib/sound-catalog";
 import { cn } from "@/lib/utils";
@@ -58,7 +72,7 @@ export const SoundCard = memo(function SoundCard({
 			onFocus={() => onPreviewStart(sound.name)}
 			onBlur={onPreviewStop}
 			className={cn(
-				"cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/10 hover:ring-primary/30",
+				"relative min-h-[180px] cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/10 hover:ring-primary/30",
 				selected &&
 					"border-primary bg-primary/[0.06] ring-primary/30 scale-[0.99]",
 			)}
@@ -70,7 +84,7 @@ export const SoundCard = memo(function SoundCard({
 							"absolute top-2.5 right-2.5 flex size-5 items-center justify-center rounded-full border-2 transition-[transform,opacity,color,background-color,border-color] duration-150",
 							selected
 								? "border-primary bg-primary text-primary-foreground scale-100"
-								: "border-muted-foreground/30 bg-card/80 scale-90 opacity-0 group-hover:opacity-100 group-hover:scale-100",
+								: "border-muted-foreground/30 bg-card/80 scale-90 opacity-0 group-hover/card:opacity-100 group-hover/card:scale-100",
 						)}
 					>
 						{selected ? <Check className="size-3" strokeWidth={3} /> : null}
@@ -96,6 +110,88 @@ export const SoundCard = memo(function SoundCard({
 					</span>
 				</div>
 			</CardHeader>
+
+			<SoundActions sound={sound} />
 		</Card>
 	);
 });
+
+const SoundActions: React.FC<{ sound: SoundCatalogItem }> = ({ sound }) => {
+	const [packageManager] = usePackageManager();
+
+	const installCommand = convertNpmCommand(
+		`npx shadcn add @soundcn/${sound.name}`,
+	);
+	const { state: copyNameState, copy: copyName } = useCopyToClipboard();
+	const { state: copyCommandState, copy: copyCommand } = useCopyToClipboard();
+
+	const command =
+		installCommand[packageManager as PackageManagerWithoutPrompt] ||
+		installCommand.npm;
+
+	const handleCopyName = (e: React.MouseEvent) => {
+		e.stopPropagation();
+		e.preventDefault();
+		copyName(sound.name);
+	};
+
+	const handleCopyCommand = (e: React.MouseEvent) => {
+		e.stopPropagation();
+		e.preventDefault();
+		copyCommand(command);
+	};
+
+	return (
+		<TooltipProvider delayDuration={150}>
+			<div className="mt-auto flex items-center justify-start gap-1 px-4">
+				<Tooltip>
+					<TooltipTrigger asChild>
+						<Button
+							size="icon-sm"
+							variant="outline"
+							onClick={handleCopyName}
+							aria-label={
+								copyNameState === "done"
+									? "Sound name copied"
+									: "Copy sound name"
+							}
+						>
+							{copyNameState === "done" ? (
+								<Check className="size-3.5" strokeWidth={2.5} />
+							) : (
+								<Copy className="size-3.5" />
+							)}
+						</Button>
+					</TooltipTrigger>
+					<TooltipContent side="top">
+						{copyNameState === "done" ? "Copied" : "Copy sound name"}
+					</TooltipContent>
+				</Tooltip>
+
+				<Tooltip>
+					<TooltipTrigger asChild>
+						<Button
+							size="icon-sm"
+							variant="outline"
+							onClick={handleCopyCommand}
+							aria-label={
+								copyCommandState === "done"
+									? "Install command copied"
+									: "Copy install command"
+							}
+						>
+							{copyCommandState === "done" ? (
+								<Check className="size-3.5" strokeWidth={2.5} />
+							) : (
+								<Terminal className="size-3.5" />
+							)}
+						</Button>
+					</TooltipTrigger>
+					<TooltipContent side="top">
+						{copyCommandState === "done" ? "Copied" : "Copy install command"}
+					</TooltipContent>
+				</Tooltip>
+			</div>
+		</TooltipProvider>
+	);
+};

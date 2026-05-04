@@ -18,6 +18,7 @@ import { CopyButton } from "@/components/copy-button/copy-button";
 import { cn } from "@/lib/utils";
 
 export type PackageManager = "prompt" | "pnpm" | "yarn" | "npm" | "bun";
+export type PackageManagerWithoutPrompt = Exclude<PackageManager, "prompt">;
 
 const packageManagerAtom = atomWithStorage<PackageManager>(
 	"@acme/packageManager",

@@ -49,7 +49,7 @@ export const SoundGrid = memo(function SoundGrid({
 		<div
 			ref={gridRef}
 			onKeyDown={onKeyDown}
-			className="grid min-h-screen grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+			className="grid min-h-screen auto-rows-min grid-cols-2 content-start gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4"
 		>
 			{sounds.map((sound) => (
 				<SoundCard

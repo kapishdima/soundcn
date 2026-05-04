@@ -65,10 +65,7 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 				</div>
 			</Hero>
 
-			<div
-				className="container flex flex-1 flex-col gap-8 pb-8 lg:flex-row lg:items-start"
-				style={{ animationDelay: "260ms" }}
-			>
+			<div className="container flex flex-1 flex-col gap-8 pb-8 lg:flex-row lg:items-start">
 				<aside className="w-full lg:w-auto sticky top-2 self-start">
 					<GlobalFilters sounds={sounds} onApplySearch={onApplySearch} />
 				</aside>
