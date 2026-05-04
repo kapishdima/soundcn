@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,13 +17,38 @@ import { Slider } from "@/components/ui/slider";
 import { SlidersHorizontalIcon } from "@/components/ui/sliders-horizontal";
 import { Switch } from "@/components/ui/switch";
 import { useAudioSettings } from "@/hooks/use-audio-settings";
+import { useSoundPlayback } from "@/hooks/use-sound-playback";
 
 export const GlobalSettings = () => {
 	const { settings, setMute, setVolume } = useAudioSettings();
 	const { muted, volume } = settings;
 
+	const [opened, setOpened] = useState(false);
+	const [liveVolume, setLiveVolume] = useState(volume);
+	const [liveMuted, setLiveMuted] = useState(muted);
+
+	const { toggle } = useSoundPlayback("back-001");
+
+	useEffect(() => {
+		setLiveVolume(volume);
+		if (opened) toggle();
+	}, [volume, toggle, opened]);
+
+	useEffect(() => {
+		setLiveMuted(muted);
+	}, [muted]);
+
+	const handleMuteChange = (next: boolean) => {
+		setLiveMuted(next);
+		startTransition(() => setMute(next));
+	};
+
+	const handleVolumeCommit = (next: number) => {
+		startTransition(() => setVolume(next));
+	};
+
 	return createPortal(
-		<Dialog>
+		<Dialog open={opened} onOpenChange={setOpened}>
 			<DialogTrigger asChild>
 				<div className="fixed right-10 bottom-10">
 					<Button size="icon-sm">
@@ -50,7 +75,11 @@ export const GlobalSettings = () => {
 								Silence all sound effects across the app.
 							</p>
 						</FieldContent>
-						<Switch id="mute-rows" checked={muted} onCheckedChange={setMute} />
+						<Switch
+							id="mute-rows"
+							checked={liveMuted}
+							onCheckedChange={handleMuteChange}
+						/>
 					</Field>
 					<Separator />
 					<Field className="gap-3 py-4 last:pb-0">
@@ -62,16 +91,17 @@ export const GlobalSettings = () => {
 								</p>
 							</FieldContent>
 							<span className="font-mono text-muted-foreground text-xs tabular-nums">
-								{muted ? "—" : `${volume}%`}
+								{liveMuted ? "—" : `${Math.round(liveVolume * 100)}%`}
 							</span>
 						</div>
 						<Slider
 							id="vol-rows"
-							value={[volume]}
-							onValueChange={([v]) => setVolume(v)}
-							max={100}
-							step={1}
-							disabled={muted}
+							value={[liveVolume]}
+							onValueChange={([v]) => setLiveVolume(v)}
+							onValueCommit={([v]) => handleVolumeCommit(v)}
+							max={1}
+							step={0.01}
+							disabled={liveMuted}
 						/>
 					</Field>
 				</div>

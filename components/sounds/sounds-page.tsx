@@ -62,7 +62,6 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 						<Card className="py-1.5 px-4 font-mono">
 							$ {convertNpmCommand(`npx shadcn add @soundcn/belt-handle-2`).bun}
 						</Card>
-						<Button>Watch example</Button>
 					</div>
 				}
 			/>
