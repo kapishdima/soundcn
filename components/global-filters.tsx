@@ -1,4 +1,5 @@
 import { CategoryFilter } from "@/components/category-filter";
+import { PremiumSponsorBanner } from "@/components/sounds/premium-sponsor-banner";
 import { SoundSearch } from "@/components/sounds/sound-search";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
@@ -13,7 +14,7 @@ export function GlobalFilters({ sounds, onApplySearch }: GlobalFiltersProps) {
 		useGlobalFilters({ sounds });
 
 	return (
-		<div className="flex w-full flex-col gap-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:w-[240px] lg:overflow-y-auto lg:pr-2">
+		<div className="flex w-full flex-col gap-3 lg:sticky lg:top-4 lg:h-[calc(100dvh-2rem)] lg:w-[240px] lg:overflow-hidden">
 			<SoundSearch
 				value={query}
 				onChange={setQuery}
@@ -24,7 +25,9 @@ export function GlobalFilters({ sounds, onApplySearch }: GlobalFiltersProps) {
 				sounds={sounds}
 				activeCategory={activeCategory}
 				onChange={setActiveCategory}
+				className="min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-2"
 			/>
+			<PremiumSponsorBanner className="hidden lg:flex" />
 		</div>
 	);
 }

@@ -50,7 +50,7 @@ export const GlobalSettings = () => {
 	return createPortal(
 		<Dialog open={opened} onOpenChange={setOpened}>
 			<DialogTrigger asChild>
-				<div className="fixed right-10 bottom-10">
+				<div className="fixed right-10 bottom-10 z-99">
 					<Button size="icon-sm">
 						<SlidersHorizontalIcon />
 					</Button>

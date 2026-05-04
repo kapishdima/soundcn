@@ -11,7 +11,13 @@ type HeroProps = {
 	children?: ReactNode;
 };
 
-export function Hero({ title, description, action, aside, children }: HeroProps) {
+export function Hero({
+	title,
+	description,
+	action,
+	aside,
+	children,
+}: HeroProps) {
 	const hasAside = Boolean(aside);
 
 	return (
@@ -23,7 +29,7 @@ export function Hero({ title, description, action, aside, children }: HeroProps)
 							"grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-center lg:gap-14",
 					)}
 				>
-					<div>
+					<div className="flex flex-col justify-center items-center text-center">
 						<h1
 							className="font-heading text-4xl font-bold text-balance sm:text-5xl lg:text-6xl"
 							style={{ animationDelay: "50ms" }}
@@ -43,9 +49,7 @@ export function Hero({ title, description, action, aside, children }: HeroProps)
 						</div>
 					</div>
 
-					{hasAside ? (
-						<div className="hidden lg:block">{aside}</div>
-					) : null}
+					{hasAside ? <div className="hidden lg:block">{aside}</div> : null}
 				</div>
 			</div>
 

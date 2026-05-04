@@ -66,8 +66,8 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 				}
 			/>
 
-			<div className="container flex flex-1 flex-col gap-8 pb-8 lg:flex-row lg:items-start">
-				<aside className="w-full lg:w-auto sticky top-2 self-start">
+			<div className="container-wide flex flex-1 flex-col gap-8 pb-8 lg:flex-row lg:items-start">
+				<aside className="w-full lg:w-auto sticky top-2">
 					<GlobalFilters sounds={sounds} onApplySearch={onApplySearch} />
 				</aside>
 

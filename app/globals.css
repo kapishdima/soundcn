@@ -142,6 +142,13 @@
 	padding-inline: --spacing(6);
 }
 
+@utility container-wide {
+	width: 100%;
+	margin-inline: auto;
+	max-width: var(--container-8xl);
+	padding-inline: --spacing(8);
+}
+
 /* ─── Equalizer animation ─── */
 @keyframes eq {
 	0%,

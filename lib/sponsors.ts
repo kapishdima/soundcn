@@ -8,6 +8,21 @@ export interface Sponsor {
 	isCurrent?: boolean;
 }
 
+/** Single in-page Premium banner slot — shown in the sounds-page filter aside */
+export interface PremiumBannerSlot {
+	name: string;
+	url: string;
+	/** Square logo: image URL/path or inline <svg> source */
+	logo: string;
+	/** One-line pitch shown under the name (~50 chars) */
+	tagline: string;
+	/** CTA label, e.g. "Visit Mayven" */
+	cta?: string;
+}
+
+/** Set to a sponsor object when the Premium tier is filled, or `null` for the empty placeholder. */
+export const PREMIUM_BANNER: PremiumBannerSlot | null = null;
+
 export function isSvgSource(logo: string): boolean {
 	return logo.trimStart().startsWith("<svg");
 }

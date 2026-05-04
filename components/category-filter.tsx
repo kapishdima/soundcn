@@ -12,17 +12,19 @@ interface CategoryFilterProps {
 	activeCategory: string;
 	onChange: (category: string) => void;
 	sounds: SoundCatalogItem[];
+	className?: string;
 }
 
 export const CategoryFilter = memo(function CategoryFilter({
 	activeCategory,
 	onChange,
 	sounds,
+	className,
 }: CategoryFilterProps) {
 	const options = useMemo(() => buildCategoryOptions(sounds), [sounds]);
 
 	return (
-		<div className="flex flex-col gap-1">
+		<div className={cn("flex flex-col gap-1", className)}>
 			{options.map((option) => {
 				const isActive = option.key === activeCategory;
 				return (
@@ -31,6 +33,7 @@ export const CategoryFilter = memo(function CategoryFilter({
 							onClick={() => {
 								onChange(option.key);
 								trackEvent("category_filtered", { category: option.key });
+								window.scrollTo({ top: 0, behavior: "smooth" });
 							}}
 							variant={isActive ? "default" : "ghost"}
 							className="w-full justify-between gap-3 px-3"
