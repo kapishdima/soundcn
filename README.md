@@ -1,6 +1,6 @@
 # soundcn
 
-![soundcn](public/hero.png)
+![soundcn](public/og-dark.png)
 
 Open-source collection of UI sound effects, installable via [shadcn CLI](https://ui.shadcn.com/docs/cli).
 
