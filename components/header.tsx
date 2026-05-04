@@ -1,9 +1,9 @@
 "use client";
 
+import { SponsorButton } from "@/app/sponsors/components/sponsor-button";
 import { AppLogo } from "@/components/app-logo";
 import { AppMenu } from "@/components/app-menu";
 import { GithubButton } from "@/components/github-button";
-import { SponsorButton } from "@/components/sponsor-button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {

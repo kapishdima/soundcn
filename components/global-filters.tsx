@@ -1,17 +1,14 @@
-import { CategoryFilterVertical } from "@/components/category-filter-vertical";
-import { SoundSearch } from "@/components/sound-search";
+import { CategoryFilter } from "@/components/category-filter";
+import { SoundSearch } from "@/components/sounds/sound-search";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 
-type GlobalFiltersSidebarProps = {
+type GlobalFiltersProps = {
 	sounds: SoundCatalogItem[];
 	onApplySearch: () => void;
 };
 
-export function GlobalFiltersSidebar({
-	sounds,
-	onApplySearch,
-}: GlobalFiltersSidebarProps) {
+export function GlobalFilters({ sounds, onApplySearch }: GlobalFiltersProps) {
 	const { query, setQuery, activeCategory, setActiveCategory } =
 		useGlobalFilters({ sounds });
 
@@ -23,7 +20,7 @@ export function GlobalFiltersSidebar({
 				onEnterGrid={onApplySearch}
 				className="max-w-none w-full"
 			/>
-			<CategoryFilterVertical
+			<CategoryFilter
 				sounds={sounds}
 				activeCategory={activeCategory}
 				onChange={setActiveCategory}

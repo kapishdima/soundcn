@@ -8,7 +8,7 @@ import {
 import { CopyButton } from "@/components/copy-button/copy-button";
 import { InstallMethodSwitcher } from "@/components/install-method-switcher";
 
-import { SoundCopyBlock } from "@/components/sound-copy-block";
+import { SoundCopyBlock } from "@/components/sounds/sound-copy-block";
 import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import { trackEvent } from "@/lib/analytics";

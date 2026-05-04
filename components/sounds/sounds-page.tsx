@@ -2,20 +2,16 @@
 
 import dynamic from "next/dynamic";
 import { useRef } from "react";
-import { BatchInstallBar } from "@/components/batch-install-bar";
-import { GlobalFiltersSidebar } from "@/components/global-filters-sidebar";
+import { GlobalFilters } from "@/components/global-filters";
 import { Hero } from "@/components/hero";
-import { KeyboardTips } from "@/components/keyboard-tips";
-import { SoundGrid } from "@/components/sound-grid";
-import { SoundsCountTitle } from "@/components/sounds-count-title";
-import { Button } from "@/components/ui/button";
+import { SoundGrid } from "@/components/sounds/sound-grid";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { cn } from "@/lib/utils";
 
 const SoundDetail = dynamic(() =>
-	import("@/components/sound-detail").then((mod) => mod.SoundDetail),
+	import("@/components/sounds/sound-detail").then((mod) => mod.SoundDetail),
 );
 
 interface SoundsPageProps {
@@ -42,7 +38,6 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 					</>
 				}
 				description="Open-source sound effects for creative web apps. Install any sound with a shadcn"
-				action={<Button>Show an example</Button>}
 			/>
 
 			<div
@@ -50,14 +45,10 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 				style={{ animationDelay: "260ms" }}
 			>
 				<aside className="w-full lg:w-auto sticky top-2 self-start">
-					<GlobalFiltersSidebar sounds={sounds} onApplySearch={onApplySearch} />
+					<GlobalFilters sounds={sounds} onApplySearch={onApplySearch} />
 				</aside>
 
 				<main id="main-content" className="flex min-w-0 flex-1 flex-col gap-6">
-					<div className="flex items-center justify-between">
-						<SoundsCountTitle count={deferredSounds.length} />
-					</div>
-
 					<div
 						className={cn(
 							"transition-opacity duration-150",
@@ -74,7 +65,6 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 				</main>
 			</div>
 
-			<BatchInstallBar sounds={sounds} />
 			<SoundDetail sounds={deferredSounds} />
 		</>
 	);

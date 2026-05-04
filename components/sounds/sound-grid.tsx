@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { EmptyBars } from "@/components/empty-bars";
-import { SoundCard } from "@/components/sound-card";
+import { SoundCard } from "@/components/sounds/sound-card";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useGridNavigation } from "@/hooks/use-grid-navigation";
 import { useSoundSelection } from "@/hooks/use-sound-selection";

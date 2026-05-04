@@ -1,13 +1,11 @@
 "use client";
 
-import { ArrowUpRight, Clock, HardDrive, Scale, Tag } from "lucide-react";
-import Link from "next/link";
+import { Clock, HardDrive, Scale, Tag } from "lucide-react";
 import { useEffect, useRef } from "react";
-import { SoundDownloadButton } from "@/components/sound-download-button";
-import { SoundInstallInstructions } from "@/components/sound-install-instructions";
-import { SoundNavigation } from "@/components/sound-navigation";
-import { PlayerStrip } from "@/components/sound-player";
-import { Button } from "@/components/ui/button";
+import { SoundDownloadButton } from "@/components/sounds/sound-download-button";
+import { SoundInstallInstructions } from "@/components/sounds/sound-install-instructions";
+import { SoundNavigation } from "@/components/sounds/sound-navigation";
+import { PlayerStrip } from "@/components/sounds/sound-player";
 import {
 	Drawer,
 	DrawerContent,
@@ -83,14 +81,6 @@ export function SoundDetail({ sounds }: { sounds: SoundCatalogItem[] }) {
 										sound={sound}
 										setSoundParam={navigateTo}
 									/>
-									<Button asChild variant="ghost" size="icon-sm">
-										<Link
-											href={`/sound/${sound.name}`}
-											aria-label="Open sound page"
-										>
-											<ArrowUpRight aria-hidden="true" />
-										</Link>
-									</Button>
 									<SoundDownloadButton name={sound.name} />
 								</div>
 							</div>

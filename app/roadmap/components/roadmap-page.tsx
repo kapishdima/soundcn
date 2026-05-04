@@ -1,27 +1,18 @@
 "use client";
 
-import { AppHero } from "@/components/app-hero";
-import { RoadmapItem } from "@/components/roadmap-item";
+import { RoadmapItem } from "@/app/roadmap/components/roadmap-item";
+import { Hero } from "@/components/hero";
 import { ROADMAP_STEPS } from "@/lib/roadmap";
 
 export function RoadmapPage() {
 	return (
 		<>
-			<AppHero
-				eyebrow={
-					<>
-						<span className="relative flex size-2 shrink-0" aria-hidden="true">
-							<span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-primary opacity-50" />
-							<span className="relative inline-flex size-2 rounded-full bg-primary" />
-						</span>
-						What&apos;s coming
-					</>
-				}
+			<Hero
 				title={
 					<>
-						The plan.
+						The plan
 						<br />
-						<span className="text-muted-foreground">No vague promises.</span>
+						<span className="text-muted-foreground">No vague promises</span>
 					</>
 				}
 				description={

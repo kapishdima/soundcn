@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { SoundPlayControl } from "@/components/sound-control";
+import { SoundPlayControl } from "@/components/sounds/sound-control";
 import type { PlayState } from "@/hooks/use-sound-playback";
 import { generateWaveform } from "@/lib/sound-data";
 import { cn } from "@/lib/utils";
