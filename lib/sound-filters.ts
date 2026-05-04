@@ -1,4 +1,3 @@
-import type { CategoryFilterOption } from "@/components/category-filter";
 import {
 	ALL_CATEGORY,
 	CATEGORY_ORDER,
@@ -38,7 +37,7 @@ export function filterSounds(
 
 export function buildCategoryOptions(
 	sounds: SoundCatalogItem[],
-): CategoryFilterOption[] {
+) {
 	const counts = sounds.reduce<Record<string, number>>((acc, sound) => {
 		const key = sound.broadCategory;
 		acc[key] = (acc[key] ?? 0) + 1;

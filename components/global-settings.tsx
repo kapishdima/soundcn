@@ -26,8 +26,13 @@ export const GlobalSettings = () => {
 	const [opened, setOpened] = useState(false);
 	const [liveVolume, setLiveVolume] = useState(volume);
 	const [liveMuted, setLiveMuted] = useState(muted);
+	const [mounted, setMounted] = useState(false);
 
 	const { toggle } = useSoundPlayback("back-001");
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 
 	useEffect(() => {
 		setLiveVolume(volume);
@@ -37,6 +42,8 @@ export const GlobalSettings = () => {
 	useEffect(() => {
 		setLiveMuted(muted);
 	}, [muted]);
+
+	if (!mounted) return null;
 
 	const handleMuteChange = (next: boolean) => {
 		setLiveMuted(next);
