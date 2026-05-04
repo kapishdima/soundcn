@@ -11,6 +11,7 @@ import { Hero } from "@/components/hero";
 import { SoundGrid } from "@/components/sounds/sound-grid";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { UsedByStrip } from "@/components/used-by-strip";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
@@ -26,7 +27,7 @@ interface SoundsPageProps {
 
 export function SoundsPage({ sounds }: SoundsPageProps) {
 	const gridFocusRef = useRef<(() => void) | null>(null);
-	const { deferredSounds, isPending } = useGlobalFilters({
+	const { deferredSounds } = useGlobalFilters({
 		sounds,
 	});
 
@@ -56,14 +57,15 @@ export function SoundsPage({ sounds }: SoundsPageProps) {
 						shadcn
 					</p>
 				}
-			>
-				<div className="flex items-end gap-x-2">
-					<Card className="py-1.5 px-4 font-mono">
-						$ {convertNpmCommand(`npx shadcn add @soundcn/belt-handle-2`).bun}
-					</Card>
-					<Button>Watch example</Button>
-				</div>
-			</Hero>
+				action={
+					<div className="flex items-end gap-x-2">
+						<Card className="py-1.5 px-4 font-mono">
+							$ {convertNpmCommand(`npx shadcn add @soundcn/belt-handle-2`).bun}
+						</Card>
+						<Button>Watch example</Button>
+					</div>
+				}
+			/>
 
 			<div className="container flex flex-1 flex-col gap-8 pb-8 lg:flex-row lg:items-start">
 				<aside className="w-full lg:w-auto sticky top-2 self-start">

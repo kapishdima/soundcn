@@ -7,6 +7,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { Footer } from "@/components/footer";
+import { GlobalSettings } from "@/components/global-settings";
 import { Header } from "@/components/header";
 import { InstallMethodProvider } from "@/contexts/install-method-context";
 import { PackageManagerProvider } from "@/contexts/package-manager-context";
@@ -122,6 +123,7 @@ export default function RootLayout({
 										<Header />
 										{children}
 										<Footer />
+										<GlobalSettings />
 									</div>
 								</InstallMethodProvider>
 							</PackageManagerProvider>
