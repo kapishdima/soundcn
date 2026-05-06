@@ -7,8 +7,8 @@ export type SponsorStats = {
 
 export const SPONSOR_STATS: SponsorStats = {
 	monthLabel: "May 2026",
-	visitors: 2.511,
-	pageViews: 4.268,
+	visitors: 2.641,
+	pageViews: 4.465,
 	bounceRate: 0.73,
 };
 
