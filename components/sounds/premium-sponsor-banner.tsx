@@ -2,7 +2,6 @@ import { Crown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { trackEvent } from "@/lib/analytics";
 import {
 	isSvgSource,
 	PREMIUM_BANNER,
@@ -34,7 +33,6 @@ function FilledBanner({
 			href={sponsor.url}
 			target="_blank"
 			rel="noopener noreferrer sponsored"
-			onClick={() => trackEvent("sponsor_link_clicked")}
 			aria-label={`Sponsored by ${sponsor.name}`}
 			className={cn(SHELL_CLASSES, className)}
 		>
@@ -117,12 +115,7 @@ function PlaceholderBanner({ className }: { className?: string }) {
 			</div>
 
 			<Button asChild size="sm" className="w-full">
-				<Link
-					href={SPONSOR_HREF}
-					onClick={() => trackEvent("sponsor_link_clicked")}
-				>
-					Claim this spot
-				</Link>
+				<Link href={SPONSOR_HREF}>Claim this spot</Link>
 			</Button>
 		</aside>
 	);

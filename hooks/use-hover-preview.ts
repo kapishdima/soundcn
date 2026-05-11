@@ -2,7 +2,7 @@
 
 import { use, useCallback, useRef } from "react";
 import { useAudioSettings } from "@/hooks/use-audio-settings";
-import { trackEvent } from "@/lib/analytics";
+import { useTrackEvent } from "@/lib/analytics";
 import { playSound, type SoundPlayback } from "@/lib/play-sound";
 import { loadSoundAsset } from "@/lib/sound-loader";
 
@@ -17,6 +17,7 @@ export function useHoverPreview(): HoverPreviewHandlers {
   const playbackRef = useRef<SoundPlayback | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const activeNameRef = useRef<string | null>(null);
+  const trackEvent = useTrackEvent();
 
   const stop = useCallback(() => {
     if (timerRef.current) {
@@ -72,7 +73,7 @@ export function useHoverPreview(): HoverPreviewHandlers {
         }
       }, DEBOUNCE_MS);
     },
-    [stop],
+    [stop, trackEvent],
   );
 
   return {

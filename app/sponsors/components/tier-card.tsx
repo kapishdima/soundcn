@@ -1,6 +1,5 @@
 import { Coffee, Crown, Heart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { trackEvent } from "@/lib/analytics";
 import type { BillingMode, Tier } from "@/lib/sponsorship-tiers";
 
 const TIER_ICON: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -113,7 +112,6 @@ export function TierCard({
 					href={tier.urls[billing]}
 					target="_blank"
 					rel="noopener noreferrer"
-					onClick={() => trackEvent("sponsor_link_clicked")}
 				>
 					Choose {tier.name}
 				</a>

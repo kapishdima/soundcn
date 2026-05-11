@@ -3,7 +3,7 @@
 import { memo, useMemo } from "react";
 import { ClickableWithSound } from "@/components/clickable-with-sound";
 import { Button } from "@/components/ui/button";
-import { trackEvent } from "@/lib/analytics";
+import { useTrackEvent } from "@/lib/analytics";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 import { buildCategoryOptions } from "@/lib/sound-filters";
 import { cn } from "@/lib/utils";
@@ -22,6 +22,7 @@ export const CategoryFilter = memo(function CategoryFilter({
 	className,
 }: CategoryFilterProps) {
 	const options = useMemo(() => buildCategoryOptions(sounds), [sounds]);
+	const trackEvent = useTrackEvent();
 
 	return (
 		<div

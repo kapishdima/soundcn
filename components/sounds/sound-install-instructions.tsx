@@ -11,7 +11,7 @@ import { InstallMethodSwitcher } from "@/components/install-method-switcher";
 import { SoundCopyBlock } from "@/components/sounds/sound-copy-block";
 import { useInstallMethod } from "@/hooks/use-install-method";
 import { usePackageManager } from "@/hooks/use-package-manager";
-import { trackEvent } from "@/lib/analytics";
+import { useTrackEvent } from "@/lib/analytics";
 import { getSoundSnippets, type SetupStep } from "@/lib/sound-snippets";
 
 interface SoundInstallInstructionsProps {
@@ -78,6 +78,7 @@ export function SoundInstallInstructions({
 }: SoundInstallInstructionsProps) {
 	const [method] = useInstallMethod();
 	const [pm] = usePackageManager();
+	const trackEvent = useTrackEvent();
 
 	const snippets = useMemo(
 		() => getSoundSnippets(soundName, pm, method),

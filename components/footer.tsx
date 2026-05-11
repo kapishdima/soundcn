@@ -27,7 +27,6 @@ export function Footer() {
 					</a>
 					<TrackedExternalLink
 						href={GITHUB_URL}
-						label="GitHub"
 						className="hover:text-foreground transition-colors duration-150"
 					>
 						GitHub

@@ -2,7 +2,7 @@ import { parseAsString, useQueryState } from "nuqs";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
-import { trackEvent } from "@/lib/analytics";
+import { useTrackEvent } from "@/lib/analytics";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 
 export const useSoundSelection = ({
@@ -12,6 +12,7 @@ export const useSoundSelection = ({
 }) => {
 	const { onPreviewStop } = useHoverPreview();
 	const { activeCategory, query } = useGlobalFilters({ sounds });
+	const trackEvent = useTrackEvent();
 	const prevFiltersRef = useRef({ activeCategory, query });
 
 	const [soundParam, setSoundParam] = useQueryState(

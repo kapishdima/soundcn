@@ -1,4 +1,7 @@
-import { track } from "@vercel/analytics";
+"use client";
+
+import { useOpenPanel } from "@openpanel/nextjs";
+import { useCallback } from "react";
 
 type AnalyticsEvents = {
 	sound_install_copied: {
@@ -18,15 +21,20 @@ type AnalyticsEvents = {
 	install_method_changed: { value: string };
 	theme_toggled: { theme: string };
 	collection_viewed: { collectionName: string };
-	sponsor_link_clicked: Record<string, never>;
-	external_link_clicked: { url: string; label: string };
 };
 
-export function trackEvent<E extends keyof AnalyticsEvents>(
-	event: E,
-	...args: AnalyticsEvents[E] extends Record<string, never>
-		? []
-		: [AnalyticsEvents[E]]
-) {
-	track(event, args[0] as Record<string, string | number | boolean>);
+export function useTrackEvent() {
+	const op = useOpenPanel();
+
+	return useCallback(
+		<E extends keyof AnalyticsEvents>(
+			event: E,
+			...args: AnalyticsEvents[E] extends Record<string, never>
+				? []
+				: [AnalyticsEvents[E]]
+		) => {
+			op.track(event, args[0] as Record<string, unknown> | undefined);
+		},
+		[op],
+	);
 }
