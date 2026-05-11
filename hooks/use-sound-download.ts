@@ -1,10 +1,11 @@
 "use client";
 
 import { useCallback } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { useTrackEvent } from "@/lib/analytics";
 import { loadSoundAsset } from "@/lib/sound-loader";
 
 export function useSoundDownload(soundName: string | null) {
+  const trackEvent = useTrackEvent();
   return useCallback(async () => {
     if (!soundName) return;
     try {
@@ -21,5 +22,5 @@ export function useSoundDownload(soundName: string | null) {
     } catch (err) {
       console.error(`[useSoundDownload] Failed to download "${soundName}":`, err);
     }
-  }, [soundName]);
+  }, [soundName, trackEvent]);
 }

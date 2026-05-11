@@ -2,7 +2,7 @@
 
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useInstallMethod } from "@/hooks/use-install-method";
-import { trackEvent } from "@/lib/analytics";
+import { useTrackEvent } from "@/lib/analytics";
 import {
 	INSTALL_METHOD_LABELS,
 	INSTALL_METHODS,
@@ -11,6 +11,7 @@ import {
 
 export function InstallMethodSwitcher() {
 	const [method, setMethod] = useInstallMethod();
+	const trackEvent = useTrackEvent();
 
 	return (
 		<Tabs

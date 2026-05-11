@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "./globals.css";
 
-import { Analytics } from "@vercel/analytics/next";
+import { OpenPanelComponent } from "@openpanel/nextjs";
 import { Suspense } from "react";
 import { Footer } from "@/components/footer";
 import { GlobalSettings } from "@/components/global-settings";
@@ -129,7 +129,13 @@ export default function RootLayout({
 							</PackageManagerProvider>
 						</NuqsAdapter>
 					</ThemeProvider>
-					<Analytics />
+					<OpenPanelComponent
+						clientId={process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID as string}
+						apiUrl={process.env.NEXT_PUBLIC_OPENPANEL_API_URL}
+						trackScreenViews
+						trackAttributes
+						trackOutgoingLinks
+					/>
 				</Suspense>
 			</body>
 		</html>
