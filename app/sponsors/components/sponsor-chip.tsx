@@ -23,7 +23,7 @@ export function SponsorChip({
 			<Avatar className={cn("shrink-0", active ? "size-10" : "size-7 ")}>
 				{sponsor.logo && isSvgSource(sponsor.logo) ? (
 					<div
-						className="flex size-full items-center justify-center [&>svg]:size-3"
+						className="flex size-full items-center justify-center [&>svg]:size-8"
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: trusted sponsor SVG source
 						dangerouslySetInnerHTML={{ __html: sponsor.logo }}
 					/>

@@ -95,11 +95,6 @@ export const viewport: Viewport = {
 	],
 };
 
-console.log(
-	"OpenPanel Client ID:",
-	process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID,
-);
-
 export default function RootLayout({
 	children,
 }: Readonly<{

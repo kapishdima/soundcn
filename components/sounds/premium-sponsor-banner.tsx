@@ -69,7 +69,7 @@ function SponsorLogo({ logo, name }: { logo: string; name: string }) {
 		return (
 			<span
 				aria-hidden
-				className="flex size-9 shrink-0 items-center justify-center  text-primary [&_svg]:size-5 [&_svg]:shrink-0"
+				className="flex size-7 shrink-0 items-center justify-center"
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: logo }}
 			/>
