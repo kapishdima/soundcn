@@ -18,7 +18,7 @@ export function SponsorChip({
 					? "border-primary/30 bg-primary/6 hover:border-primary/50 hover:bg-primary/12 px-4 py-2.5 text-sm"
 					: "border-border/70 bg-card/60 hover:border-border hover:bg-card"
 			}`}
-			rel="noopener"
+			rel="noopener sponsored"
 		>
 			<Avatar className={cn("shrink-0", active ? "size-10" : "size-7 ")}>
 				{sponsor.logo && isSvgSource(sponsor.logo) ? (

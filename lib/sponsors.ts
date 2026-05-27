@@ -22,7 +22,7 @@ export interface PremiumBannerSlot {
 
 /** Set to a sponsor object when the Premium tier is filled, or `null` for the empty placeholder. */
 export const PREMIUM_BANNER: PremiumBannerSlot | null = {
-	name: "shadcnblocks",
+	name: "Shadcnblocks.com",
 	url: "https://shadcnblocks.com/?utm_source=soundcn.xyz",
 	logo: `<svg width="78" height="90" viewBox="0 0 78 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g clip-path="url(#clip0_33_3)">
@@ -50,7 +50,7 @@ export function isSvgSource(logo: string): boolean {
 export const SPONSORS: Sponsor[] = [
 
 	{
-		name: "Shadcnblocks",
+		name: "Shadcnblocks.com",
 		isCurrent: true,
 		url: "https://shadcnblocks.com/?utm_source=soundcn.xyz",
 		logo: `<svg width="78" height="90" viewBox="0 0 78 90" fill="none" xmlns="http://www.w3.org/2000/svg">
