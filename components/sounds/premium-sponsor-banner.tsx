@@ -32,7 +32,7 @@ function FilledBanner({
 		<a
 			href={sponsor.url}
 			target="_blank"
-			rel="noopener noreferrer sponsored"
+			rel="noopener sponsored"
 			aria-label={`Sponsored by ${sponsor.name}`}
 			className={cn(SHELL_CLASSES, className)}
 		>
