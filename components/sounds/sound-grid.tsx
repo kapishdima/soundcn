@@ -2,7 +2,7 @@ import { memo } from "react";
 import { EmptyBars } from "@/components/empty-bars";
 import { SoundCard } from "@/components/sounds/sound-card";
 import { Button } from "@/components/ui/button";
-import { useGlobalFilters } from "@/hooks/use-global-filters";
+import { useFilterState } from "@/hooks/use-global-filters";
 import { useGridNavigation } from "@/hooks/use-grid-navigation";
 import { useSoundSelection } from "@/hooks/use-sound-selection";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
@@ -23,7 +23,7 @@ export const SoundGrid = memo(function SoundGrid({
 	const { gridRef, onKeyDown, focusFirst } = useGridNavigation();
 	const { selectMode, selectedNames, handleBatchSelect, handleSelect } =
 		useSoundSelection({ sounds });
-	const { handleClearFilters } = useGlobalFilters({ sounds });
+	const { handleClearFilters } = useFilterState();
 
 	if (focusRef) {
 		focusRef.current = focusFirst;

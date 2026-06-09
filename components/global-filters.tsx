@@ -2,7 +2,7 @@ import { CategoryFilter } from "@/components/category-filter";
 import { PremiumSponsorBanner } from "@/components/sounds/premium-sponsor-banner";
 import { SoundSearch } from "@/components/sounds/sound-search";
 import { SoundSort } from "@/components/sounds/sound-sort";
-import { useGlobalFilters } from "@/hooks/use-global-filters";
+import { useFilterState } from "@/hooks/use-global-filters";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
 
 type GlobalFiltersProps = {
@@ -12,7 +12,7 @@ type GlobalFiltersProps = {
 
 export function GlobalFilters({ sounds, onApplySearch }: GlobalFiltersProps) {
 	const { query, setQuery, activeCategory, setActiveCategory } =
-		useGlobalFilters({ sounds });
+		useFilterState();
 
 	return (
 		<div className="flex w-full flex-col gap-3 lg:sticky lg:top-4 lg:h-[calc(100dvh-2rem)] lg:w-60 lg:overflow-hidden">
@@ -22,7 +22,7 @@ export function GlobalFilters({ sounds, onApplySearch }: GlobalFiltersProps) {
 				onEnterGrid={onApplySearch}
 				className="w-full"
 			/>
-			<SoundSort sounds={sounds} />
+			<SoundSort />
 			<CategoryFilter
 				sounds={sounds}
 				activeCategory={activeCategory}

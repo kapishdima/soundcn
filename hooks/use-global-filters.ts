@@ -2,14 +2,19 @@ import { parseAsString, parseAsStringLiteral, useQueryState } from "nuqs";
 import { useCallback, useDeferredValue, useEffect, useMemo } from "react";
 import { useTrackEvent } from "@/lib/analytics";
 import { ALL_CATEGORY, type SoundCatalogItem } from "@/lib/sound-catalog";
-import { filterSounds, SORT_KEYS, sortSounds } from "@/lib/sound-filters";
+import {
+	buildSortedVariants,
+	filterSounds,
+	SORT_KEYS,
+} from "@/lib/sound-filters";
 
-export const useGlobalFilters = ({
-	sounds,
-}: {
-	sounds: SoundCatalogItem[];
-}) => {
-	const trackEvent = useTrackEvent();
+/**
+ * URL-backed filter/sort state (query, category, sort) plus a reset helper.
+ * Catalog-independent and cheap, so components that only need the controls (or
+ * just the clear action) can call this without triggering any sort/filter work.
+ * All instances stay in sync through the shared nuqs URL state.
+ */
+export const useFilterState = () => {
 	const [query, setQuery] = useQueryState(
 		"q",
 		parseAsString
@@ -33,22 +38,6 @@ export const useGlobalFilters = ({
 		setSortBy("title");
 	}, [setQuery, setActiveCategory, setSortBy]);
 
-	useEffect(() => {
-		const trimmed = query.trim();
-		if (trimmed) {
-			trackEvent("search_used", { query: trimmed });
-		}
-	}, [query, trackEvent]);
-
-	const filteredSounds = useMemo(
-		() => sortSounds(filterSounds(sounds, query, activeCategory), sortBy),
-		[sounds, query, activeCategory, sortBy],
-	);
-
-	// Keep old cards visible while React prepares new ones
-	const deferredSounds = useDeferredValue(filteredSounds);
-	const isPending = deferredSounds !== filteredSounds;
-
 	return {
 		query,
 		setQuery,
@@ -56,9 +45,47 @@ export const useGlobalFilters = ({
 		setActiveCategory,
 		sortBy,
 		setSortBy,
+		handleClearFilters,
+	};
+};
+
+/**
+ * Filter state plus the derived, sorted + filtered sound list. Owns the
+ * expensive memoized work, so call it ONLY where the list is rendered (the
+ * sounds page). Control-only consumers should use useFilterState instead.
+ */
+export const useGlobalFilters = ({
+	sounds,
+}: {
+	sounds: SoundCatalogItem[];
+}) => {
+	const trackEvent = useTrackEvent();
+	const filters = useFilterState();
+	const { query, activeCategory, sortBy } = filters;
+
+	useEffect(() => {
+		const trimmed = query.trim();
+		if (trimmed) {
+			trackEvent("search_used", { query: trimmed });
+		}
+	}, [query, trackEvent]);
+
+	// Sort the catalog once per identity, then filter the pre-sorted array —
+	// filterSounds preserves order, so changing sort costs no re-sort.
+	const variants = useMemo(() => buildSortedVariants(sounds), [sounds]);
+	const filteredSounds = useMemo(
+		() => filterSounds(variants[sortBy], query, activeCategory),
+		[variants, sortBy, query, activeCategory],
+	);
+
+	// Keep old cards visible while React prepares new ones
+	const deferredSounds = useDeferredValue(filteredSounds);
+	const isPending = deferredSounds !== filteredSounds;
+
+	return {
+		...filters,
 		filteredSounds,
 		deferredSounds,
 		isPending,
-		handleClearFilters,
 	};
 };

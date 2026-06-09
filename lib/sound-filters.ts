@@ -35,30 +35,33 @@ export function filterSounds(
 	});
 }
 
-export type SortKey = "title" | "size-asc" | "size-desc";
-export const SORT_KEYS: SortKey[] = ["title", "size-asc", "size-desc"];
+// Single source of truth: the union derives from the array so the nuqs literal
+// parser (parseAsStringLiteral) and the SortKey type can never drift apart.
+export const SORT_KEYS = ["title", "size-asc", "size-desc"] as const;
+export type SortKey = (typeof SORT_KEYS)[number];
 
-export function sortSounds(
+type SortedVariants = Record<SortKey, SoundCatalogItem[]>;
+
+/**
+ * Build every sort ordering of the catalog up front. Because filterSounds()
+ * preserves input order, sorting the base array once lets the runtime path stay
+ * filter-only — selecting a sort becomes an array pick with no per-interaction
+ * sort cost. The returned arrays are read-only: the "title" variant aliases the
+ * input (already title-sorted at build time, sound-data.ts:36) while the size
+ * variants are fresh copies, so callers must never mutate them.
+ */
+export function buildSortedVariants(
 	sounds: SoundCatalogItem[],
-	sortBy: SortKey,
-): SoundCatalogItem[] {
-	switch (sortBy) {
-		case "size-asc":
-			return [...sounds].sort(
-				(a, b) =>
-					a.meta.sizeKb - b.meta.sizeKb || a.title.localeCompare(b.title),
-			);
-		case "size-desc":
-			return [...sounds].sort(
-				(a, b) =>
-					b.meta.sizeKb - a.meta.sizeKb || a.title.localeCompare(b.title),
-			);
-		default:
-			// "title": no-op. filterSounds() already returns a fresh array preserving
-			// build-time title order (sound-data.ts:36). Returning it as-is guarantees
-			// default order == SSR order with no comparator drift.
-			return sounds;
-	}
+): SortedVariants {
+	return {
+		title: sounds,
+		"size-asc": [...sounds].sort(
+			(a, b) => a.meta.sizeKb - b.meta.sizeKb || a.title.localeCompare(b.title),
+		),
+		"size-desc": [...sounds].sort(
+			(a, b) => b.meta.sizeKb - a.meta.sizeKb || a.title.localeCompare(b.title),
+		),
+	};
 }
 
 export function buildCategoryOptions(sounds: SoundCatalogItem[]) {

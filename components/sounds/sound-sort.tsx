@@ -6,14 +6,11 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { useGlobalFilters } from "@/hooks/use-global-filters";
-import type { SoundCatalogItem } from "@/lib/sound-catalog";
+import { useFilterState } from "@/hooks/use-global-filters";
 import type { SortKey } from "@/lib/sound-filters";
 
-export const SoundSort: React.FC<{ sounds: SoundCatalogItem[] }> = ({
-	sounds,
-}) => {
-	const { sortBy, setSortBy } = useGlobalFilters({ sounds });
+export const SoundSort: React.FC = () => {
+	const { sortBy, setSortBy } = useFilterState();
 
 	return (
 		<Select value={sortBy} onValueChange={(v) => setSortBy(v as SortKey)}>
