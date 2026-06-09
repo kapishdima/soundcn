@@ -35,9 +35,33 @@ export function filterSounds(
 	});
 }
 
-export function buildCategoryOptions(
+export type SortKey = "title" | "size-asc" | "size-desc";
+export const SORT_KEYS: SortKey[] = ["title", "size-asc", "size-desc"];
+
+export function sortSounds(
 	sounds: SoundCatalogItem[],
-) {
+	sortBy: SortKey,
+): SoundCatalogItem[] {
+	switch (sortBy) {
+		case "size-asc":
+			return [...sounds].sort(
+				(a, b) =>
+					a.meta.sizeKb - b.meta.sizeKb || a.title.localeCompare(b.title),
+			);
+		case "size-desc":
+			return [...sounds].sort(
+				(a, b) =>
+					b.meta.sizeKb - a.meta.sizeKb || a.title.localeCompare(b.title),
+			);
+		default:
+			// "title": no-op. filterSounds() already returns a fresh array preserving
+			// build-time title order (sound-data.ts:36). Returning it as-is guarantees
+			// default order == SSR order with no comparator drift.
+			return sounds;
+	}
+}
+
+export function buildCategoryOptions(sounds: SoundCatalogItem[]) {
 	const counts = sounds.reduce<Record<string, number>>((acc, sound) => {
 		const key = sound.broadCategory;
 		acc[key] = (acc[key] ?? 0) + 1;

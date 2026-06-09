@@ -1,0 +1,11 @@
+{
+  "active": true,
+  "started_at": "2026-06-08T16:25:15.775Z",
+  "current_phase": "ralplan",
+  "original_prompt": "/oh-my-claudecode:ralplan нужно добавить возможность сортировки по размеру файла",
+  "session_id": "3133fa38-a5db-455a-8c79-6cc0fa16355d",
+  "project_path": "/Users/dev_wandry/projects/opensource/soundcn",
+  "awaiting_confirmation": true,
+  "awaiting_confirmation_set_at": "2026-06-08T16:25:15.775Z",
+  "last_checked_at": "2026-06-08T16:25:15.775Z"
+}

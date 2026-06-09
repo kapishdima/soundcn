@@ -1,8 +1,8 @@
-import { parseAsString, useQueryState } from "nuqs";
+import { parseAsString, parseAsStringLiteral, useQueryState } from "nuqs";
 import { useCallback, useDeferredValue, useEffect, useMemo } from "react";
 import { useTrackEvent } from "@/lib/analytics";
 import { ALL_CATEGORY, type SoundCatalogItem } from "@/lib/sound-catalog";
-import { filterSounds } from "@/lib/sound-filters";
+import { filterSounds, SORT_KEYS, sortSounds } from "@/lib/sound-filters";
 
 export const useGlobalFilters = ({
 	sounds,
@@ -20,11 +20,18 @@ export const useGlobalFilters = ({
 		"category",
 		parseAsString.withDefault(ALL_CATEGORY).withOptions({ shallow: true }),
 	);
+	const [sortBy, setSortBy] = useQueryState(
+		"sort",
+		parseAsStringLiteral(SORT_KEYS)
+			.withDefault("title")
+			.withOptions({ shallow: true }),
+	);
 
 	const handleClearFilters = useCallback(() => {
 		setQuery("");
 		setActiveCategory(ALL_CATEGORY);
-	}, [setQuery, setActiveCategory]);
+		setSortBy("title");
+	}, [setQuery, setActiveCategory, setSortBy]);
 
 	useEffect(() => {
 		const trimmed = query.trim();
@@ -34,8 +41,8 @@ export const useGlobalFilters = ({
 	}, [query, trackEvent]);
 
 	const filteredSounds = useMemo(
-		() => filterSounds(sounds, query, activeCategory),
-		[sounds, query, activeCategory],
+		() => sortSounds(filterSounds(sounds, query, activeCategory), sortBy),
+		[sounds, query, activeCategory, sortBy],
 	);
 
 	// Keep old cards visible while React prepares new ones
@@ -47,6 +54,8 @@ export const useGlobalFilters = ({
 		setQuery,
 		activeCategory,
 		setActiveCategory,
+		sortBy,
+		setSortBy,
 		filteredSounds,
 		deferredSounds,
 		isPending,

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "entries": {
+    "445ed27a3872b681d98190bae61ccb84954e1bc4e140df5370be958dee776b3a": {
+      "last_emitted_at_ms": 1780936952231,
+      "message": "Verify changes work after editing. Test functionality before marking complete."
+    },
+    "79a93d4a2f8f50b95f852280616242fee1855dc99a3c75211917f55e72e95fae": {
+      "last_emitted_at_ms": 1780936938647,
+      "message": "Use parallel execution for independent tasks. Use run_in_background for long operations (npm install, builds, tests)."
+    },
+    "466399dafa2d20f60587180bad0a07358eb7f2bce724df0ff682f038ad33f5ad": {
+      "last_emitted_at_ms": 1780936930500,
+      "message": "Read multiple files in parallel when possible for faster analysis."
+    },
+    "f37e5ad7da458760618829ed432363cb7e84229bfc5ac33809ecc64c7a21309b": {
+      "last_emitted_at_ms": 1780936924521,
+      "message": "Spawning agent: oh-my-claudecode:executor (opus) | Task: Implement sort by file size"
+    },
+    "5b4535ef28ebfd1f53ad7a4c286d4f9cdd1a29efcf217fae4590de25f79da164": {
+      "last_emitted_at_ms": 1780936347741,
+      "message": "Spawning agent: oh-my-claudecode:architect (inherit) | Task: Architect review of sort plan"
+    },
+    "50ebc61851ea4b7b2e74284e573968de5323eb91ee5f6e1516abcbaf2abc146d": {
+      "last_emitted_at_ms": 1780935927185,
+      "message": "Spawning agent: Explore (inherit) | Task: Explore sorting and file size context"
+    }
+  },
+  "updated_at": "2026-06-08T16:42:32.231Z"
+}
