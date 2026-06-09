@@ -1,6 +1,6 @@
 import { parseAsString, useQueryState } from "nuqs";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useGlobalFilters } from "@/hooks/use-global-filters";
+import { useFilterState } from "@/hooks/use-global-filters";
 import { useHoverPreview } from "@/hooks/use-hover-preview";
 import { useTrackEvent } from "@/lib/analytics";
 import type { SoundCatalogItem } from "@/lib/sound-catalog";
@@ -11,7 +11,7 @@ export const useSoundSelection = ({
 	sounds: SoundCatalogItem[];
 }) => {
 	const { onPreviewStop } = useHoverPreview();
-	const { activeCategory, query } = useGlobalFilters({ sounds });
+	const { activeCategory, query } = useFilterState();
 	const trackEvent = useTrackEvent();
 	const prevFiltersRef = useRef({ activeCategory, query });
 
