@@ -33,7 +33,7 @@ export function SoundCopyBlock({
 						</div>
 					) : null}
 				</div>
-				<CopyButton value={text} text={"Copy"} size="icon-sm" />
+				<CopyButton text={text} size="icon-sm" />
 			</div>
 			<div className="relative overflow-hidden bg-code">
 				<div

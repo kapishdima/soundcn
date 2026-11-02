@@ -67,7 +67,7 @@ export function CopyStateIcon({
   )
 }
 
-export type CopyButtonProps = ComponentProps<typeof Button> & {
+export type CopyButtonProps = Omit<ComponentProps<typeof Button>, "value"> & {
   /** The text to copy, or a function that returns the text. */
   text: string | (() => string)
   /** Called with the copied text on successful copy. */
@@ -86,6 +86,7 @@ export function CopyButton({
   onClick,
   onCopySuccess,
   onCopyError,
+  "aria-label": ariaLabel = "Copy",
   ...props
 }: CopyButtonProps) {
   const { state, copy } = useCopyToClipboard({
@@ -96,12 +97,12 @@ export function CopyButton({
   return (
     <Button
       size={size}
+      {...props}
       onClick={(e) => {
         copy(text)
         onClick?.(e)
       }}
-      aria-label="Copy"
-      {...props}
+      aria-label={ariaLabel}
     >
       <CopyStateIcon
         state={state}

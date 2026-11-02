@@ -113,10 +113,9 @@ export function SoundInstallInstructions({
 							Command
 						</span>
 						<CopyButton
-							value={snippets.installCmd}
 							size="icon-sm"
-							text="Copied!"
-							onCopy={() =>
+							text={snippets.installCmd}
+							onCopySuccess={() =>
 								trackEvent("sound_install_copied", {
 									soundName,
 									packageManager: pm,
@@ -128,7 +127,9 @@ export function SoundInstallInstructions({
 					<CodeBlockCommand
 						classNames="rounded-none"
 						prompt={`Add the @soundcn/${soundName} component to my project`}
-						{...convertNpmCommand(`npx shadcn add @soundcn/${soundName}`)}
+						{...convertNpmCommand(
+							`npx shadcn@latest add @soundcn/use-sound @soundcn/${soundName}`,
+						)}
 					/>
 				</div>
 			) : null}
